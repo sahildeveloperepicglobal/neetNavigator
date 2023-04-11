@@ -16,7 +16,10 @@
     "eslint-config-next": "13.3.0",
     "next": "13.3.0",
     "react": "18.2.0",
+    "react-active-menu": "^0.0.14",
     "react-dom": "18.2.0",
+    "react-slick": "^0.29.0",
+    "react-type-animation": "^3.0.1",
     "typescript": "5.0.4"
   }
 }
