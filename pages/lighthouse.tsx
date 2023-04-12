@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unescaped-entities */
 import MinusIcon from "@/icons/MinusIcon";
 import PlusIcon from "@/icons/PlusIcon";
 import React from "react";

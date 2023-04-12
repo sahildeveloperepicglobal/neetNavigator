@@ -78,7 +78,7 @@ export default function Home() {
       </section>
 
       <section>
-        <div classname="container2">
+        <div className="container2">
           <div className="background">
             <div className="row">
               <div className="who-we">

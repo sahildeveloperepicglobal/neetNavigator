@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unescaped-entities */
 /* eslint-disable @next/next/no-img-element */
 import Head from "next/head";
 import Image from "next/image";
@@ -105,9 +106,7 @@ export default function AboutUs() {
                       currently leading the organization and counselling
                       processes at NEET Navigator.
                     </span>
-                    <button onclick="myFunctionT()" id="myBtn">
-                      Read more
-                    </button>
+                    <button id="myBtn">Read more</button>
                   </p>
                 </div>
               </div>
@@ -128,9 +127,7 @@ export default function AboutUs() {
                       spearheading NEET Navigator’s data management team towards
                       creating GPS to MBBS admission.
                     </span>
-                    <button onclick="myFunctionV()" id="myBtnv">
-                      Read more
-                    </button>
+                    <button id="myBtnv">Read more</button>
                   </p>
                 </div>
               </div>
@@ -151,9 +148,7 @@ export default function AboutUs() {
                       California State University. He is guiding NEET Navigator
                       on its journey of value creation.
                     </span>
-                    <button onclick="myFunctionM()" id="myBtnm">
-                      Read more
-                    </button>
+                    <button id="myBtnm">Read more</button>
                   </p>
                 </div>
               </div>
