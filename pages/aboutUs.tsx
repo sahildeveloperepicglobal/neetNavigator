@@ -239,7 +239,7 @@ export default function AboutUs() {
       </section>
       <section>
         <div className="container">
-          <div className="testimonials">
+          <div className="testimonials p-0">
             <h2>
               Videos<span> Testimonials</span>
             </h2>

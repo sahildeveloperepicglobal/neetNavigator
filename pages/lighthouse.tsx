@@ -200,8 +200,12 @@ const LightHouse = () => {
                 <thead>
                   <tr>
                     <th>Features</th>
-                    <th>MBBS Lighthouse</th>
-                    <th>Other Applications</th>
+                    <th>
+                      MBBS <br /> Lighthouse
+                    </th>
+                    <th>
+                      Other <br /> Applications
+                    </th>
                   </tr>
                 </thead>
                 <tbody>
@@ -417,7 +421,7 @@ const FAQComponent = ({ content, heading }: FAQComponentProps) => {
         onClick={() => setSelected(!selected)}
       >
         {/* <span className="icon" aria-hidden={selected} /> */}
-        <span className="">
+        <span className="icon">
           {selected ? (
             <MinusIcon height={14} width={14} />
           ) : (

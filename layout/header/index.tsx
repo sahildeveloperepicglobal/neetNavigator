@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { Poppins } from "next/font/google";
-import poppins from "@/fonts/poppins";
 import Link from "next/link";
 
 const Header = () => {
@@ -11,7 +10,7 @@ const Header = () => {
   };
 
   return (
-    <div className={`${poppins.className} header`}>
+    <div className={` header`}>
       <div className="header-left">
         <ul className="left-flex">
           <li className="animate__animated animate__bounceInLeft">
