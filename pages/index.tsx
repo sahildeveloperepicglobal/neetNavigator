@@ -4,7 +4,7 @@ import Head from "next/head";
 import Image from "next/image";
 import { TypeAnimation } from "react-type-animation";
 import React, { Component } from "react";
-import ReactReadMoreReadLess from "react-read-more-read-less";
+
 import Style from "/styles/home.module.css";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -125,21 +125,14 @@ export default function Home() {
             </div>
             <div className="row">
               <div className="cards">
-                {problemStatement.map((items) => (
-                  <div className="first-card upper-card " key={items.id}>
+                {problemStatement.map((items, index) => (
+                  <div className="first-card upper-card " key={index}>
                     <div className="card-image">
                       <img src={items.url} alt="" />
                     </div>
                     <h3>{items.heading}</h3>
-                    <p>
-                      <ReactReadMoreReadLess
-                        charLimit={150}
-                        readMoreText={"Read more"}
-                        readLessText={"Read less"}
-                      >
-                        {items.pre}
-                      </ReactReadMoreReadLess>
-                    </p>
+
+                    <ReactReadMoreReadLess>{items.pre}</ReactReadMoreReadLess>
                   </div>
                 ))}
               </div>
@@ -720,3 +713,21 @@ const problemStatement = [
     pre: `medical admission guidance is notorious for lack of ethical and professional counsellors. “MBBS admission means Millions of rupees” this is the most common impression. There are too many dream merchants and cheats in the market. It is difficult to find genuine and professional guide for medical admissions`,
   },
 ];
+
+interface T {
+  children: React.ReactNode | React.ReactNode[];
+}
+
+const ReactReadMoreReadLess = ({ children }: T) => {
+  const [showMore, setShowMore] = React.useState(false);
+
+  const onShowMore = React.useCallback(() => {
+    setShowMore(!showMore);
+  }, [showMore]);
+  return (
+    <p>
+      {children}
+      <a onClick={onShowMore}>Read More</a>
+    </p>
+  );
+};
