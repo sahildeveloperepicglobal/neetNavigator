@@ -6,7 +6,7 @@ import { Inter } from "next/font/google";
 import { TypeAnimation } from "react-type-animation";
 import React, { Component } from "react";
 import { Poppins } from "next/font/google";
-import Style from "/styles/ug.module.css";
+import Style from "@/styles/ug.module.css";
 import PlusIcon from "@/icons/PlusIcon";
 import MinusIcon from "@/icons/MinusIcon";
 

@@ -3,7 +3,7 @@
 import { TypeAnimation } from "react-type-animation";
 import React from "react";
 
-import Style from "styles/home.module.css";
+import Style from "@/styles/home.module.css";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";

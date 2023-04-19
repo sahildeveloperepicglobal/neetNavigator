@@ -1,6 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
 import React from "react";
-import Style from "/styles/blogs.module.scss";
+import Style from "@/styles/blogs.module.scss";
 import EditIcon from "@/public/icons/EditIcon";
 import BinIcon from "@/public/icons/BinIcon";
 import SearchIcon from "@/public/icons/SearchIcon";
