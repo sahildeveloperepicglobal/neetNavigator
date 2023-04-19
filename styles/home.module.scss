@@ -94,3 +94,18 @@
   font-size: 18px !important;
   font-weight: 300;
 }
+
+@media (max-width: 769px) {
+  .approachsection {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+
+  .introduction_home {
+    height: auto;
+  }
+
+  .headingmin {
+    margin: 0px !important;
+  }
+}

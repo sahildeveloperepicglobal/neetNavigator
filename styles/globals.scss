@@ -42,7 +42,11 @@ a {
 .p-0 {
   padding: 0px !important;
 }
-
+.ReactReadMoreReadLess {
+  font-size: 15px !important;
+  font-weight: 400 !important;
+  cursor: pointer !important;
+}
 /* mobile menu  */
 .menubar + nav {
   position: absolute;
@@ -109,9 +113,9 @@ li {
 .header {
   display: flex;
   align-items: center;
-  padding: 10px 50px;
+
   z-index: 99;
-  padding: 0 15%;
+  padding: 12px 15%;
   top: 0;
 }
 .header-left {
@@ -293,7 +297,7 @@ li {
     padding: 0 10%;
   }
   .header {
-    padding: 0 10%;
+    padding: 10px 10%;
   }
   .whatsapp img {
     bottom: 45px;
@@ -303,7 +307,7 @@ li {
 @media only screen and (max-width: 1025px) {
   /* nav bar end */
   .header {
-    padding: 0 5%;
+    padding: 10px 5%;
   }
   .container {
     padding: 0 5%;
@@ -451,9 +455,6 @@ li {
     margin-left: 0 !important;
   }
 
-  .header {
-    padding: 0;
-  }
   /* .xyz span {
       right: 12px;
     } */
@@ -902,9 +903,7 @@ td {
   width: 280px !important;
   margin-top: 7%;
 }
-#last-slide {
-  margin-right: 20%;
-}
+
 .success-stories .story-text #success {
   font-style: normal;
   font-weight: 400;
@@ -1477,10 +1476,9 @@ td {
   .success-stories .slider ul li .image-textContainer .stories-studentSection {
     margin-bottom: 5%;
   }
-  #second-slide,
-  #last-slide,
-  #first-slide {
-    display: none;
+  .success-stories .slider.moslider .slick-slide > div {
+    display: flex;
+    justify-content: center;
   }
   #only-resp {
     display: block !important;
@@ -1654,12 +1652,8 @@ td {
     font-size: 28px;
   }
   .success-stories {
-    height: 100vh;
-    display: grid;
-    grid-template-columns: 1fr;
-    align-content: space-between;
-    justify-content: center;
-    justify-items: center;
+    height: auto;
+    display: inherit;
   }
   .slider ul li {
     width: 250px !important;
@@ -1668,8 +1662,6 @@ td {
   .slick-track {
     margin: auto;
     display: flex !important;
-    flex-direction: column;
-    align-items: center;
   }
   .success-stories .story-text {
     justify-items: center;
@@ -1776,11 +1768,6 @@ td {
     height: auto;
   }
   .faq-section .accordion .accordion-item .accordion-title {
-    margin-left: 8.7% !important;
-    width: 100%;
-    display: flex;
-    padding-right: 0;
-    padding-top: 0;
     font-size: 18px;
   }
   .faq-section .accordion .accordion-content p {
@@ -1788,9 +1775,7 @@ td {
     margin-top: 0 !important;
     font-size: 14px !important;
   }
-  .faq-section .accordion .accordion-item button {
-    padding-bottom: 0;
-  }
+
   .services-section .services-heading h2 {
     margin-bottom: 8% !important;
   }
@@ -1851,8 +1836,6 @@ td {
     padding-right: 10px;
   }
   .faq-section .accordion .accordion-item .accordion-title {
-    padding-left: 8.7%;
-    margin-left: 0 !important;
     width: auto;
   }
   .container {
@@ -2365,9 +2348,7 @@ th {
   .feature-comparison {
     padding-bottom: 0 !important;
   }
-  .accordion button .accordion-title {
-    margin-left: 5.7% !important;
-  }
+
   .faq-section h2 {
     margin: 1% 0;
   }
@@ -2550,32 +2531,16 @@ th {
   .affordablity-plans .golden-plan {
     margin-bottom: 2%;
   }
-
-  .accordion button .accordion-title {
-    margin-left: 4.5% !important;
-  }
 }
 @media only screen and (max-width: 426px) {
-  .faq-section {
-    padding: 0 4%;
-  }
   .lighthouse-banner .light-image {
-    margin-top: -10%;
+    margin-top: inherit;
   }
   .gps-admission {
     margin-top: 20%;
   }
   h2 {
     font-size: 28px !important;
-  }
-  .faq-section .accordion .accordion-item .accordion-title {
-    /* margin-left: 8.7% !important; */
-    width: 95%;
-    display: flex;
-    padding-right: 0;
-    padding-top: 0;
-    font-size: 18px;
-    padding-left: 4%;
   }
   .comparision-table th {
     font-size: 14px !important;
@@ -2590,17 +2555,7 @@ th {
   .comparision-table {
     padding: 0 2%;
   }
-  .faq-section .accordion .accordion-content p {
-    margin-left: 0 !important;
-    margin-top: 0 !important;
-    font-size: 14px !important;
-  }
-  .faq-section .accordion .accordion-item button {
-    padding-bottom: 0;
-  }
-  .faq-section {
-    margin-bottom: 25% !important;
-  }
+
   .whatsapp {
     bottom: 55px;
     left: 25px;
@@ -2723,14 +2678,7 @@ th {
   .lighthouse-banner .banner-textLight .banner-firstText {
     font-size: 24px;
   }
-  .faq-section .accordion .accordion-item .accordion-title {
-    padding-left: 8.7%;
-    margin-left: 0 !important;
-    width: auto;
-  }
-  .faq-section .accordion .accordion-item .accordion-title {
-    font-size: 16px !important;
-  }
+
   .gps-admission h2 {
     margin-top: 5%;
   }
@@ -2765,9 +2713,7 @@ th {
   .feature-comparison .contentbox .comperisonbox {
     padding: 0 3% !important;
   }
-  .faq-section {
-    padding: 0 3%;
-  }
+
   h3 {
     font-size: 18px !important;
   }
@@ -3028,16 +2974,17 @@ th {
 
 .accordion button {
   position: relative;
-  display: block;
+  display: flex;
   text-align: left;
   width: 100%;
   padding: 1em 0;
-
   font-size: 1.15rem;
   font-weight: 400;
   border: none;
   background: none;
   outline: none;
+  align-items: center;
+  gap: 8px;
 }
 
 .accordion button:hover,
@@ -3053,16 +3000,10 @@ th {
 }
 
 .accordion button .accordion-title {
-  padding: 1em 0 1em 0;
-  margin-left: 3.7% !important;
   line-height: 1.3;
 }
 
 .accordion button .icon {
-  display: inline-block;
-  position: absolute;
-  top: 18px;
-
   width: 20px;
   height: 20px;
   border: 1px solid;
@@ -3393,13 +3334,7 @@ h2 {
   font-size: 36px;
   font-weight: 500;
 }
-.faq-section {
-  display: grid;
-  grid-template-columns: auto auto;
-  gap: 2%;
-  margin-top: 10%;
-  margin-bottom: 5%;
-}
+
 .faq-section .heading h2 span {
   color: #1366ce;
 }
@@ -3589,9 +3524,7 @@ h2 span {
   .why-hire .below-poeFirst {
     padding-top: 5%;
   }
-  .faq-section {
-    grid-template-columns: auto;
-  }
+
   .faq-section .heading {
     text-align: center;
     margin-bottom: 5% !important;
@@ -3692,9 +3625,7 @@ h2 span {
   .why-hire q {
     font-size: 16px;
   }
-  .accordion button .accordion-title {
-    margin-left: 5.7% !important;
-  }
+
   .bcOIJd {
     padding: 15px;
 
@@ -3758,29 +3689,13 @@ h2 span {
   .faqStyle-approa {
     padding: 0 !important;
   }
-  .faq-section .accordion .accordion-item .accordion-title {
-    margin-left: 8.7% !important;
-    width: 100%;
-    display: flex;
-    padding-right: 0;
-    padding-top: 0;
-    font-size: 18px;
-  }
+
   .faq-section .accordion .accordion-content p {
     margin-left: 0 !important;
     margin-top: 0 !important;
     font-size: 14px !important;
   }
-  .faq-section .accordion .accordion-item button {
-    padding-bottom: 0;
-  }
-  .faq-section {
-    margin-bottom: 25% !important;
-  }
 
-  .faqStyle-approa .accordion .accordion-item button .accordion-title {
-    margin-left: 7.7% !important;
-  }
   .faqStyle-approa .accordion .accordion-item .accordion-content p {
     margin: 0 !important;
   }
@@ -3845,14 +3760,6 @@ h2 span {
   .why-hire q {
     font-size: 12px;
   }
-  .faq-section .accordion .accordion-item .accordion-title {
-    padding-left: 8.7%;
-    margin-left: 0 !important;
-    width: auto;
-  }
-  .faq-section .accordion .accordion-item .accordion-title {
-    font-size: 16px !important;
-  }
 }
 @media only screen and (max-width: 321px) {
   .poem img {
@@ -3868,9 +3775,7 @@ h2 span {
   .faqStyle-approa .accordion .accordion-item .accordion-content p {
     font-size: 14px !important;
   }
-  .faqStyle-approa .accordion .accordion-item button .accordion-title {
-    margin-left: 9.7% !important;
-  }
+
   .faq-section .accordion .accordion-item .accordion-title {
     font-size: 14px;
   }
@@ -5045,8 +4950,57 @@ h2 span {
     display: none;
   }
 }
+
+@media (min-width: 769px) {
+  .dsktop-d-none {
+    display: none;
+  }
+}
 @media (max-width: 769px) {
   .menubar {
     display: block;
+  }
+
+  .mt-50 {
+    margin-top: 50px;
+  }
+  .mb-50 {
+    margin-bottom: 50px;
+  }
+
+  .mt-60 {
+    margin-top: 50px;
+  }
+  .mb-60 {
+    margin-bottom: 50px;
+  }
+
+  .mt-70 {
+    margin-top: 50px;
+  }
+  .mb-70 {
+    margin-bottom: 50px;
+  }
+  .mobile-d-none {
+    display: none;
+  }
+  .mobil-d-block {
+    display: block;
+  }
+  .colleges-marqouter {
+    padding: 0px;
+    button {
+      display: none !important;
+    }
+  }
+
+  .stories {
+    .moslider {
+      width: 100%;
+    }
+
+    .horxslider {
+      width: 100%;
+    }
   }
 }

@@ -7,6 +7,8 @@ import Style from "@/styles/home.module.scss";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
+import MinusIcon from "@/icons/MinusIcon";
+import PlusIcon from "@/icons/PlusIcon";
 
 export default function Home() {
   const [selected, setSelected] = React.useState(dataArray[0]);
@@ -17,6 +19,20 @@ export default function Home() {
     autoplaySpeed: 100,
     slidesToShow: 6,
     slidesToScroll: 1,
+    responsive: [
+      {
+        breakpoint: 769,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 1,
+          vertical: false,
+          verticalSwiping: false,
+          autoplaySpeed: 1000,
+          centerMode: true,
+          centerPadding: "60px",
+        },
+      },
+    ],
   };
   var settings = {
     dots: true,
@@ -27,6 +43,20 @@ export default function Home() {
     slidesToScroll: 1,
     autoplay: true,
     autoplaySpeed: 1000,
+    responsive: [
+      {
+        breakpoint: 769,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          vertical: false,
+          verticalSwiping: false,
+          autoplaySpeed: 2000,
+          centerMode: true,
+          centerPadding: "0px",
+        },
+      },
+    ],
   };
   var settings2 = {
     dots: true,
@@ -37,6 +67,20 @@ export default function Home() {
     slidesToScroll: 1,
     autoplay: true,
     autoplaySpeed: 1000,
+    responsive: [
+      {
+        breakpoint: 769,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          vertical: false,
+          verticalSwiping: false,
+          autoplaySpeed: 2000,
+          centerMode: true,
+          centerPadding: "0px",
+        },
+      },
+    ],
   };
   var settings3 = {
     dots: true,
@@ -47,7 +91,22 @@ export default function Home() {
     slidesToScroll: 1,
     autoplay: true,
     autoplaySpeed: 1000,
+    responsive: [
+      {
+        breakpoint: 769,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          vertical: false,
+          verticalSwiping: false,
+          autoplaySpeed: 2000,
+          centerMode: true,
+          centerPadding: "0px",
+        },
+      },
+    ],
   };
+
   return (
     <>
       <section className={Style.homebanner}>
@@ -111,7 +170,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section>
+      <section className="mt-70">
         <div className="container2">
           <div className="background">
             <div className="row">
@@ -180,9 +239,25 @@ export default function Home() {
         </div>
       </section>
 
-      <section>
+      <section className="mobil-d-block dsktop-d-none">
+        <div className="container2 faq-section">
+          <div className="heading">
+            <h2>
+              Our
+              <span> Approach</span>
+            </h2>
+          </div>
+          <div className="accordion">
+            {dataArray.map((item, index) => {
+              return <FAQApproach key={index} {...item} />;
+            })}
+          </div>
+        </div>
+      </section>
+
+      <section className={`${Style.approachsection}   mobile-d-none`}>
         <>
-          <div className="approach m-0">
+          <div className={`${Style.headingmin} approach m-0`}>
             <h2>
               Our <span>Approach</span>
             </h2>
@@ -221,111 +296,6 @@ export default function Home() {
               <div className="approach-text">
                 <h3 id="heading"> {selected.content[0]}</h3>
                 <p id="paragraph">{selected.content[1]}</p>
-              </div>
-            </div>
-          </div>
-          <div className="faqStyle-approa ">
-            <div className="accordion">
-              <div className="accordion-item">
-                <button id="accordion-button-5" aria-expanded="false">
-                  <span className="icon" aria-hidden="true" />
-                  <span className="accordion-title">Estimation</span>
-                </button>
-                <div className="accordion-content">
-                  <p>
-                    NEET Navigator uses advanced data analytics to assess the
-                    admission possibility for all India medical colleges on
-                    basis of your NEET PG Rank, Domicile, Category and Fee
-                    Budget (in case of Private/ Deemed Medical Institutions).
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div className="accordion">
-              <div className="accordion-item">
-                <button id="accordion-button-5" aria-expanded="false">
-                  <span className="icon" aria-hidden="true" />
-                  <span className="accordion-title"> Guidance</span>
-                </button>
-                <div className="accordion-content">
-                  <p>
-                    NEET Navigator uses in depth knowledge of external
-                    environmental factors as well as candidate’s credentials to
-                    guide the candidate on subject (Clinical/Non-clinical/
-                    Para-clinical) and program (MD/MS/DNB/Diploma) selection for
-                    PG studies.
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div className="accordion">
-              <div className="accordion-item">
-                <button id="accordion-button-5" aria-expanded="false">
-                  <span className="icon" aria-hidden="true" />
-                  <span className="accordion-title">
-                    Institutional Selection
-                  </span>
-                </button>
-                <div className="accordion-content">
-                  <p>
-                    NEET Navigator has developed an extensive 12 factors based
-                    objective institutional rating system which incorporates
-                    parameters including college infrastructure, academic
-                    quality and institutional reputation. NEET Navigator helps
-                    you select the best medical institution to target for
-                    admission.
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div className="accordion">
-              <div className="accordion-item">
-                <button id="accordion-button-5" aria-expanded="false">
-                  <span className="icon" aria-hidden="true" />
-                  <span className="accordion-title"> Application Support</span>
-                </button>
-                <div className="accordion-content">
-                  <p>
-                    NEET Navigator guides you in selection of counselling type
-                    and offers you support during filling up of counselling
-                    application. NEET Navigator ensures that counselling
-                    application process is 100% error free so that there is no
-                    loss of opportunity.
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div className="accordion">
-              <div className="accordion-item">
-                <button id="accordion-button-5" aria-expanded="false">
-                  <span className="icon" aria-hidden="true" />
-                  <span className="accordion-title">College List</span>
-                </button>
-                <div className="accordion-content">
-                  <p>
-                    NEET Navigator uses historical data analytics to design
-                    round based highly effective college choice list. The
-                    college choice list is optimized for candidate’s NEET Rank
-                    and Category so that You get admission in THE BEST medical
-                    college in the desired subject.
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div className="accordion">
-              <div className="accordion-item">
-                <button id="accordion-button-5" aria-expanded="false">
-                  <span className="icon" aria-hidden="true" />
-                  <span className="accordion-title">Documentation</span>
-                </button>
-                <div className="accordion-content">
-                  <p>
-                    NEET Navigator ensures that your admission process is smooth
-                    and stress free by ensuring timely guidance on requisite
-                    documentation. The right documentation support ensures
-                    optimization of admission opportunity.
-                  </p>
-                </div>
               </div>
             </div>
           </div>
@@ -522,6 +492,22 @@ export default function Home() {
                 <img src={logo.url} />
               ))}
             </Slider>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <div className="container2 faq-section">
+          <div className="heading">
+            <h2>Frequently</h2>{" "}
+            <h2>
+              Asked<span> Questions</span>
+            </h2>
+          </div>
+          <div className="accordion">
+            {faqArray.map((item, index) => {
+              return <FAQComponent key={index} {...item} />;
+            })}
           </div>
         </div>
       </section>
@@ -723,9 +709,125 @@ const ReactReadMoreReadLess = ({ children }: T) => {
     setShowMore(!showMore);
   }, [showMore]);
   return (
-    <p>
-      {children}
-      <a onClick={onShowMore}>Read More</a>
-    </p>
+    <React.Fragment>
+      <div className="ReactReadMoreReadLess">
+        <p
+          style={{
+            display: "-webkit-box",
+            WebkitLineClamp: showMore ? "10" : "3",
+            WebkitBoxOrient: "vertical",
+            overflow: "hidden",
+            transition: "all 200ms ease",
+          }}
+        >
+          {children}
+        </p>
+        <a onClick={onShowMore} className="ReactReadMoreReadLess">
+          {showMore ? "Read Less" : "Read More"}
+        </a>
+      </div>
+    </React.Fragment>
+  );
+};
+
+const faqArray = [
+  {
+    heading: "What is NEET UG exam?",
+    content:
+      "NEET (National Eligibility cum Entrance Test) UG is a national level entrance exam for admission to undergraduate medical courses in India. NEET UG is conducted by National Testing Agency (NTA). It is mandatory for students seeking admission in government and private medical colleges in India to qualify NEET exam.",
+  },
+  {
+    heading: "Who is eligible to appear for NEET UG exam?",
+    content:
+      "Indian citizens and OCI (Overseas Citizen of India) card holders who have completed 17 years of age as on December 31st of the year of admission and have passed Class 12th or equivalent exam with Physics, Chemistry, Biology/Biotechnology, and English as mandatory subjects are eligible to appear for NEET exam.",
+  },
+  {
+    heading: "How often is NEET UG exam conducted?",
+    content:
+      "NEET exam is conducted once a year usually in the month of May/ June. NEET 2023 is expected to be conducted in June/July 2023. Though NTA had released 7 th May 2023 as date for NEET 2023 in their calendar but NEET 2023 appears to be delayed",
+  },
+  {
+    heading: "How to apply for NEET UG exam?",
+    content:
+      "The application process for NEET exam can be done online through the official website of NTA (National Testing Agency). Candidates need to fill the online application form, upload their scanned documents, and pay the exam fee to complete the application process.",
+  },
+  {
+    heading: "What is the syllabus for NEET UG exam?",
+    content:
+      "The syllabus for NEET exam is based on Class 11th and 12th Physics, Chemistry, and Biology/Biotechnology syllabus. It includes topics from these subjects covered during the 2-year course.",
+  },
+  {
+    heading: "What is the format of NEET UG exam?",
+    content:
+      "NEET UG exam is a pen and paper based test that consists of 180 multiple-choice questions from Physics, Chemistry, Botany and Zoology. The exam duration is 3 hours and 20 minutes.There is negative marking system in NEET UG exam. A candidate gets 4 marks for each right answer and loses 1 mark for each wrong answer.",
+  },
+  {
+    heading: "What is the minimum qualifying score for NEET UG exam?",
+    content:
+      "The minimum qualifying score for NEET UG exam is 50th percentile for General and EWS category and 40th percentile for reserved categories (SC/ST/OBC). The exact qualifying score varies each year based on the difficulty level of the exam and number of candidates appearing. For NEET UG 2022, cut off marks for General/EWS category student was 117 while for OBC/SC/ST candidates, cut off marks were 93.",
+  },
+];
+
+type FAQComponentProps = {
+  heading?: string;
+  content?: string;
+};
+
+const FAQComponent = ({ content, heading }: FAQComponentProps) => {
+  const [selected, setSelected] = React.useState(false);
+
+  return (
+    <div className="accordion-item">
+      <button
+        id="accordion-button-2"
+        aria-expanded={selected}
+        onClick={() => setSelected(!selected)}
+      >
+        {/* <span className="icon" aria-hidden={selected} /> */}
+        <span className="icon">
+          {selected ? (
+            <MinusIcon height={14} width={14} />
+          ) : (
+            <PlusIcon height={14} width={14} />
+          )}
+        </span>
+        <span className="accordion-title">{heading}</span>
+      </button>
+      <div className="accordion-content">
+        <p>{content}</p>
+      </div>
+    </div>
+  );
+};
+
+type FAQApproach = {
+  heading?: string;
+  content?: string;
+};
+
+const FAQApproach = ({ content, heading }: FAQApproach) => {
+  const [selected, setSelected] = React.useState(false);
+
+  return (
+    <div className="accordion-item">
+      <button
+        id="accordion-button-2"
+        aria-expanded={selected}
+        onClick={() => setSelected(!selected)}
+      >
+        {/* <span className="icon" aria-hidden={selected} /> */}
+        <span className="icon">
+          {selected ? (
+            <MinusIcon height={14} width={14} />
+          ) : (
+            <PlusIcon height={14} width={14} />
+          )}
+        </span>
+        <span className="accordion-title">{heading}</span>
+      </button>
+      <div className="accordion-content">
+        <p>{content}</p>
+      </div>
+    </div>
   );
 };
