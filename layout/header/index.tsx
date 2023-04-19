@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import React, { useState } from "react";
 import { Poppins } from "next/font/google";
 import Link from "next/link";
@@ -14,10 +15,10 @@ const Header = () => {
       <div className="header-left">
         <ul className="left-flex">
           <li className="animate__animated animate__bounceInLeft">
-            <a href="./index">
+            <Link href="">
               {" "}
               <img src="./img/blue-logo-final 1.png" alt="logo" />
-            </a>
+            </Link>
           </li>
         </ul>
       </div>
