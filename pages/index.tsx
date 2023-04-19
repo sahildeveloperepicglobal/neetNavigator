@@ -1,11 +1,9 @@
 /* eslint-disable jsx-a11y/alt-text */
 /* eslint-disable @next/next/no-img-element */
-import Head from "next/head";
-import Image from "next/image";
 import { TypeAnimation } from "react-type-animation";
-import React, { Component } from "react";
+import React from "react";
 
-import Style from "/styles/home.module.css";
+import Style from "styles/home.module.css";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
