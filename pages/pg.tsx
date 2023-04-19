@@ -1,14 +1,10 @@
 /* eslint-disable react/no-unescaped-entities */
 /* eslint-disable @next/next/no-img-element */
-import Head from "next/head";
-import Image from "next/image";
-import { Inter } from "next/font/google";
-import { TypeAnimation } from "react-type-animation";
-import React, { Component } from "react";
-import { Poppins } from "next/font/google";
-import Style from "@/styles/pg.module.css";
+import React from "react";
+import Style from "@/styles/pg.module.scss";
 import MinusIcon from "@/icons/MinusIcon";
 import PlusIcon from "@/icons/PlusIcon";
+import { TypeAnimation } from "react-type-animation";
 
 export default function Pg() {
   const [selected, setSelected] = React.useState(dataArray[0]);
