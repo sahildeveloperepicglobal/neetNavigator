@@ -1837,6 +1837,7 @@ td {
   }
   .faq-section .accordion .accordion-item .accordion-title {
     width: auto;
+    flex: 1;
   }
   .container {
     padding: 0 3% !important;
@@ -2870,6 +2871,12 @@ th {
 #appli {
   padding-left: 4%;
 }
+
+.comparision-table {
+  flex: 1;
+  width: 100%;
+}
+
 .feature-comparison .contentbox {
   display: flex;
 }
@@ -2879,6 +2886,9 @@ th {
   padding-right: 30px;
   display: flex;
   align-items: center;
+}
+.feature-comparison .contentbox .comparision-table {
+  flex: 1;
 }
 
 .comparision-table table tbody tr td img {

@@ -89,6 +89,12 @@ const Footer = () => {
       <div className={`${poppins.className} copyright`}>
         <span>© Copyright - NEET Navigator Educational Services </span>
       </div>
+
+      <div className="whatsapp">
+        <a href="https://wa.me/+919910375900">
+          <img src="./img/whatsapp1.png" alt="whatsapp image" />
+        </a>
+      </div>
     </>
   );
 };

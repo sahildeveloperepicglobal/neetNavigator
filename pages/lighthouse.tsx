@@ -195,7 +195,7 @@ const LightHouse = () => {
                 Feature <span>Comparison</span>
               </h4>
             </div>
-            <div className="comparision-table">
+            <div className="comparision-table" style={{ flex: "1" }}>
               <table>
                 <thead>
                   <tr>
