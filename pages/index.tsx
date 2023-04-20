@@ -249,7 +249,13 @@ export default function Home() {
           </div>
           <div className="accordion">
             {dataArray.map((item, index) => {
-              return <FAQApproach key={index} {...item} />;
+              return (
+                <FAQApproach
+                  key={index}
+                  content={item.content[1]}
+                  heading={item.heading}
+                />
+              );
             })}
           </div>
         </div>
@@ -270,7 +276,7 @@ export default function Home() {
                       key={index}
                       type="radio"
                       checked={active}
-                      onClick={() => setSelected(value)}
+                      onChange={() => setSelected(value)}
                     />
                   );
                 })}

@@ -1,13 +1,10 @@
 /* eslint-disable @next/next/no-img-element */
 import React from "react";
 import Style from "/styles/blogs.module.scss";
-import EditIcon from "@/public/icons/EditIcon";
-import BinIcon from "@/public/icons/BinIcon";
-import SearchIcon from "@/public/icons/SearchIcon";
 import Input from "@/components/element/input";
 import ChipInput from "@/components/chip-input";
 import DynamicImageGrid from "@/components/element/image-picker-grid";
-import AddMoreButton from "@/components/element/Addmore";
+import AddMoreButton from "@/components/element/addmore";
 
 const Admin = () => {
   return (
