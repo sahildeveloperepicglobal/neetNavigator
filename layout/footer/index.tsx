@@ -8,8 +8,8 @@ const Footer = () => {
       <div className={`${poppins.className} footer`}>
         <div className="footer-left">
           <div className="leftTop-part">
-            {/* <img src="./img/blue-logo-final 1.png" alt="neet logo" /> */}
-            <img src="./img/NNWhite.png" alt="neet logo" />
+            {/* <img src="/img/blue-logo-final 1.png" alt="neet logo" /> */}
+            <img src="/img/NNWhite.png" alt="neet logo" />
             <p>
               NEET NAVIGATOR started in 2019 with advisory and training services
               to institutional clients and in 2021 NEET NAVIGATOR launched the
@@ -26,25 +26,25 @@ const Footer = () => {
           <div className="leftBottom-part">
             <h2>Connect with us</h2>
             <a href="mailto:Info@neetnavigator.com">
-              <img src="./img/mail.png" />
+              <img src="/img/mail.png" />
             </a>
             <a href="https://wa.me/+919910375900">
-              <img src="./img/whatsapp.png" />
+              <img src="/img/whatsapp.png" />
             </a>
             <a href="https://www.facebook.com/NavigatorNeet" target="_blank">
-              <img src="./img/facebook.png" />
+              <img src="/img/facebook.png" />
             </a>
             <a
               href="https://www.linkedin.com/company/neet-navigator/"
               target="_blank"
             >
-              <img src="./img/linkedIn.png" />
+              <img src="/img/linkedIn.png" />
             </a>
             <a href="https://www.instagram.com/NavigatorNeet/" target="_blank">
-              <img src="./img/instagram.png" />
+              <img src="/img/instagram.png" />
             </a>
             <a href="https://twitter.com/NavigatorNeet" target="_blank">
-              <img src="./img/twitter.png" />
+              <img src="/img/twitter.png" />
             </a>
           </div>
         </div>
@@ -92,7 +92,7 @@ const Footer = () => {
 
       <div className="whatsapp">
         <a href="https://wa.me/+919910375900">
-          <img src="./img/whatsapp1.png" alt="whatsapp image" />
+          <img src="/img/whatsapp1.png" alt="whatsapp image" />
         </a>
       </div>
     </>

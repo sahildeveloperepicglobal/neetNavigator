@@ -36,13 +36,13 @@ const ChipInput = React.forwardRef(
       setChips(newChips);
     };
 
-    React.useMemo(() => {
+    React.useEffect(() => {
       if (value) {
         setChips(value);
       }
     }, [value]);
 
-    React.useMemo(() => {
+    React.useEffect(() => {
       onChange(chips);
     }, [chips, onChange]);
 

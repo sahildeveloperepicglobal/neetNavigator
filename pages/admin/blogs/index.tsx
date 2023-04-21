@@ -5,27 +5,30 @@ import EditIcon from "@/public/icons/EditIcon";
 import BinIcon from "@/public/icons/BinIcon";
 import SearchIcon from "@/public/icons/SearchIcon";
 import { useGetAllBlogs } from "@/network-requests/queries";
+import Link from "next/link";
+import moment from "moment";
+import { useRouter } from "next/router";
+import { deleteBlogs } from "@/network-requests/api/blogs";
 
-interface BlogsListProps {
-  name: string;
-  date: string;
-  category: string[];
-  onView?: () => void;
-  onDelete?: () => void;
-  onEdit?: (value: any) => any;
-}
+const Admin = () => {
+  const { data, refetch } = useGetAllBlogs();
 
-const Admin = ({
-  name,
-  date,
-  category,
-  onView,
-  onDelete,
-  onEdit,
-}: BlogsListProps) => {
-  const { data } = useGetAllBlogs();
+  const router = useRouter();
 
-  console.log(data);
+  const onDeleteById = React.useCallback(
+    async (id: string | undefined) => {
+      if (id) {
+        if (window.confirm("Are you sure to delete this blog")) {
+          const response = await deleteBlogs(id);
+          alert(`Blog Deleted Successfully`);
+          console.log(response);
+          refetch();
+        }
+      }
+    },
+    [refetch]
+  );
+
   return (
     <>
       <div className={Style.mydiv}>
@@ -65,9 +68,9 @@ const Admin = ({
           </li>
           <li>
             <div className={Style.actionbtnlist}>
-              <a href="#" className={Style.cpbtn}>
+              <Link href="/admin/blogs/create" className={Style.cpbtn}>
                 Create New Blogs
-              </a>
+              </Link>
             </div>
           </li>
         </ul>
@@ -90,43 +93,53 @@ const Admin = ({
             </tr>
           </thead>
           <tbody>
-            {data?.map((_data, index) => {
+            {data?.map((list, index) => {
+              console.log(list);
               return (
                 <tr key={index}>
                   <td>
-                    {" "}
                     <div className={Style.orderbox}>
                       <input type="checkbox" />
                     </div>
                   </td>
                   <td>
                     <div className={Style.productrname}>
-                      <img src="/img/1.png" alt="" />
+                      <img src={list.images[0]} alt="" />
                     </div>
                   </td>
                   <td>
                     <div className={Style.productrname}>
-                      <p>
-                        Why Divan Beds are a Great Investment for Small
-                        Apartments in the UK?{" "}
-                      </p>
+                      <p>{list.name}</p>
                     </div>
                   </td>
                   <td>
                     <div className={Style.price}>
-                      <div>Divan Beds</div>
+                      {list.categories.map((c, i) => (
+                        <div key={i}>{c}</div>
+                      ))}
                     </div>
                   </td>
                   <td>
-                    <div className={Style.date}>12 April 2023 at 18:37</div>
+                    {/* <div className={Style.date}>12 April 2023 at 18:37</div> */}
+                    <div className={Style.date}>
+                      {moment(list.createdAt).format("DD MMM YYYY hh:mm")}
+                    </div>
                   </td>
                   <td>
                     <div className={Style.actionbtn}>
                       <ul className={Style.actionbtnul}>
-                        <li title="edit">
+                        <li
+                          title="edit"
+                          onClick={() =>
+                            router.push(`/admin/blogs/update?id=${list._id}`)
+                          }
+                        >
                           <EditIcon />
                         </li>
-                        <li title="Delete">
+                        <li
+                          title="Delete"
+                          onClick={() => onDeleteById(list._id)}
+                        >
                           <BinIcon />
                         </li>
                       </ul>

@@ -10,7 +10,6 @@ import AddMoreButton from "@/components/element/addmore";
 import { uploadBlogImage } from "@/network-requests/image";
 import DynamicImageGrid from "@/components/element/image-picker-grid";
 import { useCreateNewBlog } from "@/network-requests/mutations";
-import { useRouter } from "next/router";
 
 const IRichTextEditor = dynamic(() => import("@mantine/rte"), {
   ssr: false,
@@ -18,8 +17,6 @@ const IRichTextEditor = dynamic(() => import("@mantine/rte"), {
 });
 
 const CreateBlog = () => {
-  const router = useRouter();
-
   const [state, setState] = useImmer({
     name: "",
     slug: "",
@@ -66,7 +63,7 @@ const CreateBlog = () => {
     };
     mutate(data, {
       onSuccess: (data: any) => {
-        router.back();
+        // router.back();
         alert(data?.message || "Blog Created Successfully");
       },
       onError: () => {

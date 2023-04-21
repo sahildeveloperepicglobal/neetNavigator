@@ -1,4 +1,6 @@
 export interface BlogsTypes {
+  _id?: string;
+  createdAt?: string;
   name: string;
   slug: string;
   content: string;

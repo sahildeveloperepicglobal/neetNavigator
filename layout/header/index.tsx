@@ -17,7 +17,7 @@ const Header = () => {
           <li className="animate__animated animate__bounceInLeft">
             <Link href="/">
               {" "}
-              <img src="./img/blue-logo-final 1.png" alt="logo" />
+              <img src="/img/blue-logo-final 1.png" alt="logo" />
             </Link>
           </li>
         </ul>
@@ -41,25 +41,25 @@ const Header = () => {
         <nav>
           <ul className="mobilemenu">
             <li>
-              <a href="./lighthouse" className="unique">
+              <Link href="/lighthouse" className="unique">
                 MBBS Lighthouse
-              </a>
+              </Link>
             </li>
             <li>
-              <a href="./ug" className="unique">
+              <Link href="/ug" className="unique">
                 NEET UG Service{" "}
-              </a>
+              </Link>
             </li>
             <li>
-              <a href="./pg" className="unique">
+              <Link href="/pg" className="unique">
                 NEET PG Service{" "}
-              </a>
+              </Link>
             </li>
 
             <li>
-              <a href="./contactUs" className="unique">
+              <Link href="/contactUs" className="unique">
                 Contact
-              </a>
+              </Link>
             </li>
           </ul>
         </nav>
@@ -68,25 +68,25 @@ const Header = () => {
       <div className="header-middle">
         <ul className="middle-flex animate__animated animate__bounceInRight">
           <li>
-            <a href="./lighthouse" className="unique">
+            <Link href="/lighthouse" className="unique">
               MBBS Lighthouse
-            </a>
+            </Link>
           </li>
           <li>
-            <a href="./ug" className="unique">
+            <Link href="/ug" className="unique">
               NEET UG Service{" "}
-            </a>
+            </Link>
           </li>
           <li>
-            <a href="./pg" className="unique">
+            <Link href="/pg" className="unique">
               NEET PG Service{" "}
-            </a>
+            </Link>
           </li>
 
           <li>
-            <a href="./contactUs" className="unique">
+            <Link href="/contactUs" className="unique">
               Contact
-            </a>
+            </Link>
           </li>
         </ul>
       </div>
