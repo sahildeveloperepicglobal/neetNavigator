@@ -3,7 +3,7 @@
 import Head from "next/head";
 import Image from "next/image";
 import { Inter } from "next/font/google";
-import styles from "@/styles/successstories.module.scss";
+import css from "@/styles/successstories.module.scss";
 import { TypeAnimation } from "react-type-animation";
 import React, { Component } from "react";
 import { Poppins } from "next/font/google";
@@ -18,7 +18,7 @@ export default function SuccessStories() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <section className={styles.krishna}>
+      <section className={css.div1}>
         <h1>My Success Story</h1>
       </section>
     </>
