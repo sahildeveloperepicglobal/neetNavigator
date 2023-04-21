@@ -19,7 +19,7 @@ export default function SuccessStories() {
       </Head>
 
       <section className={styles.krishna}>
-        <h1>krishna</h1>
+        <h1>My Success Story</h1>
       </section>
     </>
   );
