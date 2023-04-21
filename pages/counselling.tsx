@@ -7,6 +7,7 @@ import { TypeAnimation } from "react-type-animation";
 import React, { Component } from "react";
 import { Poppins } from "next/font/google";
 import css from "styles/counselling.module.scss";
+import Link from "next/link";
 
 export default function Counselling() {
   return (
@@ -17,25 +18,47 @@ export default function Counselling() {
             Medical Admission<strong> Counselling</strong>
           </h1>
           <p>
-            NEET Navigator is India's most advanced data analytics based <br/>Medical
-            Admission Counselling Services
+            NEET Navigator is India's most advanced data analytics based <br />
+            Medical Admission Counselling Services
           </p>
         </div>
       </div>
       <div className="container">
         <div className={css.containerdiv}>
           <div className={css.amsblue}>
-            <h5>About</h5>
-            <h5>MCC Counselling</h5>
-            <h5>State Counselling</h5>
-            <h5>Eligibility Criteria</h5>
-            <h5>Documents Required</h5>
-            <h5>Reservation Categories</h5>
-            <h5>College Choice</h5>
-            <h5>Central Pool Quota</h5>
-            <h5>Admission Process</h5>
-            <h5>Service Bond</h5>
-            <h5>Options</h5>
+            <h5>
+              <Link href={"#0"}>About</Link>
+            </h5>
+            <h5>
+              <Link href={"#1"}>MCC Counselling</Link>
+            </h5>
+            <h5>
+              <Link href={"#2"}>State Counselling</Link>
+            </h5>
+            <h5>
+              <Link href={"#3"}>Eligibility Criteria</Link>
+            </h5>
+            <h5>
+              <Link href={"#4"}>Documents Required</Link>
+            </h5>
+            <h5>
+              <Link href={"#5"}>Reservation Categories</Link>
+            </h5>
+            <h5>
+              <Link href={"#6"}>College Choice</Link>
+            </h5>
+            <h5>
+              <Link href={"#7"}>Central Pool Quota</Link>
+            </h5>
+            <h5>
+              <Link href={"#8"}>Admission Process</Link>
+            </h5>
+            <h5>
+              <Link href={"#9"}>Service Bond</Link>
+            </h5>
+            <h5>
+              <Link href={"#"}>Options</Link>
+            </h5>
           </div>
           <section className={css.mainsection}>
             <div className={css.aboutdiv} id="0">
