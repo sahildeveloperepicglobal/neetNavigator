@@ -38,7 +38,7 @@ export default function Counselling() {
             <h5>Options</h5>
           </div>
           <section className={css.mainsection}>
-            <div className={css.aboutdiv}>
+            <div className={css.aboutdiv} id="0">
               <h2 className={css.h2headdiv}>
                 About Medical Admission<strong> Counselling</strong>
               </h2>
@@ -79,7 +79,7 @@ export default function Counselling() {
                 biases or prejudices."
               </p>
             </div>
-            <div className={css.aboutdiv}>
+            <div className={css.aboutdiv} id="1">
               <h2 className={css.h2headdiv}>
                 MCC <strong>Counselling</strong>
               </h2>
@@ -145,7 +145,7 @@ export default function Counselling() {
                 in India."
               </p>
             </div>
-            <div className={css.aboutdiv}>
+            <div className={css.aboutdiv} id="2">
               <h2 className={css.h2headdiv}>
                 State medical admission <strong>counselling</strong>
               </h2>
@@ -205,7 +205,7 @@ export default function Counselling() {
                 admission to the college and course of their choice.
               </p>
             </div>
-            <div className={css.aboutdiv}>
+            <div className={css.aboutdiv} id="3">
               <h2 className={css.h2headdiv}>
                 Eligibility criteria for medical admission{" "}
                 <strong>counselling</strong>
@@ -269,7 +269,7 @@ export default function Counselling() {
                 conditions vary depending on state counselling process."
               </p>
             </div>
-            <div className={css.aboutdiv}>
+            <div className={css.aboutdiv} id="4">
               <h2 className={css.h2headdiv}>
                 Documents required for medical admission{" "}
                 <strong>counselling</strong>
@@ -382,7 +382,7 @@ export default function Counselling() {
                 applying for counselling to avoid any last-minute hassles."
               </p>
             </div>
-            <div className={css.aboutdiv}>
+            <div className={css.aboutdiv} id="5">
               <h2 className={css.h2headdiv}>
                 Reservation categories for NEET UG <strong>counselling</strong>
               </h2>
@@ -496,7 +496,7 @@ export default function Counselling() {
                 aspirations of becoming medical professionals."
               </p>
             </div>
-            <div className={css.aboutdiv}>
+            <div className={css.aboutdiv} id="6">
               <h2 className={css.h2headdiv}>
                 College choice filling for NEET UG <strong>counselling</strong>
               </h2>
@@ -559,7 +559,7 @@ export default function Counselling() {
                 fulfill their aspirations of becoming medical professionals."
               </p>
             </div>
-            <div className={css.aboutdiv}>
+            <div className={css.aboutdiv} id="7">
               <h2 className={css.h2headdiv}>
                 Central Pool Quota in Medical <strong>Admissions</strong>
               </h2>
@@ -644,7 +644,7 @@ export default function Counselling() {
                 Welfare, Government of India.
               </p>
             </div>
-            <div className={css.aboutdiv}>
+            <div className={css.aboutdiv} id="8">
               <h2 className={css.h2headdiv}>
                 Admission process after <strong>NEET UG counselling</strong>
               </h2>
@@ -703,7 +703,7 @@ export default function Counselling() {
                 admission process."
               </p>
             </div>
-            <div className={css.aboutdiv}>
+            <div className={css.aboutdiv} id="9">
               <h2 className={css.h2headdiv}>
                 Service Bond After <strong>MBBS, MD/MS</strong>
               </h2>
@@ -759,7 +759,7 @@ export default function Counselling() {
                 experience and serve their community.
               </p>
             </div>
-            <div className={css.aboutdiv}>
+            <div className={css.aboutdiv} id="10">
               <h2 className={css.h2headdiv}>
                 Options For Low NEET <strong>Scores</strong>
               </h2>

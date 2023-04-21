@@ -26,16 +26,17 @@
     margin-block-end: 1em;
     margin-inline-start: 0px;
     margin-inline-end: 0px;
+     font-size: 16px;
+            font-family: 'Poppins';
+              color: #000;
     }
 }
 
 .mainsection {
     .aboutdiv {
             border-bottom: 1px solid #e5e5e5;
-    padding-bottom: 50px;
-    margin-top: 50px;
+    padding-bottom: 50px;   
     margin-bottom: 50px;
-    padding-top: 50px;
         .h2headdiv{
             text-align: center;
             font-size: 34px;
@@ -52,10 +53,9 @@
             margin-block-end: 1em;
             margin-inline-start: 0px;
             margin-inline-end: 0px;
-        }
-        b{
-            font-size: 18px;
-    font-weight: 500;
+            font-size: 16px;
+            font-family: 'Poppins';
+              color: #000;
         }
     }
     .bluepara{
@@ -76,12 +76,14 @@
     display: flex;
     flex-direction: column;
     gap: 20px;
+    width: 200px;
     height: 87vh;
     background-color: rgb(43, 43, 127);
     padding: 5%;
     h5{
         color: white;
-    text-decoration: none;
+    cursor: pointer;
     }
-}
+    }
+
 
