@@ -1,7 +1,6 @@
 import React from "react";
 import styles from "./chip.module.scss";
 import CancelIcon from "@/icons/CancelIcon";
-import useDeepCompareEffect from "@/hooks/use-deep-effects";
 
 interface ChipInputProps extends React.ComponentPropsWithRef<"input"> {
   value?: string[];
@@ -14,7 +13,7 @@ const ChipInput = React.forwardRef(
     { onChange, value, label, ...rest }: ChipInputProps,
     ref: React.Ref<HTMLInputElement>
   ) => {
-    const [chips, setChips] = React.useState<string[]>([]);
+    const [chips, setChips] = React.useState<string[]>(value || []);
 
     const onAddIndusrtryChip = React.useCallback(
       (chip: any) => {
@@ -43,6 +42,10 @@ const ChipInput = React.forwardRef(
       }
     }, [value]);
 
+    React.useMemo(() => {
+      onChange(chips);
+    }, [chips, onChange]);
+
     return (
       <>
         <label className={styles.label}>{label}</label>
@@ -63,7 +66,6 @@ const ChipInput = React.forwardRef(
                   type="text"
                   name="name"
                   className="chipinput"
-                  //   placeholder={true ? "Type here..." : ""}
                   onKeyUp={(e) => onAddIndusrtryChip(e)}
                   {...rest}
                 />
