@@ -2,7 +2,6 @@
 /* eslint-disable @next/next/no-img-element */
 import { TypeAnimation } from "react-type-animation";
 import React from "react";
-
 import Style from "@/styles/home.module.scss";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
