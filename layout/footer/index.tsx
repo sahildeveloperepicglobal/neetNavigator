@@ -1,6 +1,7 @@
 import React from "react";
 import { Poppins } from "next/font/google";
 import poppins from "@/fonts/poppins";
+import Link from "next/link";
 
 const Footer = () => {
   return (
@@ -58,7 +59,7 @@ const Footer = () => {
               <a href="./medical-counselling">Medical Admission Counselling</a>
             </li>
             <li>
-              <a href="#">Success Stories</a>
+              <Link href="/success-stories">Success Stories</Link>
             </li>
             <li>
               <a href="#">Blogs</a>
