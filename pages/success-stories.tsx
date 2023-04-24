@@ -1,14 +1,33 @@
+/* eslint-disable jsx-a11y/alt-text */
 /* eslint-disable react/no-unescaped-entities */
 /* eslint-disable @next/next/no-img-element */
 import Head from "next/head";
 import Image from "next/image";
 import { Inter } from "next/font/google";
+import Swiper from "swiper";
 import css from "@/styles/successstories.module.scss";
 import { TypeAnimation } from "react-type-animation";
 import React, { Component } from "react";
 import { Poppins } from "next/font/google";
 
 export default function SuccessStories() {
+  // const swiper = new Swiper(".mySwiper", {
+  //   effect: "coverflow",
+  //   grabCursor: true,
+  //   centeredSlides: true,
+  //   slidesPerView: "auto",
+  //   coverflowEffect: {
+  //     rotate: 50,
+  //     stretch: 0,
+  //     depth: 100,
+  //     modifier: 1,
+  //     slideShadows: true,
+  //   },
+  //   pagination: {
+  //     el: ".swiper-pagination",
+  //   },
+  // });
+
   return (
     <>
       <Head>
@@ -19,102 +38,150 @@ export default function SuccessStories() {
       </Head>
 
       <section className={css.div1}>
-        <h1>My<br></br>Success Story</h1>
+        <h1>
+          My<br></br>Success Story
+        </h1>
         <img src="/img/ss.png" alt="" />
       </section>
       <section className={css.div2}>
-         <div className={css.successimg}>
-            <img src="/img/333.png" alt="" />
-         </div>
-         <div className={css.successpara}>
-           <h1>DIKSHA<br></br>MIDHA</h1>
-           <p>"Overcoming<br></br>Challenges with<br></br>EET Navigator"</p>
-         </div>
+        <div className={css.successimg}>
+          <img src="/img/333.png" alt="" />
+        </div>
+        <div className={css.successpara}>
+          <h1>
+            DIKSHA<br></br>MIDHA
+          </h1>
+          <p>
+            "Overcoming<br></br>Challenges with<br></br>EET Navigator"
+          </p>
+        </div>
       </section>
       <section className={css.div3}>
         <span>
-           <img src="/img/Ellipse6.png" alt="" />
+          <img src="/img/Ellipse6.png" alt="" />
         </span>
         <span>
           <img src="/img/j1.png" alt="" />
         </span>
       </section>
       <section className={css.div4}>
-         <p>For Diksha Midha, a student with a dream of becoming a doctor, the road to success was full of
-challenges. Despite her best efforts, she could only score 165 marks in NEET 2022. Her parents
-could afford to pay for her MBBS education in a private medical college, but they were not sure
-how to get her admission in a good medical college.</p>
+        <p>
+          For Diksha Midha, a student with a dream of becoming a doctor, the
+          road to success was full of challenges. Despite her best efforts, she
+          could only score 165 marks in NEET 2022. Her parents could afford to
+          pay for her MBBS education in a private medical college, but they were
+          not sure how to get her admission in a good medical college.
+        </p>
       </section>
       <section className={css.div5}>
-        <span>    
-        </span>
+        <span></span>
         <span>
           <img src="/img/Star22.png" alt="" />
         </span>
       </section>
       <section className={css.div4}>
-         <p>Thats when they turned to NEET Navigator, India’s first advanced data analytics based medical
-admission counselling service. With their help, Diksha was able to navigate the complex process
-of MBBS admission and secure a seat in DY Patil Medical College in Pune on an NRI seat.</p>
+        <p>
+          Thats when they turned to NEET Navigator, India’s first advanced data
+          analytics based medical admission counselling service. With their
+          help, Diksha was able to navigate the complex process of MBBS
+          admission and secure a seat in DY Patil Medical College in Pune on an
+          NRI seat.
+        </p>
       </section>
       <section className={css.div6}>
-        <span>    
-        <img src="/img/geometric.png" alt="" />
-        </span>
         <span>
+          <img src="/img/geometric.png" alt="" />
         </span>
+        <span></span>
       </section>
       <section className={css.div4}>
-         <p>NEET Navigator was a true game-changer for us, says Diksha’s mother. They helped us
-throughout the counselling process, providing necessary documentation support for NRI
-category conversion, and selecting the right college for her studies.</p>
+        <p>
+          NEET Navigator was a true game-changer for us, says Diksha’s mother.
+          They helped us throughout the counselling process, providing necessary
+          documentation support for NRI category conversion, and selecting the
+          right college for her studies.
+        </p>
       </section>
       <section className={css.div7}>
-        <span>    
-        </span>
+        <span></span>
         <span>
-        <img src="/img/Star21.png" alt="" />
+          <img src="/img/Star21.png" alt="" />
         </span>
       </section>
       <section className={css.div4}>
-         <p>
-Thanks to the expert guidance and support provided by NEET Navigator, Diksha was able to
-overcome the challenges she faced and achieve her dream of becoming a doctor. I am so
-grateful for the help provided by NEET Navigator, says Diksha. They made it possible for me to
-pursue my dream and get admission to a top medical college.</p>
+        <p>
+          Thanks to the expert guidance and support provided by NEET Navigator,
+          Diksha was able to overcome the challenges she faced and achieve her
+          dream of becoming a doctor. I am so grateful for the help provided by
+          NEET Navigator, says Diksha. They made it possible for me to pursue my
+          dream and get admission to a top medical college.
+        </p>
       </section>
       <section className={css.div8}>
-        <span>    
-        <img src="/img/132.png" alt="" />
-        </span>
         <span>
+          <img src="/img/132.png" alt="" />
         </span>
+        <span></span>
       </section>
       <section className={css.div4}>
-         <p>
-         The success story of Diksha Midha is just one example of how NEET Navigator helps students
-achieve their dreams of becoming doctors. No matter what your NEET score is, NEET Navigator is
-here to provide you with the expert guidance and support you need to secure admission in a top
-medical college.</p>
+        <p>
+          The success story of Diksha Midha is just one example of how NEET
+          Navigator helps students achieve their dreams of becoming doctors. No
+          matter what your NEET score is, NEET Navigator is here to provide you
+          with the expert guidance and support you need to secure admission in a
+          top medical college.
+        </p>
       </section>
       <section className={css.div8}>
-        <span>    
-        <img src="/img/Star20.png" alt="" />
-        </span>
         <span>
+          <img src="/img/Star20.png" alt="" />
         </span>
+        <span></span>
       </section>
       <section className={css.div4}>
-         <p>
-         So, don’t let a low NEET score hold you back. With NEET Navigator by your side, anything is
-possible.</p>
+        <p>
+          So, don’t let a low NEET score hold you back. With NEET Navigator by
+          your side, anything is possible.
+        </p>
       </section>
       <section className={css.div9}>
-        <span>    
-        </span>
+        <span></span>
         <span>
-        <img src="/img/h2.png" alt="" />
+          <img src="/img/h2.png" alt="" />
         </span>
+      </section>
+      <section className={css.slideshow}>
+        <div className={css.entirecontent}>
+          <div className={css.contentcarrousel}>
+            <figure className={css.shadow}>
+              <img src="/image/1.jpg" />
+            </figure>
+            <figure className={css.shadow}>
+              <img src="/image/2.jpg" />
+            </figure>
+            <figure className={css.shadow}>
+              <img src="/image/3.jpg" />
+            </figure>
+            <figure className={css.shadow}>
+              <img src="/image/4.jpg" />
+            </figure>
+            <figure className={css.shadow}>
+              <img src="/image/5.jpg" />
+            </figure>
+            <figure className={css.shadow}>
+              <img src="/image/1.jpg" />
+            </figure>
+            <figure className={css.shadow}>
+              <img src="/image/1.jpg" />
+            </figure>
+            <figure className={css.shadow}>
+              <img src="/image/1.jpg" />
+            </figure>
+            <figure className={css.shadow}>
+              <img src="/image/1.jpg" />
+            </figure>
+          </div>
+        </div>
       </section>
     </>
   );
