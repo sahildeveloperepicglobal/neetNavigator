@@ -17,20 +17,22 @@ const Demo = () => {
       <div className="lighthouse-banner">
         <div className="banner-textLight animate__animated animate__zoomInDown">
           <h1 className="banner-firstText">
-            Expand your <span id="hori">HORIZON</span>
+            Medical Admission <span>Counselling</span> 
+            {/* <span id="hori">HORIZON</span> */}
           </h1>
           <h1 id="banner-secondText" />
           <h1 className="banner-firstText">
-            of <span id="banner-thirdText"> MBBS Admission</span>
+            <p>            
+              NEET Navigator is India's most advanced data analytics based
+              <br />
+              Medical Admission Counselling Services
+            </p>
           </h1>
-          <a href="#">Read more</a>
         </div>
         <div
           className="light-image animate__animated animate__fadeInUp"
           id="image"
-        >
-          <img src="./img/05.png" alt="" />
-        </div>
+        ></div>
       </div>
 
       <section>
