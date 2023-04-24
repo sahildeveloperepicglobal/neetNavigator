@@ -67,6 +67,7 @@ ul.mobilemenu li a {
   padding: 5px 20px;
   display: block;
   vertical-align: text-top;
+
   border-bottom: 1px solid #e3e3e3;
 }
 /* footer  */
@@ -2084,7 +2085,7 @@ h4 {
   font-style: normal;
   font-weight: 500;
   font-size: 36px;
-  line-height: 60px;
+  // line-height: 60px;
   margin: 0;
   padding: 0 10%;
 }
@@ -2125,6 +2126,11 @@ h4 span {
 }
 .lighthouse-banner .banner-textLight .banner-firstText {
   white-space: nowrap;
+}
+@media (max-width:1200px){
+  .lighthouse-banner .banner-textLight .banner-firstText {
+    white-space: inherit;
+  }
 }
 
 .gps-admission h2 {
@@ -2791,6 +2797,7 @@ th {
   align-content: flex-start;
   justify-content: space-between;
   flex: 1;
+  gap: 20px;
 }
 
 .featuresheading h3 {
@@ -2809,34 +2816,43 @@ th {
 }
 
 .page-section {
-  padding: 3em;
-
-  height: 100vh;
+  padding-top: 100px;
+  padding-bottom: 40px;
+  border-bottom: 1px solid rgb(87, 86, 86);
   background: white;
   color: #000;
   font-size: 13px;
   display: grid;
   align-content: center;
+  p{
+    margin-top: 20px;
+  }
 }
 
 .navigation {
   position: sticky;
-  background-color: #fff;
+  // background-color: #fff;
   color: #fff;
-  top: 150px;
+  top: 75px;
 }
 .navigation__link {
   display: block;
-  color: #000;
+  color: #fff;
   text-decoration: none;
   padding: 1em;
   font-weight: 500;
-  font-size: 20px !important;
+  font-size: 18px !important;
+  margin-bottom: 10px;
+  cursor: pointer;
+  border: 1px solid #2b2b7f;
 }
 .navigation__link.active {
-  color: #1366ce;
-  background-color: white;
-  font-size: 22px !important;
+  border: 1px solid white;
+  padding: 2px 8px;
+  color: #fff !important;
+  padding: 1em;
+
+  border-radius: 5px;
 }
 .page-section h2 {
   margin-bottom: 27px;
@@ -3429,9 +3445,9 @@ h2 {
 .faqStyle-approa {
   display: none;
 }
-.services-parent h2 {
-  /* text-align: center; */
-}
+// .services-parent h2 {
+//   /* text-align: center; */
+// }
 .services {
   display: grid;
   grid-template-columns: 1.5fr 1fr;
@@ -5019,5 +5035,12 @@ h2 span {
     .horxslider {
       width: 100%;
     }
+  }
+}
+
+
+@media(max-width:1200px){
+  .page-section h2{
+    text-align: center !important;
   }
 }
