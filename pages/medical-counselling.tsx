@@ -5,7 +5,7 @@ import React from "react";
 import { useActiveMenu } from "react-active-menu";
 import css from "styles/counselling.module.scss";
 
-const Demo = () => {
+const MedicalCounselling = () => {
   const { registerContainer, registerSection, registerTrigger } = useActiveMenu(
     {
       smooth: true,
@@ -17,14 +17,14 @@ const Demo = () => {
       <div className="lighthouse-banner">
         <div className="banner-textLight animate__animated animate__zoomInDown">
           <h1 className="banner-firstText">
-            Medical Admission <span>Counselling</span> 
+            Medical Admission <span>Counselling</span>
             {/* <span id="hori">HORIZON</span> */}
           </h1>
           <h1 id="banner-secondText" />
           <h1 className="banner-firstText">
-            <p>            
+            <p>
               NEET Navigator is India's most advanced data analytics based
-              <br />
+              <br/>
               Medical Admission Counselling Services
             </p>
           </h1>
@@ -39,7 +39,7 @@ const Demo = () => {
         <div className="bloxfeatures">
           <div className="featuresitems">
             <div className="featurescol">
-              <div className="featuresheading">
+              <div className={css.featuresheadingdiv}>
                 <nav className="navigation" id="mainNav">
                   <a
                     className="navigation__link active"
@@ -110,13 +110,13 @@ const Demo = () => {
                 </nav>
               </div>
 
-              <div className="featurescontent">
+              <div className={css.featurescontentdiv}>
                 <div
                   className="page-section hero"
                   ref={registerSection("section-1")}
                 >
-                  <h2>
-                    <a className="navigation__link">About</a>
+                  <h2 className={css.h2headdiv}>
+                    About Medical Admission<span> Counselling</span>
                   </h2>
 
                   <p>
@@ -160,8 +160,8 @@ const Demo = () => {
                   className="page-section second-page"
                   ref={registerSection("section-2")}
                 >
-                  <h2>
-                    <a className="navigation__link">MCC Counselling</a>
+                  <h2 className={css.h2headdiv}>
+                   MCC <span>Counselling</span>
                   </h2>
                   <p>
                     Medical admission counselling in India is a complex process
@@ -231,8 +231,8 @@ const Demo = () => {
                   className="page-section third-page"
                   ref={registerSection("section-3")}
                 >
-                  <h2>
-                    <a className="navigation__link">State Counselling</a>
+                  <h2 className={css.h2headdiv}>
+                    State medical admission <span>counselling</span>
                   </h2>
                   <p>
                     State medical admission counselling is a crucial process for
@@ -297,8 +297,9 @@ const Demo = () => {
                   className="page-section third-page"
                   ref={registerSection("section-4")}
                 >
-                  <h2>
-                    <a className="navigation__link">Eligibility Criteria</a>
+                  <h2 className={css.h2headdiv}>
+                    Eligibility criteria for medical admission{" "}
+                    <span>counselling</span>
                   </h2>
                   <p>
                     Understanding eligibility conditions for participation in
@@ -365,8 +366,9 @@ const Demo = () => {
                   className="page-section third-page"
                   ref={registerSection("section-5")}
                 >
-                  <h2>
-                    <a className="navigation__link">Documents Required</a>
+                  <h2 className={css.h2headdiv}>
+                    Documents required for medical admission{" "}
+                    <span>counselling</span>
                   </h2>
                   <p>
                     When it comes to applying for medical admission counselling,
@@ -481,8 +483,9 @@ const Demo = () => {
                   className="page-section third-page"
                   ref={registerSection("section-6")}
                 >
-                  <h2>
-                    <a className="navigation__link">Reservation Categories</a>
+                  <h2 className={css.h2headdiv}>
+                    Reservation categories for NEET UG{" "}
+                    <span>counselling</span>
                   </h2>
                   <p>
                     India has a complex system of reservation rules for medical
@@ -602,8 +605,9 @@ const Demo = () => {
                   className="page-section third-page"
                   ref={registerSection("section-7")}
                 >
-                  <h2>
-                    <a className="navigation__link">College Choice</a>
+                  <h2 className={css.h2headdiv}>
+                    College choice filling for NEET UG{" "}
+                    <span>counselling</span>
                   </h2>
                   <p>
                     College choice filling is one of the most important
@@ -672,8 +676,8 @@ const Demo = () => {
                   className="page-section third-page"
                   ref={registerSection("section-8")}
                 >
-                  <h2>
-                    <a className="navigation__link">Central Pool Quota</a>
+                  <h2 className={css.h2headdiv}>
+                    Central Pool Quota in Medical <span>Admissions</span>
                   </h2>
                   <p>
                     The Central Pool Quota is a reserved category for medical
@@ -764,8 +768,8 @@ const Demo = () => {
                   className="page-section third-page"
                   ref={registerSection("section-9")}
                 >
-                  <h2>
-                    <a className="navigation__link">Admission Process</a>
+                  <h2 className={css.h2headdiv}>
+                    Admission process after <span>NEET UG counselling</span>
                   </h2>
                   <p>
                     Once a seat has been allotted to a student through the
@@ -829,8 +833,8 @@ const Demo = () => {
                   className="page-section third-page"
                   ref={registerSection("section-10")}
                 >
-                  <h2>
-                    <a className="navigation__link">Service Bond</a>
+                  <h2 className={css.h2headdiv}>
+                    Service Bond After <span>MBBS, MD/MS</span>
                   </h2>
                   <p>
                     In India, it is common for medical students to be bound by a
@@ -889,8 +893,8 @@ const Demo = () => {
                     className="page-section third-page"
                     ref={registerSection("section-11")}
                   >
-                    <h2>
-                      <a className="navigation__link">Options</a>
+                    <h2 className={css.h2headdiv}>
+                      Options For Low NEET <span>Scores</span>
                     </h2>
                     <p>
                       For students who have scored low marks in NEET, the
@@ -964,4 +968,4 @@ const Demo = () => {
   );
 };
 
-export default Demo;
+export default MedicalCounselling;

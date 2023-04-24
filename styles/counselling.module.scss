@@ -5,6 +5,7 @@
 }
 
 .banner-firstText {
+
   span {
     color: #1366ce;
     font-size: 36px;
@@ -13,84 +14,26 @@
 }
 
 
+.featurescontentdiv{
+  // margin: 0;
+  // padding: 0;
+  display: flex;
+  flex-direction: column;
+}
 
-// .addmissiondiv {
-//   height: 100vh;
-//   display: flex;
-//   flex-direction: column;
-//   justify-content: center;
-//   padding-left: 12%;
-//   h1 {
-//     font-size: 36px;
-//     font-weight: 500;
-//     strong {
+.featuresheadingdiv{
+  background-color: rgb(43, 43, 127);
+  padding: 2%;
+}
 
-//     }
-//   }
-//   p {
-//     display: block;
-//     margin-block-start: 1em;
-//     margin-block-end: 1em;
-//     margin-inline-start: 0px;
-//     margin-inline-end: 0px;
-//     font-size: 16px;
-//     font-family: "Poppins";
-//     color: #000;
-//   }
-// }
+@media (max-width:1200px) {
+  .featuresheadingdiv{ 
+    display: none;
+  }
+}
 
-// .mainsection {
-//   .aboutdiv {
-//     border-bottom: 1px solid #e5e5e5;
-//     padding-bottom: 50px;
-//     margin-bottom: 50px;
-//     .h2headdiv {
-//       text-align: center;
-//       font-size: 34px;
-//       font-weight: 500;
-//       strong {
-//         color: #1366ce;
-//         font-size: 34px;
-//         font-weight: 500;
-//       }
-//     }
-//     p {
-//       display: block;
-//       margin-block-start: 1em;
-//       margin-block-end: 1em;
-//       margin-inline-start: 0px;
-//       margin-inline-end: 0px;
-//       font-size: 16px;
-//       font-family: "Poppins";
-//       color: #000;
-//     }
-//   }
-
-// }
-// .containerdiv {
-//   display: flex;
-//   background-color: #fff;
-//   gap: 20px;
-//   margin-top: 50px;
-// }
-// .amsblue {
-//   position: sticky;
-//   top: 61px;
-//   display: flex;
-//   flex-direction: column;
-//   gap: 20px;
-//   width: 90%;
-//   height: 100vh;
-//   background-color: rgb(43, 43, 127);
-//   padding: 20px;
-//   h5 {
-//     color: white;
-//     cursor: pointer;
-//     // border: 1px solid #000;
-//     padding: 10px;
-//     a {
-//       color: #fff;
-//       font-weight: 500;
-//     }
-//   }
-// }
+@media (max-width:1200px) {
+       .page-section h2{
+        text-align: center;
+       }
+}
