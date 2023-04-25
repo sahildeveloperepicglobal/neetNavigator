@@ -42,23 +42,63 @@ export default function SuccessStories() {
   const items = [
     {
       alt: "image first",
-      image: "/image/1.jpg",
+      image: "/image/anikajain.jpg",
     },
     {
       alt: "image first",
-      image: "/image/2.jpg",
+      image: "/image/dikshajain.jpg",
     },
     {
       alt: "image first",
-      image: "/image/3.jpg",
+      image: "/image/dikshamidha.jpg",
     },
     {
       alt: "image first",
-      image: "/image/4.jpg",
+      image: "/image/dikshasinghal.jpg",
     },
     {
       alt: "image first",
-      image: "/image/5.jpg",
+      image: "/image/divyaalokkaushik.jpg",
+    },
+    {
+      alt: "image first",
+      image: "/image/divyanirwan.jpg",
+    },
+    {
+      alt: "image first",
+      image: "/image/gayatri.jpg",
+    },
+    {
+      alt: "image first",
+      image: "/image/gunika.jpg",
+    },
+    {
+      alt: "image first",
+      image: "/image/kanikagupta.jpg",
+    },
+    {
+      alt: "image first",
+      image: "/image/palakrathi.jpg",
+    },
+    {
+      alt: "image first",
+      image: "/image/ravi.jpg",
+    },
+    {
+      alt: "image first",
+      image: "/image/shrutijain.jpg",
+    },
+    {
+      alt: "image first",
+      image: "/image/taniya.jpg",
+    },
+    {
+      alt: "image first",
+      image: "/image/vasudha.jpg",
+    },
+    {
+      alt: "image first",
+      image: "/image/yukti.jpg",
     },
   ];
   return (
@@ -184,7 +224,7 @@ export default function SuccessStories() {
         </span>
       </section>
 
-      <Carousel itemWidth={400} items={items} />
+      <Carousel itemWidth={250} items={items} />
     </>
   );
 }

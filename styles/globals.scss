@@ -5051,3 +5051,16 @@ h2 span {
 // .slick-slide {
 //   margin-left: 12px !important;
 // }
+
+.carousel__slide {
+  border: none !important;
+  width: 13.875rem !important;
+}
+
+.carousel__slide:hover .carousel__slide-overlay {
+  opacity: 0 !important;
+}
+
+.carousel__controls {
+  display: none !important;
+}
