@@ -97,7 +97,7 @@ li {
   padding: 0;
 }
 .header .header-left ul li img {
-  width: 200px;
+  width: 170px;
   height: auto;
 }
 .header .header-middle .middle-flex {
@@ -241,8 +241,12 @@ li {
 .footer .footer-left .leftBottom-part a img {
   width: 25px;
   height: auto;
-  padding-right: 10px;
   margin-top: 10px;
+}
+.footer .footer-left .leftBottom-part ul {
+  display: flex;
+  gap: 12px;
+  align-items: center;
 }
 .footer h2 {
   /* */
@@ -2127,7 +2131,7 @@ h4 span {
 .lighthouse-banner .banner-textLight .banner-firstText {
   white-space: nowrap;
 }
-@media (max-width:1200px){
+@media (max-width: 1200px) {
   .lighthouse-banner .banner-textLight .banner-firstText {
     white-space: inherit;
   }
@@ -2824,7 +2828,7 @@ th {
   font-size: 13px;
   display: grid;
   align-content: center;
-  p{
+  p {
     margin-top: 20px;
   }
 }
@@ -5038,9 +5042,12 @@ h2 span {
   }
 }
 
-
-@media(max-width:1200px){
-  .page-section h2{
+@media (max-width: 1200px) {
+  .page-section h2 {
     text-align: center !important;
   }
 }
+
+// .slick-slide {
+//   margin-left: 12px !important;
+// }

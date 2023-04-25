@@ -26,7 +26,7 @@ export default function Home() {
           slidesToScroll: 1,
           vertical: false,
           verticalSwiping: false,
-          autoplaySpeed: 1000,
+          autoplaySpeed: 2000,
           centerMode: true,
           centerPadding: "60px",
         },
@@ -41,7 +41,7 @@ export default function Home() {
     slidesToShow: 2.9,
     slidesToScroll: 1,
     autoplay: true,
-    autoplaySpeed: 1000,
+    autoplaySpeed: 2000,
     responsive: [
       {
         breakpoint: 769,
@@ -65,7 +65,7 @@ export default function Home() {
     slidesToShow: 2.9,
     slidesToScroll: 1,
     autoplay: true,
-    autoplaySpeed: 1000,
+    autoplaySpeed: 2000,
     responsive: [
       {
         breakpoint: 769,
@@ -89,7 +89,7 @@ export default function Home() {
     slidesToShow: 2.9,
     slidesToScroll: 1,
     autoplay: true,
-    autoplaySpeed: 1000,
+    autoplaySpeed: 2000,
     responsive: [
       {
         breakpoint: 769,
@@ -119,17 +119,17 @@ export default function Home() {
                 sequence={[
                   // Same String at the start will only be typed once, initially
                   "Government",
-                  1000,
+                  6000,
                   "Private",
-                  1000,
+                  6000,
                   "Deemed",
-                  1000,
+                  6000,
                   "NRI",
-                  1000,
+                  6000,
                   "Minority",
-                  1000,
+                  6000,
                 ]}
-                speed={50}
+                speed={300}
                 repeat={Infinity}
               />
               <p>

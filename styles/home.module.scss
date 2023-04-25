@@ -13,15 +13,16 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  height: 100vh;
+  height: 90vh;
 }
 .admission_banner h1 {
   font-style: normal;
   font-weight: 600;
   font-size: 44px;
-  margin-bottom: 15px;
+  max-width: 760px;
   text-align: center;
   font-family: "Poppins", sans-serif;
+  margin: 0 auto 15px;
 }
 
 .admission_banner p {
