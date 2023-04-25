@@ -2105,3 +2105,30 @@
   padding: 0.5rem;
   border-radius: 4px;
 }
+
+.mydiv55 {
+  border: 1px solid #000;
+  padding: 5em 0em;
+  background-color: #000;
+  margin-bottom: 20px;
+  h1 {
+    text-align: center;
+    color: #fff;
+    font-size: 60px;
+  }
+}
+
+.blogcard {
+  ul {
+    li {
+      .box1 {
+        img {
+          width: 400px;
+        }
+        h2 {
+          font-size: 0px;
+        }
+      }
+    }
+  }
+}
