@@ -7,8 +7,13 @@ import { Inter } from "next/font/google";
 import Swiper from "swiper";
 import css from "@/styles/successstories.module.scss";
 import { TypeAnimation } from "react-type-animation";
-import React, { Component } from "react";
+// import React, { Component } from "react";
 import { Poppins } from "next/font/google";
+import * as React from "react";
+import { createRoot } from "react-dom/client";
+
+import { Carousel, CarouselItem } from "react-round-carousel";
+import "react-round-carousel/src/index.css";
 
 export default function SuccessStories() {
   // const swiper = new Swiper(".mySwiper", {
@@ -27,7 +32,35 @@ export default function SuccessStories() {
   //     el: ".swiper-pagination",
   //   },
   // });
+  // const items: CarouselItem[] = Array(20)
+  //   .fill("")
+  //   .map((_: string, index: number) => ({
+  //     alt: "A random photo",
+  //     image: `https://picsum.photos/${210 + index}`,
+  //   }));
 
+  const items = [
+    {
+      alt: "image first",
+      image: "/image/1.jpg",
+    },
+    {
+      alt: "image first",
+      image: "/image/2.jpg",
+    },
+    {
+      alt: "image first",
+      image: "/image/3.jpg",
+    },
+    {
+      alt: "image first",
+      image: "/image/4.jpg",
+    },
+    {
+      alt: "image first",
+      image: "/image/5.jpg",
+    },
+  ];
   return (
     <>
       <Head>
@@ -150,39 +183,8 @@ export default function SuccessStories() {
           <img src="/img/h2.png" alt="" />
         </span>
       </section>
-      <section className={css.slideshow}>
-        <div className={css.entirecontent}>
-          <div className={css.contentcarrousel}>
-            <figure className={css.shadow}>
-              <img src="/image/1.jpg" />
-            </figure>
-            <figure className={css.shadow}>
-              <img src="/image/2.jpg" />
-            </figure>
-            <figure className={css.shadow}>
-              <img src="/image/3.jpg" />
-            </figure>
-            <figure className={css.shadow}>
-              <img src="/image/4.jpg" />
-            </figure>
-            <figure className={css.shadow}>
-              <img src="/image/5.jpg" />
-            </figure>
-            <figure className={css.shadow}>
-              <img src="/image/1.jpg" />
-            </figure>
-            <figure className={css.shadow}>
-              <img src="/image/1.jpg" />
-            </figure>
-            <figure className={css.shadow}>
-              <img src="/image/1.jpg" />
-            </figure>
-            <figure className={css.shadow}>
-              <img src="/image/1.jpg" />
-            </figure>
-          </div>
-        </div>
-      </section>
+
+      <Carousel itemWidth={400} items={items} />
     </>
   );
 }
