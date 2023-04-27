@@ -5,8 +5,12 @@ import Image from "next/image";
 import { Inter } from "next/font/google";
 import styles from "@/styles/blogs.module.scss";
 import * as React from "react";
+import { Blogs } from "network-requests/types";
+import { useGetAllBlogs } from "@/network-requests/queries";
+import Link from "next/link";
 
 export default function Blogs() {
+  const { data, refetch } = useGetAllBlogs();
   return (
     <>
       <Head>
@@ -17,24 +21,154 @@ export default function Blogs() {
       </Head>
 
       <section className={styles.mydiv55}>
-        <h1>krishna</h1>
+        <h1>Blogs</h1>
       </section>
 
       <section className={styles.blogcard}>
         <ul>
+          {data?.map((list, index) => {
+            console.log(list);
+            return (
+              <li key={index}>
+                <div className={styles.box1}>
+                  <img src={list.images[0]} alt="img" />
+                  <div className={styles.boxcontent}>
+                    <h2>{list.name}</h2>
+                    <div
+                      dangerouslySetInnerHTML={{
+                        __html: list.content.slice(0, 1000),
+                      }}
+                    ></div>
+                    <Link href={`/blogs/${list.slug}`}>Read More</Link>
+                  </div>
+                </div>
+              </li>
+            );
+          })}
+          {/* <li>
+            <div className={styles.box1}>
+              <img src="/image/anikajain.jpg" alt="img" />
+              <div className={styles.boxcontent}>
+                <h2>What is a Divan Bed? Here’s Everything You Need to Know</h2>
+                <p>
+                  Lorem Ipsum is simply dummy text of the printing and
+                  typesetting industry. Lorem Ipsum has been the industry's
+                  standard dummy text ever since the 1500s, when an unknown
+                  printer took a galley of type and scrambled it to make a type
+                  specimen book. It has survived not only five centuries, but
+                  also the leap into electronic typesetting, remaining
+                  essentially unchanged.
+                </p>
+                <a href="#">Read More</a>
+              </div>
+            </div>
+          </li>
           <li>
             <div className={styles.box1}>
               <img src="/image/anikajain.jpg" alt="img" />
-              <h2>What is a Divan Bed? Here’s Everything You Need to Know</h2>
-              <p>
-                Lorem Ipsum is simply dummy text of the printing and typesetting
-                industry. Lorem Ipsum has been the industry's standard dummy
-                text ever since the 1500s, when an unknown printer took a galley
-                of type and scrambled it to make a type specimen book. It has
-                survived not only five centuries, but also the leap into
-                electronic typesetting, remaining essentially unchanged.
-              </p>
-              <a href="#">Read More</a>
+              <div className={styles.boxcontent}>
+                <h2>What is a Divan Bed? Here’s Everything You Need to Know</h2>
+                <p>
+                  Lorem Ipsum is simply dummy text of the printing and
+                  typesetting industry. Lorem Ipsum has been the industry's
+                  standard dummy text ever since the 1500s, when an unknown
+                  printer took a galley of type and scrambled it to make a type
+                  specimen book. It has survived not only five centuries, but
+                  also the leap into electronic typesetting, remaining
+                  essentially unchanged.
+                </p>
+                <a href="#">Read More</a>
+              </div>
+            </div>
+          </li>
+          <li>
+            <div className={styles.box1}>
+              <img src="/image/anikajain.jpg" alt="img" />
+              <div className={styles.boxcontent}>
+                <h2>What is a Divan Bed? Here’s Everything You Need to Know</h2>
+                <p>
+                  Lorem Ipsum is simply dummy text of the printing and
+                  typesetting industry. Lorem Ipsum has been the industry's
+                  standard dummy text ever since the 1500s, when an unknown
+                  printer took a galley of type and scrambled it to make a type
+                  specimen book. It has survived not only five centuries, but
+                  also the leap into electronic typesetting, remaining
+                  essentially unchanged.
+                </p>
+                <a href="#">Read More</a>
+              </div>
+            </div>
+          </li>
+          <li>
+            <div className={styles.box1}>
+              <img src="/image/anikajain.jpg" alt="img" />
+              <div className={styles.boxcontent}>
+                <h2>What is a Divan Bed? Here’s Everything You Need to Know</h2>
+                <p>
+                  Lorem Ipsum is simply dummy text of the printing and
+                  typesetting industry. Lorem Ipsum has been the industry's
+                  standard dummy text ever since the 1500s, when an unknown
+                  printer took a galley of type and scrambled it to make a type
+                  specimen book. It has survived not only five centuries, but
+                  also the leap into electronic typesetting, remaining
+                  essentially unchanged.
+                </p>
+                <a href="#">Read More</a>
+              </div>
+            </div>
+          </li>
+          <li>
+            <div className={styles.box1}>
+              <img src="/image/anikajain.jpg" alt="img" />
+              <div className={styles.boxcontent}>
+                <h2>What is a Divan Bed? Here’s Everything You Need to Know</h2>
+                <p>
+                  Lorem Ipsum is simply dummy text of the printing and
+                  typesetting industry. Lorem Ipsum has been the industry's
+                  standard dummy text ever since the 1500s, when an unknown
+                  printer took a galley of type and scrambled it to make a type
+                  specimen book. It has survived not only five centuries, but
+                  also the leap into electronic typesetting, remaining
+                  essentially unchanged.
+                </p>
+                <a href="#">Read More</a>
+              </div>
+            </div>
+          </li>
+          <li>
+            <div className={styles.box1}>
+              <img src="/image/anikajain.jpg" alt="img" />
+              <div className={styles.boxcontent}>
+                <h2>What is a Divan Bed? Here’s Everything You Need to Know</h2>
+                <p>
+                  Lorem Ipsum is simply dummy text of the printing and
+                  typesetting industry. Lorem Ipsum has been the industry's
+                  standard dummy text ever since the 1500s, when an unknown
+                  printer took a galley of type and scrambled it to make a type
+                  specimen book. It has survived not only five centuries, but
+                  also the leap into electronic typesetting, remaining
+                  essentially unchanged.
+                </p>
+                <a href="#">Read More</a>
+              </div>
+            </div>
+          </li> */}
+          <li>
+            <div className={styles.box1}>
+              <img src="/image/anikajain.jpg" alt="img" />
+              <div className={styles.boxcontent}>
+                <h2>What is a Divan Bed? Here’s Everything You Need to Know</h2>
+                <p>
+                  Lorem Ipsum is simply dummy text of the printing and
+                  typesetting industry. Lorem Ipsum has been the industry's
+                  standard dummy text ever since the 1500s, when an unknown
+                  printer took a galley of type and scrambled it to make a type
+                  specimen book. It has survived not only five centuries, but
+                  also the leap into electronic typesetting, remaining
+                  essentially unchanged.
+                </p>
+                <a href="#">Read More</a>
+              </div>
             </div>
           </li>
         </ul>

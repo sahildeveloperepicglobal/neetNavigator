@@ -126,10 +126,9 @@ const LightHouse = () => {
                   </h2>
                   <ul>
                     <li>
-                      <b> Comprehensive: </b>b&gt; You won’t miss your MBBS
-                      admission possibility in any college of India. MBBS
-                      Lighthouse is designed on admission data of 650 medical
-                      colleges.
+                      <b> Comprehensive: </b> You won’t miss your MBBS admission
+                      possibility in any college of India. MBBS Lighthouse is
+                      designed on admission data of 650 medical colleges.
                     </li>
                     <li>
                       <b> Convenient: </b> MBBS Lighthouse runs on cloud based

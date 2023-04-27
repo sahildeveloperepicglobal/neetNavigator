@@ -89,7 +89,8 @@ export default function PrivacyPolicy() {
           </ul>
           <h2>Use Of Data</h2>
           <p>
-            NEET ADVISOR PVT. LTD. uses the collected data for various purposes:
+            NEET NAVIGATOR PVT. LTD. uses the collected data for various
+            purposes:
           </p>
           <ul>
             <li>To provide and maintain the Service</li>
@@ -123,7 +124,7 @@ export default function PrivacyPolicy() {
             such information represents your agreement to that transfer.
           </p>
           <p>
-            NEET ADVISOR PVT. LTD. will take all reasonably necessary steps to
+            NEET NAVIGATOR PVT. LTD. will take all reasonably necessary steps to
             ensure that your data is treated securely and in accordance with
             this Privacy Policy and no transfer of your Personal Data will take
             place to an organization or a country unless there are adequate
@@ -133,14 +134,14 @@ export default function PrivacyPolicy() {
           <h2>Disclosure Of Data</h2>
           <h3>Legal Requirements</h3>
           <p>
-            NEET ADVISOR PVT. LTD. may disclose your Personal Data in the good
+            NEET NAVIGATOR PVT. LTD. may disclose your Personal Data in the good
             faith belief that such action is necessary to:
           </p>
           <ul>
             <li>To comply with a legal obligation</li>
             <li>
-              To protect and defend the rights or property of NEET ADVISOR PVT.
-              LTD.
+              To protect and defend the rights or property of NEET NAVIGATOR
+              PVT. LTD.
             </li>
             <li>
               To prevent or investigate possible wrongdoing in connection with

@@ -164,8 +164,8 @@ li {
   align-items: center;
   line-height: 0;
   justify-content: center;
-  width: 30px;
-  height: 30px;
+  width: 28px;
+  height: 28px;
   align-content: center;
 }
 
@@ -2822,7 +2822,7 @@ th {
 .page-section {
   padding-top: 100px;
   padding-bottom: 40px;
-  border-bottom: 1px solid rgb(87, 86, 86);
+  // border-bottom: 1px solid rgb(87, 86, 86);
   background: white;
   color: #000;
   font-size: 13px;
@@ -2841,19 +2841,18 @@ th {
 }
 .navigation__link {
   display: block;
-  color: #fff;
+  color: #000;
   text-decoration: none;
   padding: 1em;
   font-weight: 500;
   font-size: 18px !important;
   margin-bottom: 10px;
   cursor: pointer;
-  border: 1px solid #2b2b7f;
+  // border: 1px solid #2b2b7f;
 }
 .navigation__link.active {
-  border: 1px solid white;
   padding: 2px 8px;
-  color: #fff !important;
+  color: #216fd1 !important;
   padding: 1em;
 
   border-radius: 5px;
@@ -3022,6 +3021,12 @@ th {
   outline: none;
   align-items: center;
   gap: 8px;
+  span {
+    svg {
+      width: 20px;
+      height: 20px;
+    }
+  }
 }
 
 .accordion button:hover,

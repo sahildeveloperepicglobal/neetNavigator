@@ -56,7 +56,7 @@ export default function Home() {
 
       <section>
         <div className="introduction-home container  ">
-          <h2>Introduction</h2>
+          <h2 style={{ marginTop: "-72px" }}>Introduction</h2>
           <p>
             NEET Navigator is founded by Mr. Rakesh Jain who is an alumnus of
             FMS-Delhi and IIM- Ahmedabad. NEET Navigator is run by professionals
