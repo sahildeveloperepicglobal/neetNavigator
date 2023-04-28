@@ -43,7 +43,7 @@ const CreateBlog = () => {
     [setState]
   );
   const onChangeMetaState = React.useCallback(
-    (key: keyof typeof state["meta"], value: any) => {
+    (key: keyof (typeof state)["meta"], value: any) => {
       setState((draft) => {
         draft.meta[key] = value;
       });

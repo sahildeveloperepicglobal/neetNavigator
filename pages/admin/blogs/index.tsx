@@ -9,6 +9,7 @@ import Link from "next/link";
 import moment from "moment";
 import { useRouter } from "next/router";
 import { deleteBlogs } from "@/network-requests/api/blogs";
+import Image from "next/image";
 
 const Admin = () => {
   const { data, refetch } = useGetAllBlogs();
@@ -28,6 +29,8 @@ const Admin = () => {
     },
     [refetch]
   );
+
+  console.log(data);
 
   return (
     <>
@@ -93,8 +96,8 @@ const Admin = () => {
             </tr>
           </thead>
           <tbody>
-            {data?.map((list, index) => {
-              console.log(list);
+            {data?.map((item, index) => {
+              console.log(item.images[0]);
               return (
                 <tr key={index}>
                   <td>
@@ -103,18 +106,25 @@ const Admin = () => {
                     </div>
                   </td>
                   <td>
-                    <div className={Style.productrname}>
-                      <img src={list.images[0]} alt="" />
+                    <div className={Style["product-image"]}>
+                      {item.images[0] && (
+                        <Image
+                          height={50}
+                          width={50}
+                          src={item.images[0]}
+                          alt="xyz"
+                        />
+                      )}
                     </div>
                   </td>
                   <td>
                     <div className={Style.productrname}>
-                      <p>{list.name}</p>
+                      <p>{item.name}</p>
                     </div>
                   </td>
                   <td>
                     <div className={Style.price}>
-                      {list.categories.map((c, i) => (
+                      {item.categories.map((c, i) => (
                         <div key={i}>{c}</div>
                       ))}
                     </div>
@@ -122,7 +132,7 @@ const Admin = () => {
                   <td>
                     {/* <div className={Style.date}>12 April 2023 at 18:37</div> */}
                     <div className={Style.date}>
-                      {moment(list.createdAt).format("DD MMM YYYY hh:mm")}
+                      {moment(item.createdAt).format("DD MMM YYYY hh:mm")}
                     </div>
                   </td>
                   <td>
@@ -131,14 +141,14 @@ const Admin = () => {
                         <li
                           title="edit"
                           onClick={() =>
-                            router.push(`/admin/blogs/update?id=${list._id}`)
+                            router.push(`/admin/blogs/update?id=${item._id}`)
                           }
                         >
                           <EditIcon />
                         </li>
                         <li
                           title="Delete"
-                          onClick={() => onDeleteById(list._id)}
+                          onClick={() => onDeleteById(item._id)}
                         >
                           <BinIcon />
                         </li>
