@@ -1,8 +1,8 @@
 .homebanner {
-  overflow: hidden;
   background: url(/img/pgBannerBackground.png);
   background-repeat: no-repeat;
-  object-fit: cover;
+  background-size: 100%, 100%;
+  background-position: top right !important;
 }
 .bannercontainer {
   margin-top: 0px;
@@ -13,15 +13,16 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  height: 100vh;
+  height: 90vh;
 }
 .admission_banner h1 {
   font-style: normal;
   font-weight: 600;
   font-size: 44px;
-  margin-bottom: 15px;
+  max-width: 760px;
   text-align: center;
   font-family: "Poppins", sans-serif;
+  margin: 0 auto 15px;
 }
 
 .admission_banner p {
@@ -41,7 +42,7 @@
 }
 
 .bannerText span {
-  font-family: poppins;
+  font-family: poppins !important;
   font-size: 42px;
   font-weight: 600 !important;
   color: #1366ce;

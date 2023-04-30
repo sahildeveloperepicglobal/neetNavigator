@@ -18,6 +18,9 @@ const nextConfig = {
       },
     ];
   },
+  images: {
+    domains: ["blogsapi.neetnavigator.com"],
+  },
 };
 
 module.exports = nextConfig;

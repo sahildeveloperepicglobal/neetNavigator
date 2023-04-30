@@ -28,17 +28,17 @@ export default function Home() {
                 sequence={[
                   // Same String at the start will only be typed once, initially
                   "Government",
-                  1000,
+                  3000,
                   "Private",
-                  1000,
+                  3000,
                   "Deemed",
-                  1000,
+                  3000,
                   "NRI",
-                  1000,
+                  3000,
                   "Minority",
-                  1000,
+                  3000,
                 ]}
-                speed={50}
+                speed={300}
                 repeat={Infinity}
               />
               <p>
@@ -56,7 +56,9 @@ export default function Home() {
 
       <section>
         <div className="introduction-home container  ">
-          <h2>Introduction</h2>
+          <h2 style={{ marginTop: "-72px", marginBottom: "25px" }}>
+            Introduction
+          </h2>
           <p>
             NEET Navigator is founded by Mr. Rakesh Jain who is an alumnus of
             FMS-Delhi and IIM- Ahmedabad. NEET Navigator is run by professionals
@@ -166,7 +168,7 @@ export default function Home() {
             <h2>
               Our <span>Approach</span>
             </h2>
-            <div className="our-approach container">
+            <div className="our-approach d-flex  dasktop-d-block mobile-d-none p-0">
               <div className="radio">
                 {dataArray.map((value, index) => {
                   const active = value.heading === selected.heading;
@@ -198,116 +200,20 @@ export default function Home() {
                   })}
                 </ul>
               </div>
-              <div className="approach-text">
+              <div
+                className="approach-text"
+                style={{ width: "449px", paddingLeft: "56px" }}
+              >
                 <h3 id="heading"> {selected.content[0]}</h3>
                 <p id="paragraph">{selected.content[1]}</p>
               </div>
             </div>
           </div>
-          <div className="faqStyle-approa ">
-            <div className="accordion">
-              <div className="accordion-item">
-                <button id="accordion-button-5" aria-expanded="false">
-                  <span className="icon" aria-hidden="true" />
-                  <span className="accordion-title">Estimation</span>
-                </button>
-                <div className="accordion-content">
-                  <p>
-                    NEET Navigator uses advanced data analytics to assess the
-                    admission possibility for all India medical colleges on
-                    basis of your NEET PG Rank, Domicile, Category and Fee
-                    Budget (in case of Private/ Deemed Medical Institutions).
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div className="accordion">
-              <div className="accordion-item">
-                <button id="accordion-button-5" aria-expanded="false">
-                  <span className="icon" aria-hidden="true" />
-                  <span className="accordion-title"> Guidance</span>
-                </button>
-                <div className="accordion-content">
-                  <p>
-                    NEET Navigator uses in depth knowledge of external
-                    environmental factors as well as candidate’s credentials to
-                    guide the candidate on subject (Clinical/Non-clinical/
-                    Para-clinical) and program (MD/MS/DNB/Diploma) selection for
-                    PG studies.
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div className="accordion">
-              <div className="accordion-item">
-                <button id="accordion-button-5" aria-expanded="false">
-                  <span className="icon" aria-hidden="true" />
-                  <span className="accordion-title">
-                    Institutional Selection
-                  </span>
-                </button>
-                <div className="accordion-content">
-                  <p>
-                    NEET Navigator has developed an extensive 12 factors based
-                    objective institutional rating system which incorporates
-                    parameters including college infrastructure, academic
-                    quality and institutional reputation. NEET Navigator helps
-                    you select the best medical institution to target for
-                    admission.
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div className="accordion">
-              <div className="accordion-item">
-                <button id="accordion-button-5" aria-expanded="false">
-                  <span className="icon" aria-hidden="true" />
-                  <span className="accordion-title"> Application Support</span>
-                </button>
-                <div className="accordion-content">
-                  <p>
-                    NEET Navigator guides you in selection of counselling type
-                    and offers you support during filling up of counselling
-                    application. NEET Navigator ensures that counselling
-                    application process is 100% error free so that there is no
-                    loss of opportunity.
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div className="accordion">
-              <div className="accordion-item">
-                <button id="accordion-button-5" aria-expanded="false">
-                  <span className="icon" aria-hidden="true" />
-                  <span className="accordion-title">College List</span>
-                </button>
-                <div className="accordion-content">
-                  <p>
-                    NEET Navigator uses historical data analytics to design
-                    round based highly effective college choice list. The
-                    college choice list is optimized for candidate’s NEET Rank
-                    and Category so that You get admission in THE BEST medical
-                    college in the desired subject.
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div className="accordion">
-              <div className="accordion-item">
-                <button id="accordion-button-5" aria-expanded="false">
-                  <span className="icon" aria-hidden="true" />
-                  <span className="accordion-title">Documentation</span>
-                </button>
-                <div className="accordion-content">
-                  <p>
-                    NEET Navigator ensures that your admission process is smooth
-                    and stress free by ensuring timely guidance on requisite
-                    documentation. The right documentation support ensures
-                    optimization of admission opportunity.
-                  </p>
-                </div>
-              </div>
-            </div>
+
+          <div className="accordion dasktop-d-none mobile-d-block">
+            {dataArray.map((item, index) => {
+              return <FAQComponent key={index} {...item} />;
+            })}
           </div>
         </>
       </section>
@@ -315,7 +221,7 @@ export default function Home() {
       <section>
         <div className="container">
           <div className="services-parent">
-            <h2>Services</h2>
+            <h2>Services</h2> <br />
             <div className="services">
               <div className="services-leftSection">
                 <p>
@@ -324,11 +230,13 @@ export default function Home() {
                   based medical admission counselling guidance for admission in
                   MBBS, BDS, BAMS programs.
                 </p>
+                <br />
                 <p>
                   {" "}
                   NEET Navigator offers medical admission counselling guidance
                   services for MCC as well as All States counselling.
                 </p>
+                <br />
                 <p>
                   {" "}
                   NEET Navigator offers most precise and personalized guidance

@@ -1,7 +1,5 @@
-/* eslint-disable @next/next/no-img-element */
 import React, { useState } from "react";
 import Link from "next/link";
-import poppins from "@/fonts/poppins";
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -11,7 +9,7 @@ const Header = () => {
   };
 
   return (
-    <div className={` ${poppins.className} header`}>
+    <div className={`   header`}>
       <div className="header-left">
         <ul className="left-flex">
           <li className="animate__animated animate__bounceInLeft">
