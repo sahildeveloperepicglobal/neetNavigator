@@ -15,8 +15,8 @@ export default function Home() {
     dots: false,
     infinite: true,
     autoplay: true,
-    autoplaySpeed: 100,
-    slidesToShow: 6,
+    autoplaySpeed: 2500,
+    slidesToShow: 5,
     slidesToScroll: 1,
     responsive: [
       {
@@ -116,6 +116,7 @@ export default function Home() {
             <h1>India&apos;s MBBS Admission College Predictor</h1>
             <div className={Style.bannerText}>
               <TypeAnimation
+                style={{ fontFamily: "" }}
                 sequence={[
                   // Same String at the start will only be typed once, initially
                   "Government",
@@ -143,30 +144,29 @@ export default function Home() {
             </div>
           </div>
         </div>
-      </section>
+        <section>
+          <div className={`${Style.introduction_home} container  text-center`}>
+            <h2>
+              NEET Navigator <span>Introduction</span>{" "}
+            </h2>
+            <p>
+              In India, students and parents fail to get the best outcome from
+              medical admission counselling process. As a result, they either
+              lose an opportunity of admission or they take admission in a
+              medical college which may not be as good as they could have got or
+              worse, they lose money due to fake promises and poor guidance.
+            </p>
 
-      <section>
-        <div className={`${Style.introduction_home} container  text-center`}>
-          <h2>
-            NEET Navigator <span>Introduction</span>{" "}
-          </h2>
-          <p>
-            In India, students and parents fail to get the best outcome from
-            medical admission counselling process. As a result, they either lose
-            an opportunity of admission or they take admission in a medical
-            college which may not be as good as they could have got or worse,
-            they lose money due to fake promises and poor guidance.
-          </p>
+            <br />
 
-          <br />
-
-          <p id="home-para2">
-            NEET Navigator offers India’s most authentic and advanced data
-            analytics based medical admission counselling guidance for NEET UG
-            (MBBS/BDS/BAMS), NEET PG (MD/MS/DNB/MDS) and NEET SS (DM/M.CH) in
-            all India Government, Private and Deemed medical institutions.
-          </p>
-        </div>
+            <p id="home-para2">
+              NEET Navigator offers India’s most authentic and advanced data
+              analytics based medical admission counselling guidance for NEET UG
+              (MBBS/BDS/BAMS), NEET PG (MD/MS/DNB/MDS) and NEET SS (DM/M.CH) in
+              all India Government, Private and Deemed medical institutions.
+            </p>
+          </div>
+        </section>
       </section>
 
       <section className="mt-70">
@@ -203,6 +203,7 @@ export default function Home() {
             <h2>
               About <span> Us</span>
             </h2>
+            <br />
             <div className="aboutUs-section">
               <div className="aboutUs-left">
                 <div className="about-combination">
@@ -737,39 +738,42 @@ const ReactReadMoreReadLess = ({ children }: T) => {
 
 const faqArray = [
   {
-    heading: "What is NEET UG exam?",
+    heading: "What is medical admission counselling?",
     content:
-      "NEET (National Eligibility cum Entrance Test) UG is a national level entrance exam for admission to undergraduate medical courses in India. NEET UG is conducted by National Testing Agency (NTA). It is mandatory for students seeking admission in government and private medical colleges in India to qualify NEET exam.",
+      "Medical admission counselling is the process of allotting medical college seats to NEET qualified and eligible candidates based on their NEET All India Rank, Domicile and Category. Medical admission counselling is generally an online process involving 3-4 rounds of seat allotment in participating medical colleges.",
   },
   {
-    heading: "Who is eligible to appear for NEET UG exam?",
+    heading:
+      "How many types of Medical Admission Counselling are there in India?",
     content:
-      "Indian citizens and OCI (Overseas Citizen of India) card holders who have completed 17 years of age as on December 31st of the year of admission and have passed Class 12th or equivalent exam with Physics, Chemistry, Biology/Biotechnology, and English as mandatory subjects are eligible to appear for NEET exam.",
+      "There are two types of counselling in India, one conducted by MCC (Medical Council Committee) for all India quota seats (15% of seats in government medical colleges across India) and deemed universities, and the other by respective state counselling committees for state quota seats (85% of seats in government medical colleges) and private medical colleges in that state.",
   },
   {
-    heading: "How often is NEET UG exam conducted?",
+    heading: "What is MCC counselling?",
     content:
-      "NEET exam is conducted once a year usually in the month of May/ June. NEET 2023 is expected to be conducted in June/July 2023. Though NTA had released 7 th May 2023 as date for NEET 2023 in their calendar but NEET 2023 appears to be delayed",
+      "MCC counselling is a national level counselling conducted by MCC (Medical Council Committee) under the Ministry of Health and Family Welfare for all India quota seats (15% of seats in government medical colleges across India), 100% seats of AIIMS and deemed universities across India.",
   },
   {
-    heading: "How to apply for NEET UG exam?",
+    heading: "What is state medical admission counselling?",
     content:
-      "The application process for NEET exam can be done online through the official website of NTA (National Testing Agency). Candidates need to fill the online application form, upload their scanned documents, and pay the exam fee to complete the application process.",
+      "State medical admission counselling is conducted by respective state counselling committees for state quota seats (85% of seats in government medical colleges) and 100% of seats private medical colleges within the state.",
   },
   {
-    heading: "What is the syllabus for NEET UG exam?",
+    heading:
+      "What is the eligibility criteria to participate in MCC counselling?",
     content:
-      "The syllabus for NEET exam is based on Class 11th and 12th Physics, Chemistry, and Biology/Biotechnology syllabus. It includes topics from these subjects covered during the 2-year course.",
+      "MCC medical admission counselling is domicile free. That means, all students who have qualified NEET are eligible to participate in MCC counselling irrespective of their domicile state. NRI students are also eligible to participate in MCC counselling.",
   },
   {
-    heading: "What is the format of NEET UG exam?",
+    heading:
+      "What is the eligibility criteria to participate in State medical admission counselling?",
     content:
-      "NEET UG exam is a pen and paper based test that consists of 180 multiple-choice questions from Physics, Chemistry, Botany and Zoology. The exam duration is 3 hours and 20 minutes.There is negative marking system in NEET UG exam. A candidate gets 4 marks for each right answer and loses 1 mark for each wrong answer.",
+      "To participate in State medical admission counselling for admission on state quota seats, a student must be domicile/native of that state. There are some states however who allow non- domicile students to participate in their state medical admission counselling for admission in private medical colleges of that state.",
   },
   {
-    heading: "What is the minimum qualifying score for NEET UG exam?",
+    heading: "What are Central pool quota seats in medical admission?",
     content:
-      "The minimum qualifying score for NEET UG exam is 50th percentile for General and EWS category and 40th percentile for reserved categories (SC/ST/OBC). The exact qualifying score varies each year based on the difficulty level of the exam and number of candidates appearing. For NEET UG 2022, cut off marks for General/EWS category student was 117 while for OBC/SC/ST candidates, cut off marks were 93.",
+      "Central pool quota is allocation of MBBS and BDS seats through selection and nomination of eligible candidates from Ministry of External Affairs, Ministry of Defense, Ministry of Home Affairs and Cabinet Secretariat. It is a fair and transparent process with defined eligibility, selection and nomination rules.",
   },
 ];
 

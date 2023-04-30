@@ -1,5 +1,3 @@
-/* eslint-disable react/no-unescaped-entities */
-/* eslint-disable @next/next/no-img-element */
 import React from "react";
 import Style from "@/styles/pg.module.scss";
 import MinusIcon from "@/icons/MinusIcon";
@@ -22,22 +20,12 @@ export default function Pg() {
             </h1>
             <div className={Style.bannerText}>
               <TypeAnimation
-                sequence={[
-                  // Same String at the start will only be typed once, initially
-                  "MD",
-                  1000,
-                  "MS",
-                  1000,
-                  "DNB",
-                  1000,
-                  "MDS",
-                  1000,
-                ]}
-                speed={50}
+                sequence={["MD", 3000, "MS", 3000, "DNB", 3000, "MDS", 3000]}
+                speed={300}
                 repeat={Infinity}
               />
               <p>
-                NEET Navigator is India's most advanced data analytics based{" "}
+                NEET Navigator is India s most advanced data analytics based{" "}
                 <br />
                 Medical Admission Counselling Services
               </p>
@@ -47,32 +35,32 @@ export default function Pg() {
             </div>
           </div>
         </div>
-      </section>
-
-      <section>
-        <div className="introduction-home container  ">
-          <h2>Introduction</h2>
-          <p>
-            NEET Navigator is founded by Mr. Rakesh Jain who is an alumnus of
-            FMS-Delhi and IIM- Ahmedabad. NEET Navigator is run by professionals
-            and mentored by Dr. M.L. Singla, Ex-Dean of Faculty of Management
-            Studies, Delhi University.
-          </p>
-          <br />
-          <p>
-            NEET Navigator is India’s first organization which is working
-            towards building advanced intelligence based online application to
-            guide students for their admission in the best medical college based
-            on their NEET Rank, Domicile, Category and Fee Budget.
-          </p>
-          <br />
-          <p>
-            NEET Navigator offers medical admission counselling guidance for
-            admission into INIs, government, private & deemed medical
-            institutions all over India. Our expertise includes admission
-            against NRI quota seats and mop-up/stray round counselling services.
-          </p>
-        </div>
+        <section>
+          <div className="introduction-home container  ">
+            <h2>Introduction</h2>
+            <p>
+              NEET Navigator is founded by Mr. Rakesh Jain who is an alumnus of
+              FMS-Delhi and IIM- Ahmedabad. NEET Navigator is run by
+              professionals and mentored by Dr. M.L. Singla, Ex-Dean of Faculty
+              of Management Studies, Delhi University.
+            </p>
+            <br />
+            <p>
+              NEET Navigator is India’s first organization which is working
+              towards building advanced intelligence based online application to
+              guide students for their admission in the best medical college
+              based on their NEET Rank, Domicile, Category and Fee Budget.
+            </p>
+            <br />
+            <p>
+              NEET Navigator offers medical admission counselling guidance for
+              admission into INIs, government, private & deemed medical
+              institutions all over India. Our expertise includes admission
+              against NRI quota seats and mop-up/stray round counselling
+              services.
+            </p>
+          </div>
+        </section>
       </section>
 
       <div className="propositions">
@@ -155,13 +143,13 @@ export default function Pg() {
         </div>
       </div>
 
-      <section className="container m-0">
+      <section className="container mtp-14 mbp-14">
         <>
-          <div className="approach m-0">
+          <div className="approach ">
             <h2>
               Our <span>Approach</span>
             </h2>
-            <div className="our-approach container">
+            <div className="our-approach dasktop-d-block mobile-d-none p-0">
               <div className="radio">
                 {dataArray.map((value, index) => {
                   const active = value.heading === selected.heading;
@@ -199,110 +187,16 @@ export default function Pg() {
               </div>
             </div>
           </div>
-          <div className="faqStyle-approa ">
-            <div className="accordion">
-              <div className="accordion-item">
-                <button id="accordion-button-5" aria-expanded="false">
-                  <span className="icon" aria-hidden="true" />
-                  <span className="accordion-title">Estimation</span>
-                </button>
-                <div className="accordion-content">
-                  <p>
-                    NEET Navigator uses advanced data analytics to assess the
-                    admission possibility for all India medical colleges on
-                    basis of your NEET PG Rank, Domicile, Category and Fee
-                    Budget (in case of Private/ Deemed Medical Institutions).
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div className="accordion">
-              <div className="accordion-item">
-                <button id="accordion-button-5" aria-expanded="false">
-                  <span className="icon" aria-hidden="true" />
-                  <span className="accordion-title"> Guidance</span>
-                </button>
-                <div className="accordion-content">
-                  <p>
-                    NEET Navigator uses in depth knowledge of external
-                    environmental factors as well as candidate’s credentials to
-                    guide the candidate on subject (Clinical/Non-clinical/
-                    Para-clinical) and program (MD/MS/DNB/Diploma) selection for
-                    PG studies.
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div className="accordion">
-              <div className="accordion-item">
-                <button id="accordion-button-5" aria-expanded="false">
-                  <span className="icon" aria-hidden="true" />
-                  <span className="accordion-title">
-                    Institutional Selection
-                  </span>
-                </button>
-                <div className="accordion-content">
-                  <p>
-                    NEET Navigator has developed an extensive 12 factors based
-                    objective institutional rating system which incorporates
-                    parameters including college infrastructure, academic
-                    quality and institutional reputation. NEET Navigator helps
-                    you select the best medical institution to target for
-                    admission.
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div className="accordion">
-              <div className="accordion-item">
-                <button id="accordion-button-5" aria-expanded="false">
-                  <span className="icon" aria-hidden="true" />
-                  <span className="accordion-title"> Application Support</span>
-                </button>
-                <div className="accordion-content">
-                  <p>
-                    NEET Navigator guides you in selection of counselling type
-                    and offers you support during filling up of counselling
-                    application. NEET Navigator ensures that counselling
-                    application process is 100% error free so that there is no
-                    loss of opportunity.
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div className="accordion">
-              <div className="accordion-item">
-                <button id="accordion-button-5" aria-expanded="false">
-                  <span className="icon" aria-hidden="true" />
-                  <span className="accordion-title">College List</span>
-                </button>
-                <div className="accordion-content">
-                  <p>
-                    NEET Navigator uses historical data analytics to design
-                    round based highly effective college choice list. The
-                    college choice list is optimized for candidate’s NEET Rank
-                    and Category so that You get admission in THE BEST medical
-                    college in the desired subject.
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div className="accordion">
-              <div className="accordion-item">
-                <button id="accordion-button-5" aria-expanded="false">
-                  <span className="icon" aria-hidden="true" />
-                  <span className="accordion-title">Documentation</span>
-                </button>
-                <div className="accordion-content">
-                  <p>
-                    NEET Navigator ensures that your admission process is smooth
-                    and stress free by ensuring timely guidance on requisite
-                    documentation. The right documentation support ensures
-                    optimization of admission opportunity.
-                  </p>
-                </div>
-              </div>
-            </div>
+          <div className="accordion dasktop-d-none mobile-d-block">
+            {dataArray.map((item, index) => {
+              return (
+                <FAQComponent
+                  key={index}
+                  heading={item.heading}
+                  content={item.content[1]}
+                />
+              );
+            })}
           </div>
         </>
       </section>
@@ -479,39 +373,39 @@ const dataArray = [
 
 const faqArray = [
   {
-    heading: "What is NEET UG exam?",
+    heading: "Who conducts NEET PG exam?",
     content:
-      "NEET (National Eligibility cum Entrance Test) UG is a national level entrance exam for admission to undergraduate medical courses in India. NEET UG is conducted by National Testing Agency (NTA). It is mandatory for students seeking admission in government and private medical colleges in India to qualify NEET exam.",
+      "NEET PG exam is conducted by National Board of Examination in Medical Sciences (NBEMS). NEET PG is single eligibility cum entrance test for admission to MD/MS/PG Diploma Courses in all India government, private and deemed medical institutions except for AIIMS across India, JIPMER puducherry, PGIMER Chandigarh, NIMHANS Bangalore and Sree Chitra Tirunal Institute for Medical Sciences and Technology, Trivandrum.",
   },
   {
-    heading: "Who is eligible to appear for NEET UG exam?",
+    heading: "What is the exam pattern of NEET PG 2023?",
     content:
-      "Indian citizens and OCI (Overseas Citizen of India) card holders who have completed 17 years of age as on December 31st of the year of admission and have passed Class 12th or equivalent exam with Physics, Chemistry, Biology/Biotechnology, and English as mandatory subjects are eligible to appear for NEET exam.",
+      "The exam comprises of 200 Multiple Choice Questions with each question having 4 response options/ distractors in English language only. Candidates are required to select the correct/best/most appropriate response/answer out of the 4 response options provided in each question. Time allotted is 3 hrs 30 minutes.",
   },
   {
-    heading: "How often is NEET UG exam conducted?",
+    heading: "Is there a negative marking in NEET PG 2023?",
     content:
-      "NEET exam is conducted once a year usually in the month of May/ June. NEET 2023 is expected to be conducted in June/July 2023. Though NTA had released 7 th May 2023 as date for NEET 2023 in their calendar but NEET 2023 appears to be delayed",
+      "Yes, There shall be 25% negative marking for incorrect answers. That means while 4 marks will be awarded for right answer, 1 mark will be deducted for wrong attempt. No marks will be deducted for un-attempted questions.",
   },
   {
-    heading: "How to apply for NEET UG exam?",
+    heading: "When will the admit cards for NEET PG 2023 be released?",
     content:
-      "The application process for NEET exam can be done online through the official website of NTA (National Testing Agency). Candidates need to fill the online application form, upload their scanned documents, and pay the exam fee to complete the application process.",
+      "Admit cards shall be made live on National Board of Examination in Medical Sciences website https://nbe.edu.in on 27 February 2023. Please note that while candidates will be informed via SMS/ Email alert regarding",
   },
   {
-    heading: "What is the syllabus for NEET UG exam?",
+    heading: "What is the last time to report to test centre for NEET PG 2023?",
     content:
-      "The syllabus for NEET exam is based on Class 11th and 12th Physics, Chemistry, and Biology/Biotechnology syllabus. It includes topics from these subjects covered during the 2-year course.",
+      "Candidates are required to report at the ‘Reporting Counter’ of test venue at as per time indicated in their admit cards. The reporting counter will close 30 minutes prior to the test start time i.e 9 AM. Therefore all candidates must report at least before 8.30 AM.",
   },
   {
-    heading: "What is the format of NEET UG exam?",
+    heading: "What is the address of the NEET PG 2023 Test centres?",
     content:
-      "NEET UG exam is a pen and paper based test that consists of 180 multiple-choice questions from Physics, Chemistry, Botany and Zoology. The exam duration is 3 hours and 20 minutes.There is negative marking system in NEET UG exam. A candidate gets 4 marks for each right answer and loses 1 mark for each wrong answer.",
+      "Exact address and location of the test centres shall be indicated in the candidate’s admit card. NBEMS doesn’t issue any list of test centres",
   },
   {
-    heading: "What is the minimum qualifying score for NEET UG exam?",
+    heading: "What is the process for PG admissions in AIIMS?",
     content:
-      "The minimum qualifying score for NEET UG exam is 50th percentile for General and EWS category and 40th percentile for reserved categories (SC/ST/OBC). The exact qualifying score varies each year based on the difficulty level of the exam and number of candidates appearing. For NEET UG 2022, cut off marks for General/EWS category student was 117 while for OBC/SC/ST candidates, cut off marks were 93.",
+      "A candidate must appear in INI-CET for seeking PG admission in AIIMS across India, JIPMER Puducherry, PGIMER Chandigarh, NIMHANS Bangalore and Sree Chitra Tirunal Institute for Medical Sciences and Technology, Trivandrum.",
   },
 ];
 

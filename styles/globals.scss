@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");
 
 /* font-family: 'Poppins', sans-serif; */
@@ -11,8 +11,8 @@ li {
   box-sizing: border-box;
   padding: 0;
   margin: 0;
+  font-family: "Poppins", sans-serif !important;
 }
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");
 html,
 body {
   max-width: 100vw;
@@ -157,17 +157,23 @@ li {
   right: 60px;
   z-index: 99;
 }
-
+.ReactReadMoreReadLess a.ReactReadMoreReadLess {
+  background: transparent;
+  border: 0;
+  color: #1366ce;
+  font-size: 16px;
+  padding-left: 4%;
+}
 .accordion button span.icon {
-  border: 2px solid rgb(0 0 0 / 46%);
+  border: 1px solid #000;
 
-    display: flex;
-    align-items: center;
-    line-height: 0;
-    justify-content: center;
-    width: 25px;
-    height: 25px;
-    align-content: center;
+  display: flex;
+  align-items: center;
+  line-height: 0;
+  justify-content: center;
+  width: 22px;
+  height: 22px;
+  align-content: center;
 }
 
 .accordion button span.icon:before,
@@ -183,6 +189,45 @@ li {
 
 .slick-vertical .slick-slide {
   width: unset;
+}
+
+.mtp-14 {
+  margin-top: 14%;
+}
+.mbp-14 {
+  margin-bottom: 14%;
+}
+
+.p-0 {
+  padding: 0px;
+}
+.newdesign .newdesign a.navigation__link {
+  display: block;
+  color: #000;
+  text-decoration: none;
+  padding: 1em;
+  font-weight: 500;
+  font-size: 20px !important;
+  border: none !important;
+}
+
+.newdesign .newdesign a.navigation__link.active {
+  color: #1366ce !important;
+  background-color: white;
+  font-size: 22px !important;
+}
+
+.newdesign .page-section {
+  height: 100vh;
+}
+
+.featurescol.newdesign h2 .navigation__link {
+  line-height: 36px;
+  font-size: 20px !important;
+  color: black !important;
+  font-weight: 500;
+  padding: 0;
+  text-align: left;
 }
 
 .footer {
@@ -779,7 +824,9 @@ td {
   font-weight: 500;
 
   text-align: center;
+  margin-top: 5% !important;
   margin-bottom: 4% !important;
+  padding-bottom: 60px;
 }
 .assistant-youGo h2 span {
   color: #1366ce;
@@ -2860,9 +2907,9 @@ th {
 .navigation__link.active {
   padding: 2px 8px;
   color: #fff !important;
-    padding: 10px;
-    font-weight: 400;
-border: 1px solid #fff;
+  padding: 10px;
+  font-weight: 400;
+  border: 1px solid #fff;
 
   border-radius: 5px;
 }
@@ -3032,8 +3079,8 @@ border: 1px solid #fff;
   gap: 8px;
   span {
     svg {
-width: 17px;
-    height: 17px;
+      width: 17px;
+      height: 17px;
     }
   }
 }
@@ -3763,7 +3810,10 @@ h2 span {
     font-size: 14px;
   }
   .accordion .accordion-content p {
-    font-size: 14px;
+    font-size: 14px !important;
+    margin: 0 !important;
+    padding-bottom: 0px;
+    margin-bottom: 20px !important;
   }
   .review {
     height: 115vh;
@@ -3865,11 +3915,11 @@ p {
 .form form {
   display: flex;
   flex-direction: column;
-  width: 100%;
+  max-width: 381px;
 }
 form input {
   height: 15%;
-  width: 50%;
+  width: 100%;
   padding: 1% 2%;
   font-family: poppins;
   border-radius: 25px;
@@ -3896,7 +3946,7 @@ form textarea:focus {
 }
 form textarea {
   height: 50%;
-  width: 50.3%;
+  width: 100%;
   padding: 1% 2%;
   font-family: poppins;
   border: 1px solid #e5e5e5;
@@ -3905,13 +3955,13 @@ form textarea {
   resize: none;
 }
 .button {
-  width: 56.5%;
+  width: 100%;
   background-color: #1366ce;
   color: white;
 }
 .banner-background {
   position: absolute;
-  top: -75px;
+  top: -35px;
 }
 .banner-background img {
   width: 100%;
@@ -4359,12 +4409,17 @@ h2 span {
   text-align: center;
   margin: 2% 0;
 }
+.newtextrt p {
+  margin-bottom: 0px !important;
+  padding-bottom: 0px !important;
+}
 .team-cards .ML-singla,
 .team-cards .vibhuti,
 .team-cards .rakesh {
   border: 1px solid #e5e5e5;
   box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
   margin-top: 5%;
+  padding-bottom: 20px;
 }
 .ML-singla-image {
   margin-top: -1%;
@@ -5083,14 +5138,31 @@ h2 span {
   display: none !important;
 }
 
-.topSection{
+.topSection {
   position: relative;
   top: -80px;
-  h1{
+  h1 {
     margin-bottom: 20px !important;
   }
-  p{
+  p {
     font-size: 16px !important;
     font-weight: 400 !important;
+  }
+}
+
+@media (min-width: 769px) {
+  .dasktop-d-none {
+    display: none;
+  }
+  .d-flex {
+    display: flex !important;
+  }
+}
+@media (max-width: 768px) {
+  .mobile-d-none {
+    display: none;
+  }
+  .mobile-d-block {
+    display: block;
   }
 }

@@ -1,15 +1,13 @@
 /* eslint-disable jsx-a11y/alt-text */
 /* eslint-disable @next/next/no-img-element */
 import React from "react";
-import { Poppins } from "next/font/google";
-import poppins from "@/fonts/poppins";
 import Link from "next/link";
 import Style from "@/styles/footer.module.scss";
 
 const Footer = () => {
   return (
     <>
-      <div className={`${poppins.className} footer`}>
+      <div className={`  footer`}>
         <div className="footer-left">
           <div className="leftTop-part">
             {/* <img src="/img/blue-logo-final 1.png" alt="neet logo" /> */}
@@ -82,10 +80,10 @@ const Footer = () => {
               <a href="./medical-counselling">Medical Admission Counselling</a>
             </li>
             <li>
-              <Link href="/success-stories">Success Stories</Link>
+              <a href="./success-stories">Success Stories</a>
             </li>
             <li>
-              <a href="#">Blogs</a>
+              <a href="./blogs">Blogs</a>
             </li>
             <li>
               <a href="./aboutUs">About Us</a>
@@ -110,7 +108,7 @@ const Footer = () => {
           </ul>
         </div>
       </div>
-      <div className={`${poppins.className} copyright`}>
+      <div className={` copyright`}>
         <span>© Copyright - NEET Navigator Educational Services </span>
       </div>
 

@@ -16,6 +16,7 @@ import Layout from "layout";
 import "styles/globals.scss";
 import { AppProps } from "next/app";
 import { Hydrate, QueryClient, QueryClientProvider } from "react-query";
+import { Head } from "next/document";
 
 /**
  * Admin Root

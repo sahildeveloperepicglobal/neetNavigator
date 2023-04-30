@@ -6,6 +6,7 @@ import { Inter } from "next/font/google";
 import { TypeAnimation } from "react-type-animation";
 import React, { Component } from "react";
 import { Poppins } from "next/font/google";
+import { Value } from "sass";
 
 export default function AboutUs() {
   return (
@@ -89,69 +90,23 @@ export default function AboutUs() {
               of renowned professionals from industry, medicine and academics.
             </p>
             <div className="team-cards">
-              <div className="rakesh">
-                <div className="rakesh-image">
-                  <img src="/img/rakesh-jain.jpg" alt="" />
-                </div>
-                <div className="rakeshText">
-                  <h3>Rakesh Jain</h3>
-                  <p style={{ fontSize: 14, textAlign: "justify" }}>
-                    Rakesh is among the founder members of NEET Navigator.
-                    Rakesh studied at FMS-Delhi and IIM- A. He brings a rich
-                    experience of over 20 years in<span id="dots">...</span>
-                    <span id="more">
-                      {" "}
-                      industry at most senior levels as Head-HR and over 5 years
-                      of academic experience as associate professor. Rakesh is
-                      currently leading the organization and counselling
-                      processes at NEET Navigator.
-                    </span>
-                    <button id="myBtn">Read more</button>
-                  </p>
-                </div>
-              </div>
-              <div className="vibhuti">
-                <div className="vibhuti-image">
-                  <img src="/img/vibhuti.jpg" alt="" />
-                </div>
-                <div className="vibhutiText">
-                  <h3>Vibhuti Venkat Nataraj</h3>
-                  <p style={{ fontSize: 14, textAlign: "justify" }}>
-                    Vibhuti Venkat Nataraj is a seasoned data scientist and a
-                    master statistician. Currently located in New Zealand, he
-                    started his career with<span id="dotsv">...</span>
-                    <span id="morev">
-                      {" "}
-                      TCS after doing his masters in statistics from Indian
-                      Statistical Institute Calcutta in 1996. Vibhu is
-                      spearheading NEET Navigator’s data management team towards
-                      creating GPS to MBBS admission.
-                    </span>
-                    <button id="myBtnv">Read more</button>
-                  </p>
-                </div>
-              </div>
-              <div className="ML-singla">
-                <div className="MLsingla-image">
-                  <img src="/img/ML.jpeg" alt="" />
-                </div>
-                <div className="MLsingla-text">
-                  <h3>Dr. M. L. Singla</h3>
-                  <p style={{ fontSize: 14, textAlign: "justify" }}>
-                    Dr. Singla is among the pioneers of data sciences and IT
-                    management in India. He started his journey with TCS in
-                    early 80’s and subsequently<span id="dotsm">...</span>
-                    <span id="morem">
-                      {" "}
-                      moved to teaching at FMS- Delhi. He has been one of most
-                      revered dean and professor at FMS- Delhi, MDI and
-                      California State University. He is guiding NEET Navigator
-                      on its journey of value creation.
-                    </span>
-                    <button id="myBtnm">Read more</button>
-                  </p>
-                </div>
-              </div>
+              {popArray.map((Value, index) => {
+                return (
+                  <div className="rakesh" key={index}>
+                    <div className="rakesh-image">
+                      <img src={Value.url} alt="" />
+                    </div>
+                    <div className="rakeshText">
+                      <h3>{Value.heading}</h3>
+                      {/* <p style={{ fontSize: 14, textAlign: "justify" }}>
+                      </p> */}
+                      <ReactReadMoreReadLess>
+                        {Value.content}
+                      </ReactReadMoreReadLess>
+                    </div>
+                  </div>
+                );
+              })}
             </div>
           </div>
         </div>
@@ -374,3 +329,55 @@ export default function AboutUs() {
     </>
   );
 }
+
+const ReactReadMoreReadLess = ({ children }: T) => {
+  const [showMore, setShowMore] = React.useState(false);
+
+  const onShowMore = React.useCallback(() => {
+    setShowMore(!showMore);
+  }, [showMore]);
+  return (
+    <React.Fragment>
+      <div className="ReactReadMoreReadLess newtextrt">
+        <p
+          style={{
+            display: "-webkit-box",
+            WebkitLineClamp: showMore ? "10" : "3",
+            WebkitBoxOrient: "vertical",
+            overflow: "hidden",
+            transition: "all 200ms ease",
+            fontSize: 14,
+            textAlign: "justify",
+            marginBottom: "0px !important",
+          }}
+        >
+          {children}
+        </p>
+        <a onClick={onShowMore} className="ReactReadMoreReadLess">
+          {showMore ? "Read Less" : "Read More"}
+        </a>
+      </div>
+    </React.Fragment>
+  );
+};
+
+const popArray = [
+  {
+    url: "/img/rakesh-jain.jpg",
+    heading: "Rakesh Jain",
+    content:
+      "Rakesh is among the founder members of NEET Navigator. Rakesh studied at FMS-Delhi and IIM- A. He brings a rich experience of over 20 years in industry at most senior levels as Head-HR and over 5 years of academic experience as associate professor. Rakesh is currently leading the organization and counselling processes at NEET Navigator.",
+  },
+  {
+    url: "/img/vibhuti.jpg",
+    heading: "Vibhuti Venkat Nataraj",
+    content:
+      "Vibhuti Venkat Nataraj is a seasoned data scientist and a master statistician. Currently located in New Zealand, he started his career with TCS after doing his masters in statistics from Indian Statistical Institute Calcutta in 1996. Vibhu is spearheading NEET Navigator’s data management team towards creating GPS to MBBS admission.",
+  },
+  {
+    url: "/img/ML.jpeg",
+    heading: "Dr. M. L. Singla",
+    content:
+      "Dr. Singla is among the pioneers of data sciences and IT management in India. He started his journey with TCS in early 80’s and subsequently moved to teaching at FMS- Delhi. He has been one of most revered dean and professor at FMS- Delhi, MDI and California State University. He is guiding NEET Navigator on its journey of value creation. ",
+  },
+];

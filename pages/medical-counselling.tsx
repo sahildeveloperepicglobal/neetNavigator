@@ -24,7 +24,7 @@ const MedicalCounselling = () => {
           <h1 className="banner-firstText">
             <p>
               NEET Navigator is India's most advanced data analytics based
-              <br/>
+              <br />
               Medical Admission Counselling Services
             </p>
           </h1>
@@ -36,9 +36,9 @@ const MedicalCounselling = () => {
       </div>
 
       <section>
-        <div className="bloxfeatures">
+        <div className={`bloxfeatures ${css.bloxfeatures}`}>
           <div className="featuresitems">
-            <div className="featurescol">
+            <div className={`featurescol ${css.feach}`}>
               <div className={css.featuresheadingdiv}>
                 <nav className="navigation" id="mainNav">
                   <a
@@ -161,7 +161,7 @@ const MedicalCounselling = () => {
                   ref={registerSection("section-2")}
                 >
                   <h2 className={css.h2headdiv}>
-                   MCC <span>Counselling</span>
+                    MCC <span>Counselling</span>
                   </h2>
                   <p>
                     Medical admission counselling in India is a complex process
@@ -484,8 +484,7 @@ const MedicalCounselling = () => {
                   ref={registerSection("section-6")}
                 >
                   <h2 className={css.h2headdiv}>
-                    Reservation categories for NEET UG{" "}
-                    <span>counselling</span>
+                    Reservation categories for NEET UG <span>counselling</span>
                   </h2>
                   <p>
                     India has a complex system of reservation rules for medical
@@ -606,8 +605,7 @@ const MedicalCounselling = () => {
                   ref={registerSection("section-7")}
                 >
                   <h2 className={css.h2headdiv}>
-                    College choice filling for NEET UG{" "}
-                    <span>counselling</span>
+                    College choice filling for NEET UG <span>counselling</span>
                   </h2>
                   <p>
                     College choice filling is one of the most important

@@ -1,8 +1,8 @@
 .homebanner {
-  overflow: hidden;
   background: url(/img/pgBannerBackground.png);
   background-repeat: no-repeat;
-  object-fit: cover;
+  background-size: 100%, 100%;
+  background-position: top right !important;
 }
 .bannercontainer {
   margin-top: 0px;
