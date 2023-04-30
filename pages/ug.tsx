@@ -28,17 +28,17 @@ export default function Home() {
                 sequence={[
                   // Same String at the start will only be typed once, initially
                   "Government",
-                  1000,
+                  3000,
                   "Private",
-                  1000,
+                  3000,
                   "Deemed",
-                  1000,
+                  3000,
                   "NRI",
-                  1000,
+                  3000,
                   "Minority",
-                  1000,
+                  3000,
                 ]}
-                speed={50}
+                speed={300}
                 repeat={Infinity}
               />
               <p>

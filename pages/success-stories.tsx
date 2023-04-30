@@ -2,19 +2,11 @@
 /* eslint-disable react/no-unescaped-entities */
 /* eslint-disable @next/next/no-img-element */
 import Head from "next/head";
-import Image from "next/image";
-import { Inter } from "next/font/google";
-import Swiper from "swiper";
 import css from "@/styles/successstories.module.scss";
-import { TypeAnimation } from "react-type-animation";
 // import React, { Component } from "react";
-import { Poppins } from "next/font/google";
 import * as React from "react";
-import { createRoot } from "react-dom/client";
-
-import { Carousel, CarouselItem } from "react-round-carousel";
+import { Carousel } from "react-round-carousel";
 import "react-round-carousel/src/index.css";
-
 export default function SuccessStories() {
   // const swiper = new Swiper(".mySwiper", {
   //   effect: "coverflow",
