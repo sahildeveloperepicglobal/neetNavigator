@@ -56,7 +56,7 @@ export default function Home() {
 
       <section>
         <div className="introduction-home container  ">
-          <h2 style={{ marginTop: "-72px" }}>Introduction</h2>
+          <h2 style={{ marginTop: "-72px" , marginBottom:"25px" }}>Introduction</h2>
           <p>
             NEET Navigator is founded by Mr. Rakesh Jain who is an alumnus of
             FMS-Delhi and IIM- Ahmedabad. NEET Navigator is run by professionals
@@ -198,7 +198,7 @@ export default function Home() {
                   })}
                 </ul>
               </div>
-              <div className="approach-text">
+              <div className="approach-text" style={{ width: '449px',paddingLeft: '56px'}}>
                 <h3 id="heading"> {selected.content[0]}</h3>
                 <p id="paragraph">{selected.content[1]}</p>
               </div>
@@ -315,7 +315,7 @@ export default function Home() {
       <section>
         <div className="container">
           <div className="services-parent">
-            <h2>Services</h2>
+            <h2>Services</h2> <br />
             <div className="services">
               <div className="services-leftSection">
                 <p>
@@ -324,11 +324,13 @@ export default function Home() {
                   based medical admission counselling guidance for admission in
                   MBBS, BDS, BAMS programs.
                 </p>
+                <br />
                 <p>
                   {" "}
                   NEET Navigator offers medical admission counselling guidance
                   services for MCC as well as All States counselling.
                 </p>
+                <br />
                 <p>
                   {" "}
                   NEET Navigator offers most precise and personalized guidance

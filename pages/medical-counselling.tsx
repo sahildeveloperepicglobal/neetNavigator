@@ -15,7 +15,7 @@ const MedicalCounselling = () => {
   return (
     <div>
       <div className="lighthouse-banner">
-        <div className="banner-textLight animate__animated animate__zoomInDown">
+        <div className="banner-textLight animate__animated animate__zoomInDown topSection">
           <h1 className="banner-firstText">
             Medical Admission <span>Counselling</span>
             {/* <span id="hori">HORIZON</span> */}

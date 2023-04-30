@@ -86,10 +86,10 @@ export default function Home() {
     infinite: true,
     vertical: true,
     verticalSwiping: true,
-    slidesToShow: 2.9,
+    slidesToShow: 1.9,
     slidesToScroll: 1,
     autoplay: true,
-    autoplaySpeed: 2000,
+    autoplaySpeed: 1000,
     responsive: [
       {
         breakpoint: 769,
@@ -98,7 +98,7 @@ export default function Home() {
           slidesToScroll: 1,
           vertical: false,
           verticalSwiping: false,
-          autoplaySpeed: 2000,
+          autoplaySpeed: 1000,
           centerMode: true,
           centerPadding: "0px",
         },
@@ -113,7 +113,7 @@ export default function Home() {
           <div
             className={`${Style.admission_banner} animate__animated animate__zoomInDown`}
           >
-            <h1>India s MBBS Admission College Predictor</h1>
+            <h1>India's MBBS Admission College Predictor</h1>
             <div className={Style.bannerText}>
               <TypeAnimation
                 sequence={[
