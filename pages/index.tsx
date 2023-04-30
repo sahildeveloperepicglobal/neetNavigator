@@ -113,7 +113,7 @@ export default function Home() {
           <div
             className={`${Style.admission_banner} animate__animated animate__zoomInDown`}
           >
-            <h1>India's MBBS Admission College Predictor</h1>
+            <h1>India&apos;s MBBS Admission College Predictor</h1>
             <div className={Style.bannerText}>
               <TypeAnimation
                 sequence={[
