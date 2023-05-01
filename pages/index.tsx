@@ -15,7 +15,7 @@ export default function Home() {
     dots: false,
     infinite: true,
     autoplay: true,
-    autoplaySpeed: 2500,
+    autoplaySpeed: 3000,
     slidesToShow: 5,
     slidesToScroll: 1,
     responsive: [
@@ -26,7 +26,7 @@ export default function Home() {
           slidesToScroll: 1,
           vertical: false,
           verticalSwiping: false,
-          autoplaySpeed: 2000,
+          autoplaySpeed: 3000,
           centerMode: true,
           centerPadding: "60px",
         },
@@ -41,7 +41,7 @@ export default function Home() {
     slidesToShow: 2.9,
     slidesToScroll: 1,
     autoplay: true,
-    autoplaySpeed: 2000,
+    autoplaySpeed: 3000,
     responsive: [
       {
         breakpoint: 769,
@@ -50,7 +50,7 @@ export default function Home() {
           slidesToScroll: 1,
           vertical: false,
           verticalSwiping: false,
-          autoplaySpeed: 2000,
+          autoplaySpeed: 3000,
           centerMode: true,
           centerPadding: "0px",
         },
@@ -65,7 +65,7 @@ export default function Home() {
     slidesToShow: 2.9,
     slidesToScroll: 1,
     autoplay: true,
-    autoplaySpeed: 2000,
+    autoplaySpeed: 3000,
     responsive: [
       {
         breakpoint: 769,
@@ -74,7 +74,7 @@ export default function Home() {
           slidesToScroll: 1,
           vertical: false,
           verticalSwiping: false,
-          autoplaySpeed: 2000,
+          autoplaySpeed: 3000,
           centerMode: true,
           centerPadding: "0px",
         },
@@ -89,7 +89,7 @@ export default function Home() {
     slidesToShow: 1.9,
     slidesToScroll: 1,
     autoplay: true,
-    autoplaySpeed: 1000,
+    autoplaySpeed: 3000,
     responsive: [
       {
         breakpoint: 769,
@@ -98,7 +98,7 @@ export default function Home() {
           slidesToScroll: 1,
           vertical: false,
           verticalSwiping: false,
-          autoplaySpeed: 1000,
+          autoplaySpeed: 3000,
           centerMode: true,
           centerPadding: "0px",
         },
@@ -120,15 +120,15 @@ export default function Home() {
                 sequence={[
                   // Same String at the start will only be typed once, initially
                   "Government",
-                  6000,
+                  3000,
                   "Private",
-                  6000,
+                  3000,
                   "Deemed",
-                  6000,
+                  3000,
                   "NRI",
-                  6000,
+                  3000,
                   "Minority",
-                  6000,
+                  3000,
                 ]}
                 speed={300}
                 repeat={Infinity}
@@ -492,12 +492,14 @@ export default function Home() {
           </h2>
 
           <div className="colleges-marqouter    colleges-marq">
-            <Slider {...settingss}>
+            {/* <Slider {...settingss}> */}
+            <marquee behavior="" direction="" scrolldelay="0">
               {collegeslogo.map((logo) => (
                 // eslint-disable-next-line react/jsx-key
                 <img src={logo.url} />
               ))}
-            </Slider>
+              </marquee>
+            {/* </Slider> */}
           </div>
         </div>
       </section>

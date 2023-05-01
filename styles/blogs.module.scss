@@ -2312,3 +2312,27 @@
     object-fit: cover;
   }
 }
+
+
+@media (max-width:768px) {
+  .blogcard{
+    ul {
+      grid-template-columns: repeat(2, 1fr);
+      display: grid;
+       
+      gap: 20px;
+    }
+  }
+}
+
+
+@media (max-width:500px) {
+  .blogcard{
+    ul {
+      grid-template-columns: repeat(1, 1fr);
+      display: grid;
+       
+      gap: 20px;
+    }
+  }
+}

@@ -1040,9 +1040,9 @@ td {
   margin-bottom: 50px;
 }
 .colleges-marq img {
-  width: 100px !important;
-  height: 100px !important;
-  object-fit: contain;
+  // width: 100px;
+  height: 100px; 
+  padding-right: 5%;
 }
 .approach {
   text-align: center;

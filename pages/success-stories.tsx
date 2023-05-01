@@ -5,7 +5,7 @@ import Head from "next/head";
 import css from "@/styles/successstories.module.scss";
 // import React, { Component } from "react";
 import * as React from "react";
-import { Carousel } from "react-round-carousel";
+import { Carousel } from "@/components/carousel";
 import "react-round-carousel/src/index.css";
 export default function SuccessStories() {
   // const swiper = new Swiper(".mySwiper", {
@@ -216,7 +216,12 @@ export default function SuccessStories() {
         </span>
       </section>
 
-      <Carousel itemWidth={250} items={items} />
+      <Carousel 
+      itemWidth={250} items={items}
+      
+      autoplay={true}
+      interval={2000}
+      />
     </>
   );
 }
