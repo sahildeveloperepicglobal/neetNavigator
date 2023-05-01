@@ -19,7 +19,7 @@ const nextConfig = {
     ];
   },
   images: {
-    domains: ["blogsapi.neetnavigator.com"],
+    domains: ["blogsapi.neetnavigator.com", "cdn.pixabay.com", "localhost"],
   },
 };
 

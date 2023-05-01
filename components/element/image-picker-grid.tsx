@@ -1,11 +1,11 @@
 /* eslint-disable @next/next/no-img-element */
 import React from "react";
 import { useEffect } from "react";
-import css from "styles/picker.module.scss";
+import AddIcon from "@/icons/AddIcon";
 import EditIcon from "@/icons/EditIcon";
 import DeleteIcon from "@/icons/DeleteIcon";
+import css from "styles/picker.module.scss";
 import AddimageIcon from "@/icons/AddimageIcon";
-import AddIcon from "@/icons/AddIcon";
 
 interface DynamicInputProps {
   title?: string;

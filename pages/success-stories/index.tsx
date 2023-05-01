@@ -5,8 +5,12 @@ import Head from "next/head";
 import * as React from "react";
 import { Carousel } from "@/components/carousel";
 import css from "@/styles/successstories.module.scss";
+import { useGetAllStories } from "@/network-requests/queries";
 
 export default function SuccessStories() {
+  const { data } = useGetAllStories();
+
+  console.log(data && data[0]);
   return (
     <>
       <Head>
@@ -28,14 +32,13 @@ export default function SuccessStories() {
         </div>
         <div className={css.successpara}>
           <h1>
-            DIKSHA<br></br>MIDHA
+            {/* DIKSHA<br></br>MIDHA */}
+            {data && data[0]?.name}
           </h1>
-          <p>
-            "Overcoming<br></br>Challenges with<br></br>EET Navigator"
-          </p>
+          <p>{`"${data && data[0]?.quotes[0]}"`}</p>
         </div>
       </section>
-      <section className={css.div3}>
+      <section className={css.div4}>
         <span>
           <img src="/img/Ellipse6.png" alt="" />
         </span>
@@ -43,7 +46,13 @@ export default function SuccessStories() {
           <img src="/img/j1.png" alt="" />
         </span>
       </section>
-      <section className={css.div4}>
+      <section
+        className={css.div4}
+        dangerouslySetInnerHTML={{
+          __html: data && data[0]?.content,
+        }}
+      ></section>
+      {/* <section className={css.div4}>
         <p>
           For Diksha Midha, a student with a dream of becoming a doctor, the
           road to success was full of challenges. Despite her best efforts, she
@@ -128,7 +137,7 @@ export default function SuccessStories() {
         <span>
           <img src="/img/h2.png" alt="" />
         </span>
-      </section>
+      </section> */}
 
       <Carousel itemWidth={250} items={items} autoplay={true} interval={2000} />
     </>
