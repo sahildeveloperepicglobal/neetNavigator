@@ -216,12 +216,7 @@ export default function SuccessStories() {
         </span>
       </section>
 
-      <Carousel 
-      itemWidth={250} items={items}
-      
-      autoplay={true}
-      interval={2000}
-      />
+      <Carousel itemWidth={250} items={items} autoplay={true} interval={2000} />
     </>
   );
 }
