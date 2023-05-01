@@ -10,6 +10,7 @@ import Image from "next/image";
 import { useRouter } from "next/router";
 import { deleteBlogs } from "@/network-requests/api/blogs";
 import { useGetAllStories } from "@/network-requests/queries";
+import { deleteStory } from "@/network-requests/api/stories";
 
 const StoryHome = () => {
   const { data, refetch, isLoading } = useGetAllStories();
@@ -20,7 +21,7 @@ const StoryHome = () => {
     async (id: string | undefined) => {
       if (id) {
         if (window.confirm("Are you sure to delete this story")) {
-          const response = await deleteBlogs(id);
+          const response = await deleteStory(id);
           alert(`Story Deleted Successfully`);
           console.log(response);
           refetch();
