@@ -12,3 +12,14 @@ export interface BlogsTypes {
     keywords: string[];
   };
 }
+
+interface StoryTypes {
+  _id?: string;
+  name: string;
+  slug: string;
+  content: string;
+  image: string;
+  quotes: string[];
+  createdAt?: string;
+  categories: string[];
+}

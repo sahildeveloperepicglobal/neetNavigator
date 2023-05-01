@@ -6,7 +6,7 @@ export type CarouselItem = {
   readonly alt?: string;
   readonly content?: React.ReactNode;
   readonly image: string;
-  readonly [key:string]:any
+  readonly [key: string]: any;
 };
 
 export type CarouselProps = {

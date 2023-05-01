@@ -26,27 +26,32 @@ export default function Blogs() {
 
       <section className={styles.blogcard}>
         <ul>
-          {data?.map((list, index) => {
-            console.log(list);
+          {data?.map((item, index) => {
+            console.log(item);
             return (
               <li key={index}>
                 <div className={styles.box1}>
-                  <img src={list.images[0]} alt="img" />
-                  <div className={styles.boxcontent}>
-                    <h2>{list.name}</h2>
-                    <div
-                      dangerouslySetInnerHTML={{
-                        __html: list.content.slice(0, 100),
-                      }}
-                    ></div>
-                    <Link href={`/blogs/${list.slug}`}>Read More</Link>
-                  </div>
+                  <Image
+                    height={100}
+                    width={100}
+                    src={item.images[0]}
+                    alt="img"
+                  />
+                  <Link href={`/blogs/${item.slug}`}>
+                    <div className={styles.boxcontent}>
+                      <h2>{item.name}</h2>
+                      <div
+                        dangerouslySetInnerHTML={{
+                          __html: item.content.slice(0, 100),
+                        }}
+                      ></div>
+                      <a>Read More</a>
+                    </div>
+                  </Link>
                 </div>
               </li>
             );
           })}
-          
-          
         </ul>
       </section>
     </>

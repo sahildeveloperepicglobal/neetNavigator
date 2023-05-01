@@ -1,52 +1,39 @@
 /* eslint-disable @next/next/no-img-element */
 import React from "react";
-import pMap from "p-map";
+import slugify from "slugify";
 import dynamic from "next/dynamic";
 import { useImmer } from "use-immer";
+import { useRouter } from "next/router";
 import Style from "/styles/blogs.module.scss";
 import Input from "@/components/element/input";
 import ChipInput from "@/components/chip-input";
 import AddMoreButton from "@/components/element/addmore";
 import { uploadBlogImage } from "@/network-requests/image";
 import DynamicImageGrid from "@/components/element/image-picker-grid";
-import { useCreateNewBlog } from "@/network-requests/mutations";
-import { useRouter } from "next/router";
-import slugify from "slugify";
+import { useCreateNewStory } from "@/network-requests/mutations";
 
 const IRichTextEditor = dynamic(() => import("@mantine/rte"), {
   ssr: false,
   loading: () => null,
 });
 
-const CreateBlog = () => {
+const CreateStory = () => {
   const router = useRouter();
 
   const [state, setState] = useImmer({
     name: "",
     slug: "",
+    image: "",
     content: "",
-    images: [],
+    quotes: [],
     categories: [],
-    meta: {
-      title: "",
-      description: "",
-      keywords: [],
-    },
   });
-  const { mutate, isLoading } = useCreateNewBlog();
+  const { mutate, isLoading } = useCreateNewStory();
 
   const onChangeState = React.useCallback(
     (key: keyof typeof state, value: any) => {
       setState((draft) => {
         draft[key] = value;
-      });
-    },
-    [setState]
-  );
-  const onChangeMetaState = React.useCallback(
-    (key: keyof typeof state["meta"], value: any) => {
-      setState((draft) => {
-        draft.meta[key] = value;
       });
     },
     [setState]
@@ -60,44 +47,50 @@ const CreateBlog = () => {
       }
       return image;
     };
-    const imagesUrl = (await pMap(state.images, getImageUrl)) as string[];
+    const image = await getImageUrl(state.image);
     const data = {
       ...state,
-      images: imagesUrl,
+      image,
     };
+    console.log(data);
     mutate(data, {
       onSuccess: (data: any) => {
         router.back();
-        alert(data?.message || "Blog Created Successfully");
+        alert(data?.message || "Story Created Successfully");
       },
       onError: () => {
         alert("Something went wrong");
       },
     });
-  }, [mutate, state]);
+  }, [mutate, router, state]);
 
+  console.log(state);
   return (
     <>
       <div className={Style.mydiv}>
-        <h1>Create Blog</h1>
+        <h1>Create Story</h1>
       </div>
       <div
         className={`${Style.tablebox} ${Style.mt2} ${Style.productuploadtabbox}`}
       >
         <div className={Style.tabbox}>
           <div className="tabcontantinner">
-            <h2> Blog Information</h2>
+            <h4>Story</h4>
             <div className="box">
               <ul>
                 <li>
                   <Input
                     name="name"
                     type="text"
-                    label={"Blog Heading"}
+                    label={"Heading"}
                     placeholder="Enter blog title"
-                    onChange={({ target }) =>
-                      onChangeState("name", target.value)
-                    }
+                    onChange={({ target }) => {
+                      onChangeState("name", target.value);
+                      onChangeState(
+                        "slug",
+                        slugify(target.value, { lower: true, strict: true })
+                      );
+                    }}
                     value={state.name}
                   />
                 </li>
@@ -107,14 +100,18 @@ const CreateBlog = () => {
                     type="text"
                     label={"Slug (uniq for every blog)"}
                     placeholder="Auto Generated"
-                    onChange={({ target }) => {
-                      onChangeState("slug", target.value);
-                      onChangeState(
-                        "slug",
-                        slugify(target.value, { lower: true, strict: true })
-                      );
-                    }}
+                    onChange={({ target }) =>
+                      onChangeState("slug", target.value)
+                    }
                     value={state.slug}
+                  />
+                </li>
+                <li className="grid">
+                  <ChipInput
+                    label={`Quotes`}
+                    value={state.quotes}
+                    placeholder="Add Quotes..."
+                    onChange={(value) => onChangeState("quotes", value)}
                   />
                 </li>
                 <li>
@@ -142,6 +139,7 @@ const CreateBlog = () => {
                     value={state.content}
                   />
                 </li>
+
                 <li className="grid">
                   <ChipInput
                     value={state.categories}
@@ -150,53 +148,18 @@ const CreateBlog = () => {
                     onChange={(value) => onChangeState("categories", value)}
                   />
                 </li>
-                <br />
-                <h2>SEO</h2>
-                <li>
-                  <Input
-                    type="text"
-                    name="metaTitle"
-                    value={state.meta.title}
-                    label={"Meta Title"}
-                    placeholder="Enter meta title"
-                    onChange={({ target }) =>
-                      onChangeMetaState("title", target.value)
-                    }
-                  />
-                </li>
-                <li>
-                  <Input
-                    type="text"
-                    name="metaDescription"
-                    value={state.meta.description}
-                    label={"Meta Description"}
-                    placeholder="Enter meta description"
-                    onChange={({ target }) =>
-                      onChangeMetaState("description", target.value)
-                    }
-                  />
-                </li>
-
-                <li className="grid">
-                  <ChipInput
-                    label={`Key Word`}
-                    value={state.meta.keywords}
-                    placeholder="Add Key-Word"
-                    onChange={(value) => onChangeMetaState("keywords", value)}
-                  />
-                </li>
               </ul>
             </div>
           </div>
         </div>
         <div className={Style.right}>
-          <h2>Blog Image</h2>
+          <h4>Image</h4>
           <div className={Style["box"]}>
             <ul>
               <li>
                 <DynamicImageGrid
-                  initialValue={state.images}
-                  getValue={(value) => onChangeState("images", value)}
+                  initialValue={state.image}
+                  getValue={(value) => onChangeState("image", value[0])}
                 />
               </li>
             </ul>
@@ -210,4 +173,4 @@ const CreateBlog = () => {
   );
 };
 
-export default CreateBlog;
+export default CreateStory;
