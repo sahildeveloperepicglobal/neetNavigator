@@ -11,29 +11,8 @@ import PlusIcon from "@/icons/PlusIcon";
 
 export default function Home() {
   const [selected, setSelected] = React.useState(dataArray[0]);
-  var settingss = {
-    dots: false,
-    infinite: true,
-    autoplay: true,
-    autoplaySpeed: 3000,
-    slidesToShow: 5,
-    slidesToScroll: 1,
-    responsive: [
-      {
-        breakpoint: 769,
-        settings: {
-          slidesToShow: 2,
-          slidesToScroll: 1,
-          vertical: false,
-          verticalSwiping: false,
-          autoplaySpeed: 3000,
-          centerMode: true,
-          centerPadding: "60px",
-        },
-      },
-    ],
-  };
-  var settings = {
+
+  const settings = {
     dots: true,
     infinite: true,
     vertical: true,
@@ -427,7 +406,7 @@ export default function Home() {
             </div>
             <div className="slider moslider" id="last-slide">
               <ul className="sliderapproch right-slider">
-                <Slider {...settings}>
+                <Slider {...settings3}>
                   <li>
                     <div className="image-textContainer twelve-card">
                       <img src="./img/shruti jain.jpg" alt="" />
