@@ -18,9 +18,13 @@ export type CarouselProps = {
   readonly showControls?: boolean;
   readonly autoplay?: boolean;
   readonly interval?: number;
+  readonly onSelectSlide: (item: CarouselItem) => void;
 };
 
-export const Carousel: React.FC<CarouselProps> = (props: CarouselProps) => {
+export const Carousel: React.FC<CarouselProps> = ({
+  onSelectSlide,
+  ...props
+}: CarouselProps) => {
   const itemWidth = props.itemWidth;
   const len = props.items.length;
   const radius = Math.round((itemWidth || 210) / 2 / Math.tan(Math.PI / len));
@@ -61,8 +65,6 @@ export const Carousel: React.FC<CarouselProps> = (props: CarouselProps) => {
   const prev = () => setSelectedIndex(selectedIndex - 1);
   const next = () => setSelectedIndex(selectedIndex + 1);
 
-  console.log(selectedIndex);
-
   useInterval(() => {
     if (props.autoplay) {
       if (selectedIndex < len) {
@@ -97,9 +99,9 @@ export const Carousel: React.FC<CarouselProps> = (props: CarouselProps) => {
               className={getClassName("__slide")}
               key={index}
               style={getSlideStyle(index)}
+              onClick={() => onSelectSlide(item)}
             >
-              <img src={item.image} alt={item.alt} />
-
+              <img src={item.image} alt={item.alt} crossOrigin="anonymous" />
               <div className={getClassName("__slide-overlay")}>
                 {item.content}
               </div>
@@ -108,7 +110,7 @@ export const Carousel: React.FC<CarouselProps> = (props: CarouselProps) => {
         </div>
       </div>
 
-      {props.showControls && (
+      {/* {props.showControls && (
         <div className={getClassName("__controls")}>
           <button
             className={getClassName(["__control", "__control--prev"])}
@@ -124,7 +126,7 @@ export const Carousel: React.FC<CarouselProps> = (props: CarouselProps) => {
             {props.nextButtonContent}
           </button>
         </div>
-      )}
+      )} */}
     </>
   );
 };
