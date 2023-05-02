@@ -94,12 +94,14 @@ export default function Home() {
       {
         breakpoint: 769,
         settings: {
-          slidesToShow: 1,
+          dots: true,
+          infinite: true,
+          vertical: true,
+          verticalSwiping: true,
+          slidesToShow: 2,
           slidesToScroll: 1,
-          vertical: false,
-          verticalSwiping: false,
+          autoplay: true,
           autoplaySpeed: 3000,
-          centerMode: true,
           centerPadding: "0px",
         },
       },

@@ -1520,6 +1520,12 @@ td {
   }
 }
 @media only screen and (max-width: 426px) {
+
+#second-slide , #last-slide {
+  display: none;
+}
+
+
   .faq-section .heading h2 {
     margin: 0;
   }
