@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Link from "next/link";
 
 const Header = () => {
@@ -8,6 +8,21 @@ const Header = () => {
     setIsOpen(!isOpen);
   };
 
+  useEffect(() => {
+    const handleDocumentClick = (event:any) => {
+      const menuBar = document.getElementById('menu-bar');
+      if (menuBar && !menuBar.contains(event.target)) {
+        setIsOpen(false);
+      }
+    };
+  
+    document.addEventListener('click', handleDocumentClick);
+  
+    return () => {
+      document.removeEventListener('click', handleDocumentClick);
+    };
+  }, [isOpen]);
+    
   return (
     <div className={`   header`}>
       <div className="header-left">
