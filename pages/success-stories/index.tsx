@@ -6,11 +6,28 @@ import * as React from "react";
 import { Carousel } from "@/components/carousel";
 import css from "@/styles/successstories.module.scss";
 import { useGetAllStories } from "@/network-requests/queries";
+import { StoryTypes } from "@/typings/blogs";
 
 export default function SuccessStories() {
-  const { data } = useGetAllStories();
+  const { data, isLoading, isFetched } = useGetAllStories();
 
-  console.log(data && data[0]);
+  const imageItems = data?.map((value) => {
+    return {
+      image: value.image,
+    };
+  });
+  console.log(imageItems);
+
+  const [currentStory, setCurrentStory] = React.useState<Partial<StoryTypes>>();
+
+  React.useMemo(() => {
+    if (isFetched) {
+      if (data) {
+        setCurrentStory(data[0]);
+      }
+    }
+  }, [data, isFetched]);
+
   return (
     <>
       <Head>
@@ -24,18 +41,22 @@ export default function SuccessStories() {
         <h1>
           My<br></br>Success Story
         </h1>
-        <img src="/img/ss.png" alt="" />
+        <img src={"/img/ss.png"} alt="" />
       </section>
       <section className={css.div2}>
         <div className={css.successimg}>
-          <img src="/img/333.png" alt="" />
+          <img
+            src={currentStory?.image}
+            alt={currentStory?.slug}
+            crossOrigin="anonymous"
+          />
         </div>
         <div className={css.successpara}>
           <h1>
             {/* DIKSHA<br></br>MIDHA */}
-            {data && data[0]?.name}
+            {currentStory?.name}
           </h1>
-          <p>{`"${data && data[0]?.quotes[0]}"`}</p>
+          <p>{`"${currentStory?.quotes && currentStory?.quotes[0]}"`}</p>
         </div>
       </section>
       <section className={css.div4}>
@@ -49,7 +70,7 @@ export default function SuccessStories() {
       <section
         className={css.div4}
         dangerouslySetInnerHTML={{
-          __html: data && data[0]?.content,
+          __html: (currentStory?.content && currentStory?.content) as string,
         }}
       ></section>
       {/* <section className={css.div4}>
@@ -139,85 +160,99 @@ export default function SuccessStories() {
         </span>
       </section> */}
 
-      <Carousel itemWidth={250} items={items} autoplay={true} interval={2000} />
+      {!isLoading && (
+        <Carousel
+          itemWidth={250}
+          items={data as any}
+          autoplay={true}
+          interval={3000}
+          onSelectSlide={(item: any) => {
+            window.scrollTo({
+              behavior: "smooth",
+              top: 0,
+            });
+            setCurrentStory(item);
+          }}
+        />
+      )}
     </>
   );
 }
 
-const items = [
-  {
-    alt: "image first",
-    href: "/success-stories/story",
-    image: "/image/anikajain.jpg",
-  },
-  {
-    alt: "image first",
-    href: "/success-stories/story",
-    image: "/image/dikshajain.jpg",
-  },
-  {
-    alt: "image first",
-    href: "/success-stories/story",
-    image: "/image/dikshamidha.jpg",
-  },
-  {
-    alt: "image first",
-    href: "/success-stories/story",
-    image: "/image/dikshasinghal.jpg",
-  },
-  {
-    alt: "image first",
-    href: "/success-stories/story",
-    image: "/image/divyaalokkaushik.jpg",
-  },
-  {
-    alt: "image first",
-    href: "/success-stories/story",
-    image: "/image/divyanirwan.jpg",
-  },
-  {
-    alt: "image first",
-    href: "/success-stories/story",
-    image: "/image/gayatri.jpg",
-  },
-  {
-    alt: "image first",
-    href: "/success-stories/story",
-    image: "/image/gunika.jpg",
-  },
-  {
-    alt: "image first",
-    href: "/success-stories/story",
-    image: "/image/kanikagupta.jpg",
-  },
-  {
-    alt: "image first",
-    href: "/success-stories/story",
-    image: "/image/palakrathi.jpg",
-  },
-  {
-    alt: "image first",
-    href: "/success-stories/story",
-    image: "/image/ravi.jpg",
-  },
-  {
-    alt: "image first",
-    href: "/success-stories/story",
-    image: "/image/shrutijain.jpg",
-  },
-  {
-    alt: "image first",
-    href: "/success-stories/story",
-    image: "/image/taniya.jpg",
-  },
-  {
-    alt: "image first",
-    href: "/success-stories/story",
-    image: "/image/vasudha.jpg",
-  },
-  {
-    alt: "image first",
-    href: "/success-stories/story",
-    image: "/image/yukti.jpg",
-  },
-];
+// const items = [
+//   {
+//     alt: "image first",
+//     href: "/success-stories/story",
+//     image: "/image/anikajain.jpg",
+//   },
+//   {
+//     alt: "image first",
+//     href: "/success-stories/story",
+//     image: "/image/dikshajain.jpg",
+//   },
+//   {
+//     alt: "image first",
+//     href: "/success-stories/story",
+//     image: "/image/dikshamidha.jpg",
+//   },
+//   {
+//     alt: "image first",
+//     href: "/success-stories/story",
+//     image: "/image/dikshasinghal.jpg",
+//   },
+//   {
+//     alt: "image first",
+//     href: "/success-stories/story",
+//     image: "/image/divyaalokkaushik.jpg",
+//   },
+//   {
+//     alt: "image first",
+//     href: "/success-stories/story",
+//     image: "/image/divyanirwan.jpg",
+//   },
+//   {
+//     alt: "image first",
+//     href: "/success-stories/story",
+//     image: "/image/gayatri.jpg",
+//   },
+//   {
+//     alt: "image first",
+//     href: "/success-stories/story",
+//     image: "/image/gunika.jpg",
+//   },
+//   {
+//     alt: "image first",
+//     href: "/success-stories/story",
+//     image: "/image/kanikagupta.jpg",
+//   },
+//   {
+//     alt: "image first",
+//     href: "/success-stories/story",
+//     image: "/image/palakrathi.jpg",
+//   },
+//   {
+//     alt: "image first",
+//     href: "/success-stories/story",
+//     image: "/image/ravi.jpg",
+//   },
+//   {
+//     alt: "image first",
+//     href: "/success-stories/story",
+//     image: "/image/shrutijain.jpg",
+//   },
+//   {
+//     alt: "image first",
+//     href: "/success-stories/story",
+//     image: "/image/taniya.jpg",
+//   },
+//   {
+//     alt: "image first",
+//     href: "/success-stories/story",
+//     image: "/image/vasudha.jpg",
+//   },
+//   {
+//     alt: "image first",
+//     href: "/success-stories/story",
+//     image: "/image/yukti.jpg",
+//   },
+// ];
