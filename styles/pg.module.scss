@@ -25,7 +25,7 @@
 }
 
 .admission_banner p {
-  font-size: 18px !important;
+  font-size: 18px;
   text-align: center;
   font-family: "Open Sans", sans-serif;
 }
@@ -58,7 +58,7 @@
   font-size: 20px;
   line-height: 158%;
   padding: 0 2%;
-  margin: 2% 0 !important;
+  margin: 3% 0 !important;
 }
 .readmore {
   width: auto;
@@ -93,4 +93,16 @@
   text-align: justify;
   font-size: 18px !important;
   font-weight: 300;
+}
+
+@media (max-width: 768px) {
+  .bannerText span {
+    font-size: 24px;
+  }
+  .admission_banner {
+    p {
+      font-size: 14px !important;
+      font-weight: 300;
+    }
+  }
 }

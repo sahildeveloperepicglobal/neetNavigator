@@ -26,7 +26,7 @@
 }
 
 .admission_banner p {
-  font-size: 18px !important;
+  font-size: 18px;
   text-align: center;
   font-family: "Open Sans", sans-serif;
 }
@@ -108,5 +108,13 @@
 
   .headingmin {
     margin: 0px !important;
+  }
+  .bannerText span {
+    font-size: 24px;
+  }
+  .admission_banner {
+    p {
+      font-size: 16px !important;
+    }
   }
 }
