@@ -1050,7 +1050,7 @@ td {
   display: flex;
   flex-direction: column;
   align-items: center;
-  height: 96vh;
+  height: 95vh;
   justify-content: center;
 }
 .our-approach {
@@ -1520,11 +1520,10 @@ td {
   }
 }
 @media only screen and (max-width: 426px) {
-
-#second-slide , #last-slide {
-  display: none;
-}
-
+  #second-slide,
+  #last-slide {
+    display: none;
+  }
 
   .faq-section .heading h2 {
     margin: 0;
@@ -1913,14 +1912,14 @@ td {
     margin: 5% 0 !important;
   }
   .assistant-youGo {
-    padding: 4% 3% 10% 3% !important;
+    padding: 4% 3% 0% 3% !important;
   }
   .faq-section .accordion .accordion-item .accordion-title {
     font-size: 16px !important;
   }
   p {
     font-size: 14px !important;
-    font-weight: 400;
+    font-weight: 400 !important;
     text-align: justify;
   }
   a {
@@ -2707,7 +2706,7 @@ th {
     padding-right: 0 !important;
   }
   .faq-section {
-    margin: 20% 0 !important;
+    margin: 8% 0 !important;
   }
   .page-section .navigation__link {
     font-size: 24px !important;
@@ -2887,7 +2886,7 @@ th {
   align-content: center;
   p {
     margin-top: 20px;
-    font-size: 16px !important;
+    font-size: 16px;
     font-weight: 400 !important;
   }
 }
@@ -3849,7 +3848,7 @@ h2 span {
     height: auto !important;
   }
   .services .services-leftSection p {
-    text-align: justify;
+    text-align: initial;
   }
   .why-hire .below-poeFirst p,
   .why-hire .below-poeSecond p {
@@ -3925,7 +3924,7 @@ p {
 form input {
   height: 15%;
   width: 100%;
-  padding: 1% 2%;
+  padding: 3% 5%;
   font-family: poppins;
   border-radius: 25px;
 }
@@ -4295,6 +4294,7 @@ h1 span {
 .third-poem p,
 .fourth-poem p {
   font-style: italic;
+  text-align: center;
 }
 .poem img {
   width: 25%;
@@ -4797,7 +4797,7 @@ h2 span {
     margin-top: 5% !important;
   }
   .propositions .propositions-leftPart h2 {
-    text-align: center;
+    text-align: initial;
   }
   .propositions .propositions-leftPart p {
     margin: 2% 0;
@@ -5104,6 +5104,7 @@ h2 span {
   }
   .colleges-marqouter {
     padding: 0px;
+    margin-bottom: 0 !important;
     button {
       display: none !important;
     }

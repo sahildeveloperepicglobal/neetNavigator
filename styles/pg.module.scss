@@ -3,17 +3,21 @@
   background: url(/img/pgBannerBackground.png);
   background-repeat: no-repeat;
   object-fit: cover;
+  padding-bottom: 12%;
 }
 .bannercontainer {
   margin-top: 0px;
   margin-bottom: 0px;
+}
+.introduction-home h2.introductuionhead {
+  font-size: 10px;
 }
 .admission_banner {
   padding: 4% 5%;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  height: 100vh;
+  height: 75vh;
 }
 .admission_banner h1 {
   font-style: normal;
@@ -96,6 +100,9 @@
 }
 
 @media (max-width: 768px) {
+  .homebanner {
+    padding-bottom: 50%;
+  }
   .bannerText span {
     font-size: 24px;
   }

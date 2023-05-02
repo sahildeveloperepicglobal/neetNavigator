@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import React, { useEffect, useState } from "react";
 import Link from "next/link";
 import useOnClickOutside from "../../hooks/useclick";
@@ -9,26 +10,8 @@ const Header = () => {
     setIsOpen(!isOpen);
   };
 
-<<<<<<< HEAD
-  useEffect(() => {
-    const handleDocumentClick = (event:any) => {
-      const menuBar = document.getElementById('menu-bar');
-      if (menuBar && !menuBar.contains(event.target)) {
-        setIsOpen(false);
-      }
-    };
-  
-    document.addEventListener('click', handleDocumentClick);
-  
-    return () => {
-      document.removeEventListener('click', handleDocumentClick);
-    };
-  }, [isOpen]);
-    
-=======
   const ref = useOnClickOutside(() => setIsOpen(false));
 
->>>>>>> aa047dc8b2cc31d56aeb74a127261430d128bce4
   return (
     <div className={`header`} ref={ref}>
       <div className="header-left">

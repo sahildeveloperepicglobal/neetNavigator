@@ -35,34 +35,32 @@ export default function Pg() {
             </div>
           </div>
         </div>
-        <section>
-          <div className="introduction-home container  ">
-            <h2>Introduction</h2>
-            <p>
-              NEET Navigator is founded by Mr. Rakesh Jain who is an alumnus of
-              FMS-Delhi and IIM- Ahmedabad. NEET Navigator is run by
-              professionals and mentored by Dr. M.L. Singla, Ex-Dean of Faculty
-              of Management Studies, Delhi University.
-            </p>
-            <br />
-            <p>
-              NEET Navigator is India’s first organization which is working
-              towards building advanced intelligence based online application to
-              guide students for their admission in the best medical college
-              based on their NEET Rank, Domicile, Category and Fee Budget.
-            </p>
-            <br />
-            <p>
-              NEET Navigator offers medical admission counselling guidance for
-              admission into INIs, government, private & deemed medical
-              institutions all over India. Our expertise includes admission
-              against NRI quota seats and mop-up/stray round counselling
-              services.
-            </p>
-          </div>
-        </section>
       </section>
-
+      <div className="introduction-home container  ">
+        <h2 style={{ marginTop: "-72px", marginBottom: "25px" }}>
+          Introduction
+        </h2>
+        <p>
+          NEET Navigator is founded by Mr. Rakesh Jain who is an alumnus of
+          FMS-Delhi and IIM- Ahmedabad. NEET Navigator is run by professionals
+          and mentored by Dr. M.L. Singla, Ex-Dean of Faculty of Management
+          Studies, Delhi University.
+        </p>
+        <br />
+        <p>
+          NEET Navigator is India’s first organization which is working towards
+          building advanced intelligence based online application to guide
+          students for their admission in the best medical college based on
+          their NEET Rank, Domicile, Category and Fee Budget.
+        </p>
+        <br />
+        <p>
+          NEET Navigator offers medical admission counselling guidance for
+          admission into INIs, government, private & deemed medical institutions
+          all over India. Our expertise includes admission against NRI quota
+          seats and mop-up/stray round counselling services.
+        </p>
+      </div>
       <div className="propositions">
         <div className="propositions-leftPart">
           <h2>

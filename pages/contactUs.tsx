@@ -57,11 +57,8 @@ export default function ContactUs() {
                 placeholder="Message"
                 defaultValue={""}
               />
-              <input
-                type="submit"
-                defaultValue="Send Message"
-                className="button"
-              />
+
+              <input type="submit" value={"Send Message"} className="button" />
             </form>
           </div>
           <div className="banner-background">

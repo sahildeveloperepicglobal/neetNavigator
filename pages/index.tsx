@@ -132,7 +132,7 @@ export default function Home() {
                   "Minority",
                   3000,
                 ]}
-                speed={300}
+                speed={400}
                 repeat={Infinity}
               />
               <p>
@@ -500,7 +500,7 @@ export default function Home() {
                 // eslint-disable-next-line react/jsx-key
                 <img src={logo.url} />
               ))}
-              </marquee>
+            </marquee>
             {/* </Slider> */}
           </div>
         </div>
@@ -722,6 +722,7 @@ const ReactReadMoreReadLess = ({ children }: T) => {
     <React.Fragment>
       <div className="ReactReadMoreReadLess">
         <p
+          id="readmore"
           style={{
             display: "-webkit-box",
             WebkitLineClamp: showMore ? "10" : "3",
