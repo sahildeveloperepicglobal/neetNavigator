@@ -168,7 +168,7 @@ export default function Home() {
             <h2>
               Our <span>Approach</span>
             </h2>
-            <div className="our-approach d-flex  dasktop-d-block mobile-d-none p-0">
+            <div className="our-approach d-flex  dasktop-d-block mobile-d-none p-0" style={{width:"100%", padding:"40px"}}>
               <div className="radio">
                 {dataArray.map((value, index) => {
                   const active = value.heading === selected.heading;
@@ -202,7 +202,7 @@ export default function Home() {
               </div>
               <div
                 className="approach-text"
-                style={{ width: "449px", paddingLeft: "56px" }}
+                style={{ width: "550 px", paddingLeft: "15%" }}
               >
                 <h3 id="heading"> {selected.content[0]}</h3>
                 <p id="paragraph">{selected.content[1]}</p>
@@ -217,6 +217,8 @@ export default function Home() {
           </div>
         </>
       </section>
+
+   
 
       <section>
         <div className="container">
