@@ -1,16 +1,14 @@
 /* eslint-disable jsx-a11y/alt-text */
 /* eslint-disable @next/next/no-img-element */
-import React from "react";
 import Link from "next/link";
-import Style from "@/styles/footer.module.scss";
+import React from "react";
 
 const Footer = () => {
   return (
     <>
-      <div className={`  footer`}>
+      <div className={`footer`}>
         <div className="footer-left">
           <div className="leftTop-part">
-            {/* <img src="/img/blue-logo-final 1.png" alt="neet logo" /> */}
             <img src="/img/NNWhite.png" alt="neet logo" />
             <p>
               NEET NAVIGATOR started in 2019 with advisory and training services
@@ -74,22 +72,24 @@ const Footer = () => {
           <h2>Important leads</h2>
           <ul>
             <li>
-              <a href="./medical-college">About Medical colleges</a>
+              <Link href="/medical-college">About Medical colleges</Link>
             </li>
             <li>
-              <a href="./medical-counselling">Medical Admission Counselling</a>
+              <Link href="/medical-counselling">
+                Medical Admission Counselling
+              </Link>
             </li>
             <li>
-              <a href="./success-stories">Success Stories</a>
+              <Link href="/success-stories">Success Stories</Link>
             </li>
             <li>
-              <a href="./blogs">Blogs</a>
+              <Link href="/blogs">Blogs</Link>
             </li>
             <li>
-              <a href="./aboutUs">About Us</a>
+              <Link href="/aboutUs">About Us</Link>
             </li>
             <li>
-              <a href="./contactUs">Contact us</a>
+              <Link href="/contactUs">Contact us</Link>
             </li>
           </ul>
         </div>
@@ -97,21 +97,20 @@ const Footer = () => {
           <h2>Our Services</h2>
           <ul>
             <li>
-              <a href="./lighthouse">MBBS Lighthouse</a>
+              <Link href="/lighthouse">MBBS Lighthouse</Link>
             </li>
             <li>
-              <a href="./ug">NEET UG Services</a>
+              <Link href="/ug">NEET UG Services</Link>
             </li>
             <li>
-              <a href="./pg">NEET PG Services</a>
+              <Link href="/pg">NEET PG Services</Link>
             </li>
           </ul>
         </div>
       </div>
-      <div className={` copyright`}>
+      <div className={`copyright`}>
         <span>© Copyright - NEET Navigator Educational Services </span>
       </div>
-
       <div className="whatsapp">
         <a href="https://wa.me/+919910375900">
           <img src="/img/whatsapp1.png" alt="whatsapp image" />

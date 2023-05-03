@@ -36,7 +36,7 @@ export default function Home() {
       },
     ],
   };
-  var settings2 = {
+  const settings2 = {
     dots: true,
     infinite: true,
     vertical: true,
@@ -60,7 +60,7 @@ export default function Home() {
       },
     ],
   };
-  var settings3 = {
+  const settings3 = {
     dots: true,
     infinite: true,
     vertical: true,
@@ -99,7 +99,6 @@ export default function Home() {
               <TypeAnimation
                 style={{ fontFamily: "" }}
                 sequence={[
-                  // Same String at the start will only be typed once, initially
                   "Government",
                   3000,
                   "Private",
@@ -111,7 +110,7 @@ export default function Home() {
                   "Minority",
                   3000,
                 ]}
-                speed={400}
+                speed={99}
                 repeat={Infinity}
               />
               <p>
@@ -474,6 +473,7 @@ export default function Home() {
 
           <div className="colleges-marqouter    colleges-marq">
             {/* <Slider {...settingss}> */}
+
             <marquee behavior="" direction="" scrolldelay="0">
               {collegeslogo.map((logo) => (
                 // eslint-disable-next-line react/jsx-key
