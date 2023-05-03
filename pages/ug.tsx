@@ -185,7 +185,7 @@ export default function Home() {
               <div className="approach-rightSection">
                 <ul id="activebtn">
                   {dataArray.map((value, index) => {
-                    const active = value.heading === selected.heading;
+                    const active = value.heyading === selected.heading;
                     return (
                       <li
                         key={index}
