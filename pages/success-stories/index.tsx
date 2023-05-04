@@ -7,26 +7,37 @@ import { Carousel } from "@/components/carousel";
 import css from "@/styles/successstories.module.scss";
 import { useGetAllStories } from "@/network-requests/queries";
 import { StoryTypes } from "@/typings/blogs";
+import { GetServerSidePropsContext } from "next";
+import axios from "axios";
+import Slider from "react-slick";
+import { Settings } from "react-slick";
+import { useRouter } from "next/router";
 
-export default function SuccessStories() {
-  const { data, isLoading, isFetched } = useGetAllStories();
+export default function SuccessStories({ data }: { data: StoryTypes[] }) {
+  // const { data, isLoading, isFetched } = useGetAllStories();
 
+  const router = useRouter();
+  const isLoading = !data;
   const imageItems = data?.map((value) => {
     return {
+      name: value.name,
       image: value.image,
+      slug: value.slug,
     };
   });
   console.log(imageItems);
 
-  const [currentStory, setCurrentStory] = React.useState<Partial<StoryTypes>>();
+  const [currentStory, setCurrentStory] = React.useState<Partial<StoryTypes>>(
+    data[0]
+  );
 
   React.useMemo(() => {
-    if (isFetched) {
-      if (data) {
-        setCurrentStory(data[0]);
-      }
+    if (data) {
+      setCurrentStory(data[0]);
     }
-  }, [data, isFetched]);
+  }, [data]);
+
+  console.log(data);
 
   return (
     <>
@@ -52,10 +63,7 @@ export default function SuccessStories() {
           />
         </div>
         <div className={css.successpara}>
-          <h1>
-            {/* DIKSHA<br></br>MIDHA */}
-            {currentStory?.name}
-          </h1>
+          <h1>{currentStory?.name}</h1>
           <p>{`"${currentStory?.quotes && currentStory?.quotes[0]}"`}</p>
         </div>
       </section>
@@ -73,186 +81,83 @@ export default function SuccessStories() {
           __html: (currentStory?.content && currentStory?.content) as string,
         }}
       ></section>
-      {/* <section className={css.div4}>
-        <p>
-          For Diksha Midha, a student with a dream of becoming a doctor, the
-          road to success was full of challenges. Despite her best efforts, she
-          could only score 165 marks in NEET 2022. Her parents could afford to
-          pay for her MBBS education in a private medical college, but they were
-          not sure how to get her admission in a good medical college.
-        </p>
-      </section>
-      <section className={css.div5}>
-        <span></span>
-        <span>
-          <img src="/img/Star22.png" alt="" />
-        </span>
-      </section>
-      <section className={css.div4}>
-        <p>
-          Thats when they turned to NEET Navigator, India’s first advanced data
-          analytics based medical admission counselling service. With their
-          help, Diksha was able to navigate the complex process of MBBS
-          admission and secure a seat in DY Patil Medical College in Pune on an
-          NRI seat.
-        </p>
-      </section>
-      <section className={css.div6}>
-        <span>
-          <img src="/img/geometric.png" alt="" />
-        </span>
-        <span></span>
-      </section>
-      <section className={css.div4}>
-        <p>
-          NEET Navigator was a true game-changer for us, says Diksha’s mother.
-          They helped us throughout the counselling process, providing necessary
-          documentation support for NRI category conversion, and selecting the
-          right college for her studies.
-        </p>
-      </section>
-      <section className={css.div7}>
-        <span></span>
-        <span>
-          <img src="/img/Star21.png" alt="" />
-        </span>
-      </section>
-      <section className={css.div4}>
-        <p>
-          Thanks to the expert guidance and support provided by NEET Navigator,
-          Diksha was able to overcome the challenges she faced and achieve her
-          dream of becoming a doctor. I am so grateful for the help provided by
-          NEET Navigator, says Diksha. They made it possible for me to pursue my
-          dream and get admission to a top medical college.
-        </p>
-      </section>
-      <section className={css.div8}>
-        <span>
-          <img src="/img/132.png" alt="" />
-        </span>
-        <span></span>
-      </section>
-      <section className={css.div4}>
-        <p>
-          The success story of Diksha Midha is just one example of how NEET
-          Navigator helps students achieve their dreams of becoming doctors. No
-          matter what your NEET score is, NEET Navigator is here to provide you
-          with the expert guidance and support you need to secure admission in a
-          top medical college.
-        </p>
-      </section>
-      <section className={css.div8}>
-        <span>
-          <img src="/img/Star20.png" alt="" />
-        </span>
-        <span></span>
-      </section>
-      <section className={css.div4}>
-        <p>
-          So, don’t let a low NEET score hold you back. With NEET Navigator by
-          your side, anything is possible.
-        </p>
-      </section>
-      <section className={css.div9}>
-        <span></span>
-        <span>
-          <img src="/img/h2.png" alt="" />
-        </span>
-      </section> */}
 
-      {!isLoading && (
-        <Carousel
-          itemWidth={250}
-          items={data as any}
-          autoplay={true}
-          interval={3000}
-          onSelectSlide={(item: any) => {
-            window.scrollTo({
-              behavior: "smooth",
-              top: 0,
-            });
-            setCurrentStory(item);
-          }}
-        />
-      )}
+      <section
+        style={{
+          overflow: "hidden",
+        }}
+      >
+        {!isLoading && (
+          <Slider {...options}>
+            {imageItems.map(({ image, slug, name }, index) => {
+              return (
+                <div key={index}>
+                  <div
+                    style={{
+                      padding: "10px",
+                    }}
+                    title={name}
+                  >
+                    <img
+                      src={image || "/image/anikajain.jpg"}
+                      alt={slug}
+                      crossOrigin="anonymous"
+                      style={{
+                        maxWidth: "100%",
+                        width: "100%",
+                        height: "100%",
+                        objectFit: "cover",
+                      }}
+                      onClick={() => router.push(`/success-stories/${slug}`)}
+                    />
+                  </div>
+                </div>
+              );
+            })}
+          </Slider>
+        )}
+      </section>
     </>
   );
 }
+export const getServerSideProps = async () => {
+  const { data } = await axios({
+    url: `${process.env.NEXT_PUBLIC_BASE_URL}/api/v1/stories`,
+  });
 
-// const items = [
-//   {
-//     alt: "image first",
-//     href: "/success-stories/story",
-//     image: "/image/anikajain.jpg",
-//   },
-//   {
-//     alt: "image first",
-//     href: "/success-stories/story",
-//     image: "/image/dikshajain.jpg",
-//   },
-//   {
-//     alt: "image first",
-//     href: "/success-stories/story",
-//     image: "/image/dikshamidha.jpg",
-//   },
-//   {
-//     alt: "image first",
-//     href: "/success-stories/story",
-//     image: "/image/dikshasinghal.jpg",
-//   },
-//   {
-//     alt: "image first",
-//     href: "/success-stories/story",
-//     image: "/image/divyaalokkaushik.jpg",
-//   },
-//   {
-//     alt: "image first",
-//     href: "/success-stories/story",
-//     image: "/image/divyanirwan.jpg",
-//   },
-//   {
-//     alt: "image first",
-//     href: "/success-stories/story",
-//     image: "/image/gayatri.jpg",
-//   },
-//   {
-//     alt: "image first",
-//     href: "/success-stories/story",
-//     image: "/image/gunika.jpg",
-//   },
-//   {
-//     alt: "image first",
-//     href: "/success-stories/story",
-//     image: "/image/kanikagupta.jpg",
-//   },
-//   {
-//     alt: "image first",
-//     href: "/success-stories/story",
-//     image: "/image/palakrathi.jpg",
-//   },
-//   {
-//     alt: "image first",
-//     href: "/success-stories/story",
-//     image: "/image/ravi.jpg",
-//   },
-//   {
-//     alt: "image first",
-//     href: "/success-stories/story",
-//     image: "/image/shrutijain.jpg",
-//   },
-//   {
-//     alt: "image first",
-//     href: "/success-stories/story",
-//     image: "/image/taniya.jpg",
-//   },
-//   {
-//     alt: "image first",
-//     href: "/success-stories/story",
-//     image: "/image/vasudha.jpg",
-//   },
-//   {
-//     alt: "image first",
-//     href: "/success-stories/story",
-//     image: "/image/yukti.jpg",
-//   },
-// ];
+  return {
+    props: {
+      data,
+    },
+  };
+};
+
+const options: Settings = {
+  centerMode: true,
+  centerPadding: "60px",
+  slidesToShow: 3,
+  autoplay: true,
+  autoplaySpeed: 3000,
+  dots: false,
+  arrows: false,
+  responsive: [
+    {
+      breakpoint: 768,
+      settings: {
+        arrows: false,
+        centerMode: true,
+        centerPadding: "40px",
+        slidesToShow: 3,
+      },
+    },
+    {
+      breakpoint: 480,
+      settings: {
+        arrows: false,
+        centerMode: true,
+        centerPadding: "40px",
+        slidesToShow: 1,
+      },
+    },
+  ],
+};

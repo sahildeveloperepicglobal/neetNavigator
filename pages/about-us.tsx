@@ -1,12 +1,7 @@
 /* eslint-disable react/no-unescaped-entities */
 /* eslint-disable @next/next/no-img-element */
+import React from "react";
 import Head from "next/head";
-import Image from "next/image";
-import { Inter } from "next/font/google";
-import { TypeAnimation } from "react-type-animation";
-import React, { Component } from "react";
-import { Poppins } from "next/font/google";
-import { Value } from "sass";
 
 export default function AboutUs() {
   return (
@@ -223,7 +218,6 @@ export default function AboutUs() {
                 height={315}
                 src="https://www.youtube.com/embed/I1Epcnmh1Pk"
                 title="YouTube video player"
-                frameBorder={0}
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                 allowFullScreen
               />

@@ -1,23 +1,10 @@
-// import Layout from "@/layout";
-// import "@/styles/globals.scss";
-// import type { AppProps } from "next/app";
-
-// function App({ Component, pageProps }: AppProps) {
-//   return (
-//     <Layout>
-//       <Component {...pageProps} />
-//     </Layout>
-//   );
-// }
-
-// export default App;
 import React from "react";
 import Layout from "layout";
 import "styles/globals.scss";
 import { AppProps } from "next/app";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 import { Hydrate, QueryClient, QueryClientProvider } from "react-query";
-import { Head } from "next/document";
-
 /**
  * Admin Root
  */

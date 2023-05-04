@@ -1,18 +1,40 @@
 /* eslint-disable jsx-a11y/alt-text */
 /* eslint-disable @next/next/no-img-element */
-import { TypeAnimation } from "react-type-animation";
 import React from "react";
-import Style from "@/styles/home.module.scss";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
-import MinusIcon from "@/icons/MinusIcon";
 import PlusIcon from "@/icons/PlusIcon";
+import MinusIcon from "@/icons/MinusIcon";
+import Style from "@/styles/home.module.scss";
+import { TypeAnimation } from "react-type-animation";
 
 export default function Home() {
   const [selected, setSelected] = React.useState(dataArray[0]);
 
-  const settings = {
+  // const settings = {
+  //   dots: true,
+  //   infinite: true,
+  //   vertical: true,
+  //   verticalSwiping: true,
+  //   slidesToShow: 2.9,
+  //   slidesToScroll: 1,
+  //   autoplay: true,
+  //   autoplaySpeed: 3000,
+  //   responsive: [
+  //     {
+  //       breakpoint: 769,
+  //       settings: {
+  //         slidesToShow: 1,
+  //         slidesToScroll: 1,
+  //         vertical: false,
+  //         verticalSwiping: false,
+  //         autoplaySpeed: 3000,
+  //         centerMode: true,
+  //         centerPadding: "0px",
+  //       },
+  //     },
+  //   ],
+  // };
+  const centerSlider = {
     dots: true,
     infinite: true,
     vertical: true,
@@ -36,31 +58,7 @@ export default function Home() {
       },
     ],
   };
-  const settings2 = {
-    dots: true,
-    infinite: true,
-    vertical: true,
-    verticalSwiping: true,
-    slidesToShow: 2.9,
-    slidesToScroll: 1,
-    autoplay: true,
-    autoplaySpeed: 3000,
-    responsive: [
-      {
-        breakpoint: 769,
-        settings: {
-          slidesToShow: 1,
-          slidesToScroll: 1,
-          vertical: false,
-          verticalSwiping: false,
-          autoplaySpeed: 3000,
-          centerMode: true,
-          centerPadding: "0px",
-        },
-      },
-    ],
-  };
-  const settings3 = {
+  const cornerSlider = {
     dots: true,
     infinite: true,
     vertical: true,
@@ -212,7 +210,7 @@ export default function Home() {
                 </div>
               </div>
               <div className="aboutUs-right">
-                <img src="./img/about-us.png" alt="" />
+                <img src="/img/about-us.png" alt="" />
               </div>
             </div>
           </div>
@@ -299,13 +297,13 @@ export default function Home() {
 
             <div className="slider moslider" id="first-slide">
               <ul className="sliderapproch">
-                <Slider {...settings3}>
+                <Slider {...cornerSlider}>
                   <li>
                     <div className="image-textContainer first-card">
-                      <img src="./img/anika jain.jpg" alt="" />
+                      <img src="/img/anika jain.jpg" alt="" />
                       <div className="stories-studentSection">
                         <div className="image-logo">
-                          <img src="./img/story-logo/Anika Jain.png" alt="" />
+                          <img src="/img/story-logo/Anika Jain.png" alt="" />
                         </div>
                         <div className="student-details">
                           <p>Anika Jain</p>
@@ -315,10 +313,10 @@ export default function Home() {
                   </li>
                   <li>
                     <div className="image-textContainer second-card">
-                      <img src="./img/diksha jain.jpg" alt="" />
+                      <img src="/img/diksha jain.jpg" alt="" />
                       <div className="stories-studentSection">
                         <div className="image-logo">
-                          <img src="./img/story-logo/Diksha Jain.png" alt="" />
+                          <img src="/img/story-logo/Diksha Jain.png" alt="" />
                         </div>
                         <div className="student-details">
                           <p>Diksha Jain</p>
@@ -328,10 +326,10 @@ export default function Home() {
                   </li>
                   <li>
                     <div className="image-textContainer third-card">
-                      <img src="./img/diksha midha.jpg" alt="" />
+                      <img src="/img/diksha midha.jpg" alt="" />
                       <div className="stories-studentSection">
                         <div className="image-logo">
-                          <img src="./img/story-logo/Diksha Midha.png" alt="" />
+                          <img src="/img/story-logo/Diksha Midha.png" alt="" />
                         </div>
                         <div className="student-details">
                           <p>Diksha Midha</p>
@@ -341,10 +339,10 @@ export default function Home() {
                   </li>
                   <li>
                     <div className="image-textContainer second-card">
-                      <img src="./img/diksha jain.jpg" alt="" />
+                      <img src="/img/diksha jain.jpg" alt="" />
                       <div className="stories-studentSection">
                         <div className="image-logo">
-                          <img src="./img/story-logo/Diksha Jain.png" alt="" />
+                          <img src="/img/story-logo/Diksha Jain.png" alt="" />
                         </div>
                         <div className="student-details">
                           <p>Diksha Jain</p>
@@ -357,13 +355,13 @@ export default function Home() {
             </div>
             <div className="slider moslider" id="second-slide">
               <ul className="middle-slider">
-                <Slider {...settings2}>
+                <Slider {...centerSlider}>
                   <li>
                     <div className="image-textContainer sixth-card">
-                      <img src="./img/ravi.jpg" alt="" />
+                      <img src="/img/ravi.jpg" alt="" />
                       <div className="stories-studentSection">
                         <div className="image-logo">
-                          <img src="./img/story-logo/Ravi.png" alt="" />
+                          <img src="/img/story-logo/Ravi.png" alt="" />
                         </div>
                         <div className="student-details">
                           <p>Ravi</p>
@@ -373,11 +371,11 @@ export default function Home() {
                   </li>
                   <li>
                     <div className="image-textContainer fourth-card">
-                      <img src="./img/diksha singhal.jpg" alt="" />
+                      <img src="/img/diksha singhal.jpg" alt="" />
                       <div className="stories-studentSection">
                         <div className="image-logo">
                           <img
-                            src="./img/story-logo/Diksha Singhal.png"
+                            src="/img/story-logo/Diksha Singhal.png"
                             alt=""
                           />
                         </div>
@@ -389,10 +387,10 @@ export default function Home() {
                   </li>
                   <li>
                     <div className="image-textContainer fifth-card">
-                      <img src="./img/palak rathi.jpg" alt="" />
+                      <img src="/img/palak rathi.jpg" alt="" />
                       <div className="stories-studentSection">
                         <div className="image-logo">
-                          <img src="./img/story-logo/Palak Rathi.png" alt="" />
+                          <img src="/img/story-logo/Palak Rathi.png" alt="" />
                         </div>
                         <div className="student-details">
                           <p>Palak Rathi</p>
@@ -405,13 +403,13 @@ export default function Home() {
             </div>
             <div className="slider moslider" id="last-slide">
               <ul className="sliderapproch right-slider">
-                <Slider {...settings3}>
+                <Slider {...cornerSlider}>
                   <li>
                     <div className="image-textContainer twelve-card">
-                      <img src="./img/shruti jain.jpg" alt="" />
+                      <img src="/img/shruti jain.jpg" alt="" />
                       <div className="stories-studentSection">
                         <div className="image-logo">
-                          <img src="./img/story-logo/Shruti Jain.png" alt="" />
+                          <img src="/img/story-logo/Shruti Jain.png" alt="" />
                         </div>
                         <div className="student-details">
                           <p>Shruti Jain</p>
@@ -421,10 +419,10 @@ export default function Home() {
                   </li>
                   <li>
                     <div className="image-textContainer thirteenth-card">
-                      <img src="./img/tanya.jpg" alt="" />
+                      <img src="/img/tanya.jpg" alt="" />
                       <div className="stories-studentSection">
                         <div className="image-logo">
-                          <img src="./img/story-logo/Taniya.png" alt="" />
+                          <img src="/img/story-logo/Taniya.png" alt="" />
                         </div>
                         <div className="student-details">
                           <p>Taniya</p>
@@ -434,10 +432,10 @@ export default function Home() {
                   </li>
                   <li>
                     <div className="image-textContainer fourteenth-card">
-                      <img src="./img/vasudha.jpg" alt="" />
+                      <img src="/img/vasudha.jpg" alt="" />
                       <div className="stories-studentSection">
                         <div className="image-logo">
-                          <img src="./img/story-logo/Vasudha.png" alt="" />
+                          <img src="/img/story-logo/Vasudha.png" alt="" />
                         </div>
                         <div className="student-details">
                           <p>Vasudha</p>
@@ -447,10 +445,10 @@ export default function Home() {
                   </li>
                   <li>
                     <div className="image-textContainer thirteenth-card">
-                      <img src="./img/tanya.jpg" alt="" />
+                      <img src="/img/tanya.jpg" alt="" />
                       <div className="stories-studentSection">
                         <div className="image-logo">
-                          <img src="./img/story-logo/Taniya.png" alt="" />
+                          <img src="/img/story-logo/Taniya.png" alt="" />
                         </div>
                         <div className="student-details">
                           <p>Taniya</p>
@@ -470,14 +468,11 @@ export default function Home() {
           <h2>
             Featured Medical <span>Colleges</span>
           </h2>
-
-          <div className="colleges-marqouter    colleges-marq">
-            {/* <Slider {...settingss}> */}
-
-            <marquee behavior="" direction="" scrolldelay="0">
-              {collegeslogo.map((logo) => (
-                // eslint-disable-next-line react/jsx-key
-                <img src={logo.url} />
+          <div className="colleges-marqouter colleges-marq">
+            {/* @ts-ignore  */}
+            <marquee behavior direction scrolldelay="0">
+              {collegeslogo.map((logo, index) => (
+                <img key={index} src={logo.url} alt={`hello`} />
               ))}
             </marquee>
             {/* </Slider> */}
@@ -507,114 +502,114 @@ export default function Home() {
 const collegeslogo = [
   {
     id: `1`,
-    url: `./img/1.png`,
+    url: `/img/1.png`,
   },
   {
     id: `2`,
-    url: `./img/2.png`,
+    url: `/img/2.png`,
   },
   {
     id: `3`,
-    url: `./img/3.png`,
+    url: `/img/3.png`,
   },
   {
     id: `4`,
-    url: `./img/4.png`,
+    url: `/img/4.png`,
   },
   {
     id: `5`,
-    url: `./img/5.png`,
+    url: `/img/5.png`,
   },
   {
     id: `6`,
-    url: `./img/6.png`,
+    url: `/img/6.png`,
   },
   {
     id: `7`,
-    url: `./img/7.png`,
+    url: `/img/7.png`,
   },
   {
     id: `8`,
-    url: `./img/8.png`,
+    url: `/img/8.png`,
   },
   {
     id: `9`,
-    url: `./img/9.png`,
+    url: `/img/9.png`,
   },
   {
     id: `10`,
-    url: `./img/10.png`,
+    url: `/img/10.png`,
   },
   {
     id: `11`,
-    url: `./img/11.png`,
+    url: `/img/11.png`,
   },
   {
     id: `12`,
-    url: `./img/12.png`,
+    url: `/img/12.png`,
   },
   {
     id: `13`,
-    url: `./img/13.png`,
+    url: `/img/13.png`,
   },
   {
     id: `14`,
-    url: `./img/14.png`,
+    url: `/img/14.png`,
   },
   {
     id: `15`,
-    url: `./img/15.png`,
+    url: `/img/15.png`,
   },
   {
     id: `16`,
-    url: `./img/16.png`,
+    url: `/img/16.png`,
   },
   {
     id: `17`,
-    url: `./img/17.png`,
+    url: `/img/17.png`,
   },
   {
     id: `18`,
-    url: `./img/18.png`,
+    url: `/img/18.png`,
   },
   {
     id: `19`,
-    url: `./img/19.png`,
+    url: `/img/19.png`,
   },
   {
     id: `20`,
-    url: `./img/20.png`,
+    url: `/img/20.png`,
   },
   {
     id: `21`,
-    url: `./img/21.png`,
+    url: `/img/21.png`,
   },
   {
     id: `22`,
-    url: `./img/22.png`,
+    url: `/img/22.png`,
   },
   {
     id: `23`,
-    url: `./img/24.png`,
+    url: `/img/24.png`,
   },
   {
     id: `24`,
-    url: `./img/25.png`,
+    url: `/img/25.png`,
   },
   {
     id: `25`,
-    url: `./img/26.png`,
+    url: `/img/26.png`,
   },
   {
     id: `26`,
-    url: `./img/27.png`,
+    url: `/img/27.png`,
   },
 ];
 
 const dataArray = [
   {
     heading: `Estimation`,
-    url: "./img/pg2.png",
+    url: "/img/pg2.png",
     content: [
       `Medical Admission Possibility Estimation`,
       `NEET Navigator uses advanced data analytics to assess the admission possibility for all India medical colleges on basis of your NEET PG Rank, Domicile, Category and Fee Budget (in case of Private/ Deemed Medical Institutions).
@@ -624,7 +619,7 @@ const dataArray = [
   },
   {
     heading: `Guidance`,
-    url: "./img/guid2.png",
+    url: "/img/guid2.png",
     content: [
       `Subject/ Program Selection Guidance`,
       `NEET Navigator uses in depth knowledge of external environmental factors as well as candidate’s credentials to guide the candidate on subject (Clinical/Non-clinical/ Para-clinical) and program (MD/MS/DNB/Diploma) selection for PG studies.`,
@@ -632,7 +627,7 @@ const dataArray = [
   },
   {
     heading: `Institutional Selection`,
-    url: "./img/pg3.png",
+    url: "/img/pg3.png",
     content: [
       `Institution Selection`,
       `NEET Navigator has developed an extensive 12 factors based objective institutional rating system which incorporates parameters including college infrastructure, academic quality and institutional reputation. NEET Navigator helps you select the best medical institution to target for admission.`,
@@ -640,7 +635,7 @@ const dataArray = [
   },
   {
     heading: `Application Support`,
-    url: "./img/pg4.png",
+    url: "/img/pg4.png",
     content: [
       `Counselling Application Support`,
       `NEET Navigator guides you in selection of counselling type and offers you support during filling up of counselling application. NEET Navigator ensures that counselling application process is 100% error free so that there is no loss of opportunity.`,
@@ -648,7 +643,7 @@ const dataArray = [
   },
   {
     heading: `College List`,
-    url: "./img/selection3.png",
+    url: "/img/selection3.png",
     content: [
       `College Choice List`,
       `NEET Navigator uses historical data analytics to design round based highly effective college choice list. The college choice list is optimized for candidate’s NEET Rank and Category so that You get admission in THE BEST medical college in the desired subject.`,
@@ -656,7 +651,7 @@ const dataArray = [
   },
   {
     heading: `Documentation`,
-    url: "./img/pg5.png",
+    url: "/img/pg5.png",
     content: [
       `Documentation Support`,
       `NEET Navigator ensures that your admission process is smooth and stress free by ensuring timely guidance on requisite documentation. The right documentation support ensures optimization of admission opportunity.`,
@@ -667,22 +662,22 @@ const dataArray = [
 const problemStatement = [
   {
     heading: `Knowledge gap`,
-    url: "./img/knowledge-gap.png",
+    url: "/img/knowledge-gap.png",
     pre: `Medical admission counselling is a highly complex process. Students and parents lack knowledge about eligibility conditions, counselling rules, college comparison and even basic data such admission cut off and college fees. In the absence of comprehensive data, their decision making gets limited to familiar medical colleges`,
   },
   {
     heading: `Information gap `,
-    url: "./img/info-gap.png",
+    url: "/img/info-gap.png",
     pre: `Finding the right and reliable information on Google or YouTube medical admission counselling can be highly frustrating and stressful for students and parents. In search for reliable information, students end up getting Information which may be outdated, irrelevant and in some cases, even wrong.`,
   },
   {
     heading: `Analytics gap`,
-    url: "./img/ANALYTICAL-gap.png",
+    url: "/img/ANALYTICAL-gap.png",
     pre: `Medical admission counselling data can be overwhelming. What is right what is answer for a student or parents. Moreover, there is a need to analyze the data for intelligence on wrong and which data shall be considered for decision making, these questions can be difficult to medical admission decision making.`,
   },
   {
     heading: `Guidance gap`,
-    url: "./img/guidence-gap.png",
+    url: "/img/guidence-gap.png",
     pre: `medical admission guidance is notorious for lack of ethical and professional counsellors. “MBBS admission means Millions of rupees” this is the most common impression. There are too many dream merchants and cheats in the market. It is difficult to find genuine and professional guide for medical admissions`,
   },
 ];

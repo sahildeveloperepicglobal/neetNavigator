@@ -1,7 +1,7 @@
 /* eslint-disable @next/next/no-img-element */
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import Link from "next/link";
-import useOnClickOutside from "../../hooks/useclick";
+import useOnClickOutside from "@/hooks/useclick";
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -69,7 +69,7 @@ const Header = () => {
             </li>
 
             <li>
-              <Link href="/contactUs" className="unique">
+              <Link href="/contact-us" className="unique">
                 Contact
               </Link>
             </li>
@@ -96,7 +96,7 @@ const Header = () => {
           </li>
 
           <li>
-            <Link href="/contactUs" className="unique">
+            <Link href="/contact-us" className="unique">
               Contact
             </Link>
           </li>

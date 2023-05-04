@@ -1,16 +1,19 @@
 /* eslint-disable react/no-unescaped-entities */
 /* eslint-disable @next/next/no-img-element */
 import Head from "next/head";
-import Image from "next/image";
-import { Inter } from "next/font/google";
-import styles from "@/styles/blogs.module.scss";
 import * as React from "react";
-import { Blogs } from "network-requests/types";
-import { useGetAllBlogs } from "@/network-requests/queries";
 import Link from "next/link";
+import Loading from "@/components/loading";
+import { Blogs } from "network-requests/types";
+import styles from "@/styles/blogs.module.scss";
+import axios from "axios";
+import dynamic from "next/dynamic";
+import { BlogsTypes } from "@/typings/blogs";
 
-export default function Blogs() {
-  const { data, refetch } = useGetAllBlogs();
+const HTMLView = dynamic(() => import("@/components/html-view"));
+
+export default function Blogs({ data }: { data: BlogsTypes[] }) {
+  const isLoading = !data;
   return (
     <>
       <Head>
@@ -25,35 +28,55 @@ export default function Blogs() {
       </section>
 
       <section className={styles.blogcard}>
-        <ul>
-          {data?.map((item, index) => {
-            console.log(item);
-            return (
-              <li key={index}>
-                <div className={styles.box1}>
-                  <Image
-                    height={100}
-                    width={100}
-                    src={item.images[0]}
-                    alt="img"
-                  />
-                  <Link href={`/blogs/${item.slug}`}>
-                    <div className={styles.boxcontent}>
-                      <h2>{item.name}</h2>
-                      <div
-                        dangerouslySetInnerHTML={{
-                          __html: item.content.slice(0, 100),
-                        }}
-                      ></div>
-                      <a>Read More</a>
-                    </div>
-                  </Link>
-                </div>
-              </li>
-            );
-          })}
-        </ul>
+        {isLoading ? (
+          <div
+            style={{
+              height: "80vh",
+              display: "grid",
+              placeContent: "center",
+            }}
+          >
+            <Loading />
+          </div>
+        ) : (
+          <ul>
+            {data?.map((item, index) => {
+              return (
+                <li key={index}>
+                  <div className={styles.box1}>
+                    <img
+                      src={item.images[0]}
+                      alt="img"
+                      crossOrigin="anonymous"
+                      height={`100%`}
+                      width={`100%`}
+                    />
+                    <Link href={`/blogs/${item.slug}`}>
+                      <div className={styles.boxcontent}>
+                        <h2>{item.name}</h2>
+                        <HTMLView>{item.content.slice(0, 100)}</HTMLView>
+                        <p>Read More</p>
+                      </div>
+                    </Link>
+                  </div>
+                </li>
+              );
+            })}
+          </ul>
+        )}
       </section>
     </>
   );
 }
+
+export const getServerSideProps = async () => {
+  const { data } = await axios({
+    url: `${process.env.NEXT_PUBLIC_BASE_URL}/api/v1/blogs`,
+  });
+
+  return {
+    props: {
+      data,
+    },
+  };
+};
