@@ -22,15 +22,13 @@ const Admin = () => {
         if (window.confirm("Are you sure to delete this blog")) {
           const response = await deleteBlogs(id);
           alert(`Blog Deleted Successfully`);
-          console.log(response);
+
           refetch();
         }
       }
     },
     [refetch]
   );
-
-  console.log(data);
 
   return (
     <>
@@ -97,7 +95,6 @@ const Admin = () => {
           </thead>
           <tbody>
             {data?.map((item, index) => {
-              console.log(item.images[0]);
               return (
                 <tr key={index}>
                   <td>

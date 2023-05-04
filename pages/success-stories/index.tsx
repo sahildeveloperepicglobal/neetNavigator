@@ -25,7 +25,6 @@ export default function SuccessStories({ data }: { data: StoryTypes[] }) {
       slug: value.slug,
     };
   });
-  console.log(imageItems);
 
   const [currentStory, setCurrentStory] = React.useState<Partial<StoryTypes>>(
     data[0]
@@ -36,8 +35,6 @@ export default function SuccessStories({ data }: { data: StoryTypes[] }) {
       setCurrentStory(data[0]);
     }
   }, [data]);
-
-  console.log(data);
 
   return (
     <>

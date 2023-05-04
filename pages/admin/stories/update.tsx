@@ -79,7 +79,7 @@ const UpdateStory = () => {
       ...state,
       image,
     };
-    console.log(data);
+
     mutate(data, {
       onSuccess: (data: any) => {
         router.back();
@@ -91,7 +91,6 @@ const UpdateStory = () => {
     });
   }, [mutate, router, state]);
 
-  console.log(state);
   return (
     <>
       <div className={Style.mydiv}>

@@ -23,7 +23,7 @@ const StoryHome = () => {
         if (window.confirm("Are you sure to delete this story")) {
           const response = await deleteStory(id);
           alert(`Story Deleted Successfully`);
-          console.log(response);
+
           refetch();
         }
       }
