@@ -6,10 +6,15 @@ import PlusIcon from "@/icons/PlusIcon";
 import MinusIcon from "@/icons/MinusIcon";
 import Style from "@/styles/home.module.scss";
 import { TypeAnimation } from "react-type-animation";
+import axios from "axios";
+import { StoryTypes } from "@/typings/blogs";
+import { useRouter } from "next/router";
 
-export default function Home() {
+export default function Home({ stories }: { stories: StoryTypes[] }) {
   const [selected, setSelected] = React.useState(dataArray[0]);
 
+  const router = useRouter();
+  console.log({ stories });
   // const settings = {
   //   dots: true,
   //   infinite: true,
@@ -298,7 +303,9 @@ export default function Home() {
             <div className="slider moslider" id="first-slide">
               <ul className="sliderapproch">
                 <Slider {...cornerSlider}>
-                  <li>
+                  <li
+                    onClick={() => router.push(`/success-stories/anika-jain`)}
+                  >
                     <div className="image-textContainer first-card">
                       <img src="/img/anika jain.jpg" alt="" />
                       <div className="stories-studentSection">
@@ -474,6 +481,7 @@ export default function Home() {
               {collegeslogo.map((logo, index) => (
                 <img key={index} src={logo.url} alt={`hello`} />
               ))}
+              {/* @ts-ignore */}
             </marquee>
             {/* </Slider> */}
           </div>
@@ -498,6 +506,18 @@ export default function Home() {
     </>
   );
 }
+
+export const getServerSideProps = async () => {
+  const { data: stories } = await axios({
+    url: `${process.env.NEXT_PUBLIC_BASE_URL}/api/v1/stories`,
+  });
+
+  return {
+    props: {
+      stories,
+    },
+  };
+};
 
 const collegeslogo = [
   {

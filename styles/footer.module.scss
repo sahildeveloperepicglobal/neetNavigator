@@ -1,14 +1,27 @@
 .footer {
   color: white;
-  display: grid;
-  grid-template-columns: 1fr 1fr 0.7fr;
+  // display: grid;
+  // grid-template-columns: repeat(3, 1fr);
   padding: 1% 17%;
   padding-bottom: 40px;
   justify-items: center;
   // background: #2b2b81;
   // background: rgb(0, 0, 0);
   background: inherit;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
 }
+
+.footer-left {
+  flex: 1.5;
+}
+
+.footer-middle,
+.footer-right {
+  flex: 1;
+}
+
 .footer .footer-middle ul,
 .footer-right ul {
   padding: 0;

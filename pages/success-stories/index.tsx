@@ -18,13 +18,13 @@ export default function SuccessStories({ data }: { data: StoryTypes[] }) {
 
   const router = useRouter();
   const isLoading = !data;
-  const imageItems = data?.map((value) => {
-    return {
-      name: value.name,
-      image: value.image,
-      slug: value.slug,
-    };
-  });
+  // const imageItems = data?.map((value) => {
+  //   return {
+  //     name: value.name,
+  //     image: value.image,
+  //     slug: value.slug,
+  //   };
+  // });
 
   const [currentStory, setCurrentStory] = React.useState<Partial<StoryTypes>>(
     data[0]
@@ -36,6 +36,7 @@ export default function SuccessStories({ data }: { data: StoryTypes[] }) {
     }
   }, [data]);
 
+  console.log(currentStory);
   return (
     <>
       <Head>
@@ -86,18 +87,18 @@ export default function SuccessStories({ data }: { data: StoryTypes[] }) {
       >
         {!isLoading && (
           <Slider {...options}>
-            {imageItems.map(({ image, slug, name }, index) => {
+            {data.map((item, index) => {
               return (
                 <div key={index}>
                   <div
                     style={{
                       padding: "10px",
                     }}
-                    title={name}
+                    title={item.name}
                   >
                     <img
-                      src={image || "/image/anikajain.jpg"}
-                      alt={slug}
+                      src={item.image || "/image/anikajain.jpg"}
+                      alt={item.slug}
                       crossOrigin="anonymous"
                       style={{
                         maxWidth: "100%",
@@ -105,7 +106,13 @@ export default function SuccessStories({ data }: { data: StoryTypes[] }) {
                         height: "100%",
                         objectFit: "cover",
                       }}
-                      onClick={() => router.push(`/success-stories/${slug}`)}
+                      onClick={() => {
+                        window.scrollTo({
+                          behavior: "smooth",
+                          top: 0,
+                        });
+                        setCurrentStory(item);
+                      }}
                     />
                   </div>
                 </div>
@@ -121,7 +128,6 @@ export const getServerSideProps = async () => {
   const { data } = await axios({
     url: `${process.env.NEXT_PUBLIC_BASE_URL}/api/v1/stories`,
   });
-
   return {
     props: {
       data,

@@ -5108,6 +5108,9 @@ h2 span {
   }
 
   .stories {
+    * {
+      pointer-events: all;
+    }
     .moslider {
       width: 100%;
     }
