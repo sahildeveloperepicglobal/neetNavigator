@@ -112,7 +112,7 @@ const MedicalCounselling = () => {
 
               <div className={css.featurescontentdiv}>
                 <div
-                  className="page-section hero"
+                  className="page-section hero hero3"
                   ref={registerSection("section-1")}
                 >
                   <h2 className={css.h2headdiv}>

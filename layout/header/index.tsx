@@ -2,6 +2,7 @@
 import React, { useState } from "react";
 import Link from "next/link";
 import useOnClickOutside from "@/hooks/useclick";
+import router from "next/router";
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -59,12 +60,12 @@ const Header = () => {
             </li>
             <li>
               <Link href="/ug" className="unique">
-                NEET UG Service{" "}
+                NEET UG Service
               </Link>
             </li>
             <li>
               <Link href="/pg" className="unique">
-                NEET PG Service{" "}
+                NEET PG Service
               </Link>
             </li>
 
@@ -79,7 +80,7 @@ const Header = () => {
 
       <div className="header-middle">
         <ul className="middle-flex animate__animated animate__bounceInRight">
-          <li>
+          <li >
             <Link href="/lighthouse" className="unique">
               MBBS Lighthouse
             </Link>

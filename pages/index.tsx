@@ -113,7 +113,8 @@ export default function Home({ stories }: { stories: StoryTypes[] }) {
                   "Minority",
                   3000,
                 ]}
-                speed={99}
+                
+                speed={300}
                 repeat={Infinity}
               />
               <p>

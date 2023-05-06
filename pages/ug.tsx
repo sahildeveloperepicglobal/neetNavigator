@@ -27,15 +27,13 @@ export default function Home() {
               <TypeAnimation
                 sequence={[
                   // Same String at the start will only be typed once, initially
-                  "Government",
+                  "MBBS",
                   3000,
-                  "Private",
+                  "BAMS",
                   3000,
-                  "Deemed",
+                  "BDS",
                   3000,
-                  "NRI",
-                  3000,
-                  "Minority",
+                  "BHMS",
                   3000,
                 ]}
                 speed={300}
@@ -185,7 +183,7 @@ export default function Home() {
               <div className="approach-rightSection">
                 <ul id="activebtn">
                   {dataArray.map((value, index) => {
-                    const active = value.heyading === selected.heading;
+                    const active = value.heading === selected.heading;
                     return (
                       <li
                         key={index}
